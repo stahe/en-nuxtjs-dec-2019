@@ -1,0 +1,1483 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to the NUXT.JS Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-06-injection-in-the-context-of-a-session-manager.html">
+      
+      
+        <link rel="prev" href="example-nuxt-05-store-persistence-with-a-session-cookie.html">
+      
+      
+        <link rel="next" href="example-nuxt-07-client-and-server-contexts.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>9. Example [nuxt-06]: Injection in the context of a session manager - An Introduction to the NUXT.JS Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to the NUXT.JS Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-example-nuxt-06-injection-in-the-context-of-a-session-manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to the NUXT.JS Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to the NUXT.JS Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to the NUXT.JS Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9. Example [nuxt-06]: Injection in the context of a session manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-nuxtjs-dec-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to the NUXT.JS Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to the NUXT.JS Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to the NUXT.JS Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-nuxtjs-dec-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to the NUXT.JS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-working-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The working environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-first-nuxtjs-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. A First [nuxt.js] Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-01-routing-and-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Example [nuxt-01]: Routing and Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-02-server-and-client-pages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Example [nuxt-02]: Server and Client Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-03-nuxtserverinit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Example [nuxt-03]: nuxtServerInit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-04-maintaining-a-clientserver-session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Example [nuxt-04]: Maintaining a client/server session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-05-store-persistence-with-a-session-cookie.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Example [nuxt-05]: Store persistence with a session cookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Example [nuxt-06]: Injection in the context of a session manager
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Example [nuxt-06]: Injection in the context of a session manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-the-server-session-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. The server [session] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-the-page1-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7. The [page1] page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#99-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-07-client-and-server-contexts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Example [nuxt-07]: Client and Server Contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-08-routing-middleware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Example [nuxt-08]: Routing middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-09-controlling-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Example [nuxt-09]: Controlling Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-10-asyncdata-and-loading.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Example [nuxt-10]: asyncData and loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-11-customizing-the-loading-image.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Example [nuxt-11]: Customizing the loading image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-12-http-requests-with-axios.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Example [nuxt-12]: HTTP requests with axios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Example [nuxt-20]: Porting the [vuejs-22] example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-example-nuxt-06-injection-in-the-context-of-a-session-manager">9. <span style="color: #365f91"><strong>Example [nuxt-06]: Injection in the context of a session manager</strong></span></h1>
+<h2 id="91-overview">9.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h2>
+<p>Example [nuxt-05] showed that the store can be persisted even when the user forces server calls. Store elements are reactive so that if they are integrated into views, those views react to changes in the store. You may also want to persist elements throughout client/server exchanges without wanting them to be reactive, simply because they are not displayed by views. You can then store these in the session without them being in the store.</p>
+<p>The store is easily accessible through properties such as [context.app.$store] outside of views or [this.$store] within views. We would like something similar for the session, something like [context.app.$session] or [this.$session]. We will see that this is possible thanks to the concept of injection. However, we cannot inject objects into the context, only functions. This function will then be available via the expressions [context.app.$session<strong><span style="color: #c9211e">()</span></strong>] or [this.$session<strong><span style="color: #c9211e">()</span></strong>].</p>
+<p>Finally, we’ll introduce the [nuxt] concept of [plugin].</p>
+<p>The [nuxt-06] example is initially created by cloning the [nuxt-05] project:</p>
+<p><img src="images/10000000000001640000024717468ECB.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024717468ECB.png" /></p>
+<ul>
+  <li>In [1], we will add a [plugins] folder;
+## 9.2. <span style="color: #4f81bd">**The concept of a [nuxt] plugin**</span>
+
+  </li>
+</ul>
+
+<p>[nuxt] refers to [plugin] as any code executed when the application starts, even before the [nuxtServerInit] function is executed by the server, which until now was the first user function to be executed. The application’s plugins must be declared in the [plugins] key of the [nuxt.config.js] configuration file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line">  <span style="color:#008000">/*</span></span>
+<span class="odt-code-line">   ** Plugins to load before mounting the App</span>
+<span class="odt-code-line">   */</span>
+<span class="odt-code-line">  plugins: [</span>
+<span class="odt-code-line"><span style="color:#000000">    { src: </span>&#x27;~/plugins/client/session&#x27;<span style="color:#000000">, mode: </span>&#x27;client&#x27; <span style="color:#000000">},</span></span>
+<span class="odt-code-line"><span style="color:#000000">    { src: </span>&#x27;~/plugins/server/session&#x27;<span style="color:#000000">, mode: </span>&#x27;server&#x27; <span style="color:#000000">}</span></span>
+<span class="odt-code-line">],</span>
+</code></pre></div>
+
+<ul>
+  <li>lines 5-6: a plugin is identified by its path [src] and its execution mode [mode]. [mode] can have three values:
+    <ul>
+      <li>[client]: the plugin must be executed on the client side only;
+      </li>
+      <li>[server]: the plugin must be executed on the server side only;
+      </li>
+      <li>[mode] key is missing: in this case, the plugin must be executed on both the client and server sides;
+      </li>
+    </ul>
+  </li>
+  <li>lines 5-6: we have placed our two plugins in a [plugins] folder. This is not required. Plugins can be placed anywhere in the project directory structure. Similarly, the names of the subfolders [client, server] are arbitrary here;
+  </li>
+</ul>
+
+<p><img src="images/10000000000001640000024711C4FD7E.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024711C4FD7E.png" /></p>
+<h2 id="93-the-server-session-plugin">9.3. <span style="color: #4f81bd"><strong>The server [session] plugin</strong></span></h2>
+<p>The [server / session.js] plugin is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span>(context, inject) =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// server session management</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// Is there an existing session?</span>
+<span class="odt-code-line">  <span style="color:#0000ff">let </span>value = context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>)</span>
+<span class="odt-code-line">  <span style="color:#0000ff">if </span>(!value) {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// new session</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;[session server plugin], starting a new session&quot;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">    value = initValue</span>
+<span class="odt-code-line">  } <span style="color:#0000ff">else </span>{</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// existing session</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;[session server plugin], resuming an existing session&quot;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// session definition</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// session content</span>
+<span class="odt-code-line">    value,</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// save the session to a cookie</span>
+<span class="odt-code-line">    save(context) {</span>
+<span class="odt-code-line">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// inject a function into [context, Vue] that will return the current session</span>
+<span class="odt-code-line">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// initial value of the session</span>
+<span class="odt-code-line"><span style="color:#0000ff">const </span>initValue = {</span>
+<span class="odt-code-line">  initSessionDone: <span style="color:#0000ff">false</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 2: Plugins are executed every time there is a server request: on startup and every time the user forces a server request by manually entering a URL:
+    <ul>
+      <li>first, the server plugin(s) are executed;
+      </li>
+      <li>once the client browser has received the server’s response, it is the client plugin(s)’ turn to run;
+      </li>
+    </ul>
+  </li>
+  <li>Line 2: Every plugin, whether client- or server-side, receives two parameters:
+    <ul>
+      <li>[context]: the server or client context, depending on which is executing the plugin;
+      </li>
+      <li>[inject]: a function that allows a function to be injected into the server or client context;
+      </li>
+    </ul>
+  </li>
+  <li>The purpose of the [server / session] plugin is twofold:
+    <ul>
+      <li>to define a session (lines 16–23);
+      </li>
+      <li>Define a function [$session] within the context that returns the session from line 16. Line 25 does this;
+      </li>
+    </ul>
+  </li>
+  <li>lines 16–23: the session will encapsulate its data in the [value] object on line 18;
+  </li>
+  <li>lines 20–22: it has a [save] function that takes a [context] object as a parameter. The calling code provides this context. With it, the [save] function saves the session value, the [value] object, to the session cookie;
+  </li>
+  <li>line 6: when the [server / session] plugin runs, it first checks whether the server has received a session cookie;
+    <ul>
+      <li>if so, the [value] object from line 6 represents the session value, the set of data encapsulated within it;
+      </li>
+      <li>if not, lines 7–11, we set the initial value of the session. This will be the [initValue] object in lines 29–31. The session elements will be defined in the [nuxtServerInit] function, which is executed after the server plugin;
+      </li>
+    </ul>
+  </li>
+  <li>line 18: the [value] notation is a shorthand for the [value:value] notation. The [value] on the left is the name of an object key; the [value] on the right is the [value] object declared on line 6;
+  </li>
+  <li>line 25: when this line is reached, the session has either been created because it did not exist, or retrieved from the client browser’s HTTP request;
+  </li>
+  <li>line 25: we inject a new function into the server context:
+    <ul>
+      <li>the first parameter of [inject] is the name of the function being created, here ‘session’. [nuxt] will actually give it the name ‘$session’;
+      </li>
+      <li>the second parameter is the function definition. Here, the [$session] function
+        <ul>
+          <li>will not accept any parameters;
+          </li>
+          <li>returns the [session] object from line 16;
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>once the plugin is executed:
+    <ul>
+      <li>the [$session] function is available in [<b>context.app.$session</b>] wherever the [context] object is available, or [<b>this.$session</b>] in a view or in the [vuex] store;
+      </li>
+      <li>the [$session] function returns a [session] object with a single [value] key;
+      </li>
+      <li>Upon initial session creation, the [value] object has only one key [initStoreDone] (lines 29–31). The key [initStoreDone:false] indicates that the store has not yet been added to the session. This will be done by the [nuxtServerInit] function;
+## 9.4. <span style="color: #4f81bd">**Session Initialization**</span>
+
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Once the [session / server] plugin is executed by the server, the server will execute the following [store / index.js] script:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line"><span style="color:#0000ff">export const </span>state = () =&gt; ({</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// counter</span>
+<span class="odt-code-line">  counter: 0</span>
+<span class="odt-code-line">})</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">export const </span>mutations = {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// Increment the counter by a value [inc]</span>
+<span class="odt-code-line">  increment(state, inc) {</span>
+<span class="odt-code-line">    state.counter += inc</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// replace the state</span>
+<span class="odt-code-line">  replace(state, newState) {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">for </span>(<span style="color:#0000ff">const </span>attr <span style="color:#0000ff">in </span>newState) {</span>
+<span class="odt-code-line">      state[attr] = newState[attr]</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">export const </span>actions = {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">async </span>nuxtServerInit(store, context) {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// Who executes this code?</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;nuxtServerInit, client=&#x27;</span>, process.client, <span style="color:#a31515">&#x27;server=&#x27;</span>, process.server, <span style="color:#a31515">&#x27;env=&#x27;</span>, context.env)</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// waiting for a promise to resolve</span>
+<span class="odt-code-line">    <span style="color:#0000ff">await new </span>Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// we normally have an asynchronous function here</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// We simulate it with a one-second delay</span>
+<span class="odt-code-line">      setTimeout(() =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">        </span>// initialize session</span>
+<span class="odt-code-line">        initSession(store, context)</span>
+<span class="odt-code-line"><span style="color:#000000">        </span>// success</span>
+<span class="odt-code-line">        resolve()</span>
+<span class="odt-code-line">      }, 1000)</span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">function </span>initSession(store, context) {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// store is the store to be initialized</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// retrieve the session</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = context.app.$session()</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// Has the session already been initialized?</span>
+<span class="odt-code-line">  <span style="color:#0000ff">if </span>(!session.value.initSessionDone) {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// start a new store</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, initializing a new session&quot;<span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// Initialize the store</span>
+<span class="odt-code-line">    store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 77)</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// Set the store in the session</span>
+<span class="odt-code-line">    session.value.store = store.state</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// initialize a new session</span>
+<span class="odt-code-line">    session.value.somethingImportant = { x: 2, y: 4 }</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// the session is now initialized</span>
+<span class="odt-code-line">    session.value.initSessionDone = <span style="color:#0000ff">true</span></span>
+<span class="odt-code-line">  } <span style="color:#0000ff">else </span>{</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, resuming an existing store&quot;<span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// Update the store with the session store</span>
+<span class="odt-code-line">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, session.value.store)</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// save the session</span>
+<span class="odt-code-line">  session.save(context)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// log</span>
+<span class="odt-code-line">  console.log(<span style="color:#a31515">&#x27;initSession completed, store=&#x27;</span>, store.state, <span style="color:#a31515">&#x27;session=&#x27;</span>, session.value)</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Compared to the store in the [nuxt-05] project, only the [initSession] function (formerly <em>initStore</em>) in lines 38–60 has changed:</p>
+<ul>
+  <li>line 42: we retrieve the session using the [$session] function, which has been injected into the server context;
+  </li>
+  <li>line 44: we check if the session has already been initialized;
+  </li>
+  <li>lines 45–54: if not:
+    <ul>
+      <li>line 48: the store is initialized;
+      </li>
+      <li>line 50: the store’s state is placed in the session;
+      </li>
+      <li>line 52: we add another object [somethingImportant] to the session. This object will not be part of the store;
+      </li>
+      <li>line 54: we note that the session is now initialized;
+      </li>
+    </ul>
+  </li>
+  <li>lines 55–59: if the session was already initialized:
+    <ul>
+      <li>line 58: the new store is initialized with the session’s contents;
+      </li>
+    </ul>
+  </li>
+  <li>line 61: the session is saved in the session cookie. Note that this involves placing the cookie in the HTTP response that the server will send to the client browser;
+## 9.5. <span style="color: #4f81bd">**The client’s [client / session] plugin**</span>
+
+  </li>
+</ul>
+
+<p>Once the server has executed the [plugins / server / session] and [store / index] scripts, it will send one of the pages [index, page1] to the client browser. The server’s HTTP response will include the session cookie. Once the page is received by the client browser, the client-side scripts embedded in the page will execute. The [client / session] plugin will then execute:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line"><span style="color:#0000ff">export default </span>(context, inject) =&gt; {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// client session management</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the session must exist, initialized by the server</span>
+<span class="odt-code-line"><span style="color:#000000">  console.log(</span>&#x27;[client session plugin], resuming the server session&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// session definition</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// session content</span>
+<span class="odt-code-line">    value: context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>),</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// Save the session to a cookie</span>
+<span class="odt-code-line">    save(context) {</span>
+<span class="odt-code-line">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// We inject a function into [context, Vue] that will return the current session</span>
+<span class="odt-code-line">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>When the client plugin runs, the session cookie has already been received by the client browser;
+  </li>
+  <li>the goal of the [client] plugin is to also inject a function [$session] into the client context. This function would return the session sent by the server;
+  </li>
+  <li>line 19: the injected function [$session] will return the session from lines 9–16;
+  </li>
+  <li>Lines 9–16: The [session] object managed by the client. This will be a copy of the session sent by the server;
+  </li>
+  <li>line 11: the value of the client session is retrieved from the session cookie sent by the [nuxt] server;
+  </li>
+  <li>lines 13–15: as with the server session, the client session has a [save] function that allows the session value, [this.value] on line 14, to be saved in the session cookie stored in the browser;
+## 9.6. <span style="color: #4f81bd">**The [index] page**</span>
+
+  </li>
+</ul>
+
+<p>The [index] page evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- [index] page --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout </span><span style="color:#ff0000">:</span>left=&quot;true&quot; <span style="color:#ff0000">:</span>right=&quot;true&quot;&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- navigation --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation </span>slot=&quot;left&quot; /&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- message--&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template </span>slot=&quot;right&quot;&gt;</span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt; </span>Home - session= <span style="font-weight:bold">{{ </span><span style="color:#800080">jsonSession </span><span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{ </span><span style="color:#800080">$store.state.counter </span><span style="font-weight:bold">}} </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span>&lt;!-- button --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button </span>@click=&quot;incrementCounter&quot; class=&quot;ml-3&quot; variant=&quot;primary&quot;&gt;<span style="color:#000000">Increment</span>&lt;<span style="color:#800000">/b-button</span>&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span>/Layout<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">/* eslint-disable no-undef */</span>
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
+<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
+<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    Navigation</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  computed: {</span>
+<span class="odt-code-line">    jsonSession() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>JSON.stringify(<span style="color:#0000ff">this</span>.$session().value)</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
+<span class="odt-code-line">  beforeCreate() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  created() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.$session().value)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  beforeMount() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  mounted() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
+<span class="odt-code-line">  methods: {</span>
+<span class="odt-code-line">    incrementCounter() {</span>
+<span class="odt-code-line">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// increment the counter by 1</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// update session</span>
+<span class="odt-code-line">      <span style="color:#0000ff">const </span>session = <span style="color:#0000ff">this</span>.$session()</span>
+<span class="odt-code-line">      session.value.store = <span style="color:#0000ff">this</span>.$store.state</span>
+<span class="odt-code-line">      session.value.somethingImportant.x++</span>
+<span class="odt-code-line">      session.value.somethingImportant.y++</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// Save the session to the session cookie</span>
+<span class="odt-code-line">      session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>Keep in mind that this page runs on both the server and the client.</p>
+<ul>
+  <li>Line 8: We now display both the session and the store;
+  </li>
+  <li>line 30: [jsonSession] is a computed property that returns the JSON string of the session value;
+  </li>
+  <li>line 41: we display the session value using the injected function [this.$session]. This exists in both the server and client contexts;
+  </li>
+  <li>line 53: the [incrementCounter] method is executed only on the client side;
+  </li>
+  <li>Line 56: The blind counter is incremented and displayed as before;
+  </li>
+  <li>line 58: the session is retrieved using the injected function [this.$session];
+  </li>
+  <li>line 59: the session store is updated;
+  </li>
+  <li>lines 60–61: we increment the session attributes [somethingImportant.x, somethingImportant.y]. This is just to show that a session can be used to carry data other than the store;
+  </li>
+  <li>line 63: the session is saved in the session cookie stored in the browser. In a client view, the session context is available in [this.$nuxt.context];
+  </li>
+</ul>
+
+<p>The purpose of the [index] page is to demonstrate that the session is not reactive, whereas the store is. When we increment the session elements, we will see that the view is not updated. The [page1] view presents a solution to this problem.</p>
+<h2 id="97-the-page1-page">9.7. <span style="color: #4f81bd"><strong>The [page1] page</strong></span></h2>
+<p>The [page1] page is created by copying the [index] page and then modifying it slightly:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">&lt;!-- page [index] --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout </span><span style="color:#ff0000">:</span>left=&quot;true&quot; <span style="color:#ff0000">:</span>right=&quot;true&quot;&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- navigation --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation </span>slot=&quot;left&quot; /&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- message--&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template </span>slot=&quot;right&quot;&gt;</span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt; </span>Page1 - session= <span style="font-weight:bold">{{ </span><span style="color:#800080">jsonSession </span><span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{ </span><span style="color:#800080">$store.state.counter </span><span style="font-weight:bold">}} </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span>&lt;!-- button --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button </span>@click=&quot;incrementCounter&quot; class=&quot;ml-3&quot; variant=&quot;primary&quot;&gt;<span style="color:#000000">Increment</span>&lt;<span style="color:#800000">/b-button</span>&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span>/Layout<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">/* eslint-disable no-undef */</span>
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
+<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
+<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    Navigation</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  data() {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
+<span class="odt-code-line">      session: {}</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  computed: {</span>
+<span class="odt-code-line">    jsonSession() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>JSON.stringify(<span style="color:#0000ff">this</span>.session.value)</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
+<span class="odt-code-line">  beforeCreate() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  created() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// add the session to the page&#x27;s reactive properties</span>
+<span class="odt-code-line">    <span style="color:#0000ff">this</span>.session = <span style="color:#0000ff">this</span>.$session()</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// log</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[page1 created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.session.value)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  beforeMount() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  mounted() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
+<span class="odt-code-line">  methods: {</span>
+<span class="odt-code-line">    incrementCounter() {</span>
+<span class="odt-code-line">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// increment the counter by 1</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// update session</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.store = <span style="color:#0000ff">this</span>.$store.state</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.x++</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.y++</span>
+<span class="odt-code-line"><span style="color:#000000">      </span>// Save the session to the session cookie</span>
+<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 47: the main difference is that we’re adding the current session to the page’s properties (lines 29–33). This will make the session reactive. When the [incrementCounter] function increments the session’s elements, the [page1] view will be updated;
+## 9.8. <span style="color: #4f81bd">**Running the project**</span>
+
+  </li>
+</ul>
+
+<p>Before running the project, check your browser’s session cookie and, if it exists, delete it so that the server creates a new session:</p>
+<p><img src="images/10000000000005B000000269DCC3E5FE.png" style="width:11.561cm;height:4.898cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B000000269DCC3E5FE.png" /></p>
+<p>Now let’s request the URL [http://localhost:81/nuxt-06/]:</p>
+<p><img src="images/100000000000092300000281C960AAD6.png" style="width:15.469cm;height:4.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000092300000281C960AAD6.png" /></p>
+<p>The browser logs are then as follows:</p>
+<p><img src="images/10000000000004F4000003E43312D2E8.png" style="width:10.059cm;height:7.902cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F4000003E43312D2E8.png" /></p>
+<ul>
+  <li>In [2], the server starts a new session in the server&#x27;s [session] plugin;
+  </li>
+  <li>in [3], this new session is initialized in [nuxtServerInit];
+  </li>
+  <li>in [4], the new session as it is known on the server;
+  </li>
+  <li>in [5], the client has successfully retrieved this session;
+  </li>
+</ul>
+
+<p>Now let’s increment the counter three times:</p>
+<p><img src="images/10000000000009A40000028069157B07.png" style="width:16.32cm;height:4.232cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009A40000028069157B07.png" /></p>
+<ul>
+  <li>in [3], the counter has been incremented but not the session in [2]. While [3] displays the store, which is reactive, [2] displays the session, which is not reactive:
+  </li>
+</ul>
+
+<p>Now let’s reload the page (F5). The logs are as follows after this reload:</p>
+<p><img src="images/10000000000004DC000003D69FCEB1CF.png" style="width:9.871cm;height:7.793cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DC000003D69FCEB1CF.png" /></p>
+<ul>
+  <li>In [2], we see that the server received a session cookie sent by the client browser;
+  </li>
+  <li>in [4], we see that the store is not reset but is carried over from the received session;
+  </li>
+  <li>in [4-5]: we see that the session attributes have indeed all been incremented three times;
+  </li>
+</ul>
+
+<p>The page sent by the server is then as follows;</p>
+<p><img src="images/10000000000009340000026FAD722BCF.png" style="width:15.58cm;height:4.12cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009340000026FAD722BCF.png" /></p>
+<p>The conclusion drawn from this page is that the session can carry elements other than the store, but these are not reactive.</p>
+<p>Now let’s click on the [Page 1] [4] link. The new page displayed is as follows:</p>
+<p><img src="images/10000000000008380000023A4AB5718A.png" style="width:13.921cm;height:3.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008380000023A4AB5718A.png" /></p>
+<p>Then let’s use the [Increment] button three times. The page becomes the following:</p>
+<p><img src="images/1000000000000864000002439DF02F45.png" style="width:14.212cm;height:3.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000864000002439DF02F45.png" /></p>
+<p>This time, the session is displayed correctly in [2]. It is reactive here. This can be seen in the logs:</p>
+<p><img src="images/100000000000048E0000040829D81976.png" style="width:9.26cm;height:8.197cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048E0000040829D81976.png" /></p>
+<ul>
+  <li>in [1-3], the session values;
+  </li>
+  <li>in [4-6], the reactive getters and setters for the session elements;
+  </li>
+</ul>
+
+<p>Now let’s click the [Home] link [4]. We get the following page:</p>
+<p><img src="images/100000000000099B000002872FBB8CC2.png" style="width:16.26cm;height:4.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000099B000002872FBB8CC2.png" /></p>
+<p>Then click the [Increment] button [4] twice. The page changes to the following:</p>
+<p><img src="images/100000000000083A000002373763BAAB.png" style="width:13.929cm;height:3.75cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000083A000002373763BAAB.png" /></p>
+<p>We can see that here too, the session has become reactive [2].</p>
+<p>Let’s retrieve the value returned by the [this.$session()] function:</p>
+<p><img src="images/10000000000006B40000035665CD6F32.png" style="width:13.623cm;height:6.779cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B40000035665CD6F32.png" /></p>
+<ul>
+  <li>In the [View] tab, select the current page [Home] to obtain its reference [$vm0] [3];
+  </li>
+</ul>
+
+<p>Then, in the [Console] tab [4], let’s retrieve the value of the function [$vm0.$session()]:</p>
+<p><img src="images/10000000000004DD00000257D109F034.png" style="width:16.469cm;height:7.923cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DD00000257D109F034.png" /></p>
+<ul>
+  <li>in [5], we see that the session has become reactive, whereas it was not initially;
+  </li>
+  <li>in [6], we request the value of the session;
+  </li>
+  <li>in [7-8], we discover that this value has also become reactive;
+  </li>
+</ul>
+
+<p>We therefore have an unexpected result here: if an element becomes reactive on a page because it has been placed in the page’s properties, then it also becomes reactive on pages where it is not part of the properties.</p>
+<h2 id="99-conclusion">9.9. <span style="color: #4f81bd"><strong>Conclusion</strong></span></h2>
+<p>Example [nuxt-05] showed that we could persist the store across requests made to the server. Example [nuxt-06] does the same thing with an object we called [session] by analogy with the web session. We saw that this session could have the same properties as the [Vuex] store and become reactive as well, even though it wasn’t natively.</p>
+<p>So what is the point of the [Vuex] store? I must admit that, for now, it hasn’t become clear to me. It’s likely that I’ve missed something. So, when in doubt, I would recommend using:</p>
+<ul>
+  <li>a <b>[Vuex] store </b>to hold everything that needs to be shared between client-side pages, and anything that may need to be shared between the client and the server;
+  </li>
+  <li>a <b>session cookie </b>if the store needs to be persisted during a client-to-server request, with the session containing only the store;
+  </li>
+</ul>
+
+<p>The examples [nuxt-05] and [nuxt-06] were intended to show how to ensure the application’s continuity when the user forces a call to the server by manually typing URLs. Note that the default behavior in this case is a restart of the application, causing its current state to be lost.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

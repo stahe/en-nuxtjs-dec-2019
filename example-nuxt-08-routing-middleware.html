@@ -1,0 +1,1552 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to the NUXT.JS Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-08-routing-middleware.html">
+      
+      
+        <link rel="prev" href="example-nuxt-07-client-and-server-contexts.html">
+      
+      
+        <link rel="next" href="example-nuxt-09-controlling-navigation.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>11. Example [nuxt-08]: Routing middleware - An Introduction to the NUXT.JS Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to the NUXT.JS Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-example-nuxt-08-routing-middleware" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to the NUXT.JS Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to the NUXT.JS Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to the NUXT.JS Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Example [nuxt-08]: Routing middleware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-nuxtjs-dec-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to the NUXT.JS Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to the NUXT.JS Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to the NUXT.JS Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-nuxtjs-dec-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to the NUXT.JS framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-working-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The working environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-first-nuxtjs-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. A First [nuxt.js] Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-01-routing-and-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Example [nuxt-01]: Routing and Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-02-server-and-client-pages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Example [nuxt-02]: Server and Client Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-03-nuxtserverinit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Example [nuxt-03]: nuxtServerInit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-04-maintaining-a-clientserver-session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Example [nuxt-04]: Maintaining a client/server session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-05-store-persistence-with-a-session-cookie.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Example [nuxt-05]: Store persistence with a session cookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Example [nuxt-06]: Injection in the context of a session manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-07-client-and-server-contexts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Example [nuxt-07]: Client and Server Contexts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Example [nuxt-08]: Routing middleware
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="example-nuxt-08-routing-middleware.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Example [nuxt-08]: Routing middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#113-running-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3. Running the project
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-09-controlling-navigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Example [nuxt-09]: Controlling Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-10-asyncdata-and-loading.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Example [nuxt-10]: asyncData and loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-11-customizing-the-loading-image.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Example [nuxt-11]: Customizing the loading image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-12-http-requests-with-axios.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Example [nuxt-12]: HTTP requests with axios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Example [nuxt-20]: Porting the [vuejs-22] example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11-example-nuxt-08-routing-middleware">11. <span style="color: #365f91"><strong>Example [nuxt-08]: Routing middleware</strong></span></h1>
+<p>In this example, we introduce the concept of routing middleware, scripts executed whenever a route changes.</p>
+<p>Example [nuxt-08] is initially created by cloning the [nuxt-01] project:</p>
+<p><img src="images/10000000000001AA000001DCD2565E0F.png" style="width:4.51cm;height:5.039cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001DCD2565E0F.png" /></p>
+<p>Routing middleware must be placed in a folder named [middleware] [2]. There can be two-level routing:</p>
+<ul>
+  <li>routing applied to every navigation. This is then declared in the [nuxt.config.js] file;
+  </li>
+  <li>routing applied to a specific page, when that page is the routing target. This routing is then declared in that target page;
+## 11.1. <span style="color: #4f81bd">**General Routing**</span>
+
+  </li>
+</ul>
+
+<p>The [middleware/routing.js] file will handle general routing. It is declared as follows in the [nuxt.config.js] file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">  router: {</span>
+<span class="odt-code-line">    base: <span style="color:#a31515">&#x27;/nuxt-08/&#x27;</span>,</span>
+<span class="odt-code-line">    middleware: [<span style="color:#a31515">&#x27;routing&#x27;</span>]</span>
+<span class="odt-code-line">},</span>
+</code></pre></div>
+
+<p>General routing middleware is a property of the router (line 1). There can be multiple routing middleware components. That is why, on line 3, the value of the [middleware] property is an array. Note that we do not use a path to specify the middleware. It will be automatically searched for in the project’s [middleware] folder;</p>
+<p>The [routing] middleware only logs here:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">/* eslint-disable no-undef */</span>
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line">export default function<span style="color:#000000">(...args) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// Who is executing this code?</span>
+<span class="odt-code-line">  console.log(<span style="color:#a31515">&#x27;[routing], process.server=&#x27;</span>, process.server, <span style="color:#a31515">&#x27;process.client=&#x27;</span>, process.client)</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>who = process.server ? <span style="color:#a31515">&#x27;server&#x27; </span>: <span style="color:#a31515">&#x27;client&#x27;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>routing = <span style="color:#a31515">&#x27;[routing &#x27; </span>+ who + <span style="color:#a31515">&#x27;]&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// number of arguments</span>
+<span class="odt-code-line">  console.log(routing + <span style="color:#a31515">&#x27;, there are&#x27;</span>, args.length, <span style="color:#a31515">&#x27;argument(s)&#x27;</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// 1st argument</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>context = args[0]</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// context keys</span>
+<span class="odt-code-line">  dumpkeys(routing + <span style="color:#a31515">&#x27;, context&#x27;</span>, context)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the application</span>
+<span class="odt-code-line">  dumpkeys(routing + <span style="color:#a31515">&#x27;, context.app&#x27;</span>, context.app)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the route</span>
+<span class="odt-code-line">  dumpkeys(routing + <span style="color:#a31515">&#x27;, context.route&#x27;</span>, context.route)</span>
+<span class="odt-code-line">  console.log(routing + <span style="color:#a31515">&#x27;, context.route=&#x27;</span>, context.route)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the router</span>
+<span class="odt-code-line">  dumpkeys(routing + <span style="color:#a31515">&#x27;, context.app.router&#x27;</span>, context.app.router)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// router.options.routes</span>
+<span class="odt-code-line">  dumpkeys(routing + <span style="color:#a31515">&#x27;, context.app.router.options.routes&#x27;</span>, context.app.router.options.routes)</span>
+<span class="odt-code-line">  console.log(routing + <span style="color:#a31515">&#x27;, context.app.router.options.routes=&#x27;</span>, context.app.router.options.routes)</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">function </span>dumpkeys(message, object) {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// list of keys from [object]</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>line = <span style="color:#a31515">&#x27;List of keys [&#x27; </span>+ message + <span style="color:#a31515">&#x27;]&#x27;</span></span>
+<span class="odt-code-line">  console.log(line)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// list of keys</span>
+<span class="odt-code-line">  <span style="color:#0000ff">if </span>(object) {</span>
+<span class="odt-code-line">    console.log(Object.keys(object))</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>line 3: we will see that the middleware receives an argument: the executor’s context (server or client);
+  </li>
+  <li>lines 4–25: we display the properties of various objects to determine what is usable. We will find that the middleware context is nearly identical to the plugin context;
+## 11.2. <span style="color: #4f81bd">**Routing for a specific page**</span>
+
+  </li>
+</ul>
+
+<p>We want to control how users arrive at the [index] page. To do this, we need to add the [middleware] property to this [index] page:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">/* eslint-disable no-undef */</span>
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
+<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
+<span class="odt-code-line">  components: {</span>
+<span class="odt-code-line">    Layout,</span>
+<span class="odt-code-line">    Navigation</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
+<span class="odt-code-line">  beforeCreate() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  created() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home created]&#x27;</span>)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  beforeMount() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  mounted() {</span>
+<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// routing</span>
+<span class="odt-code-line">  middleware: [<span style="color:#a31515">&#x27;index-routing&#x27;</span>]</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 34: the [middleware] property lists the scripts to be executed whenever the next page displayed is the [index] page. Again, these scripts will be searched for in the project&#x27;s [middleware] folder;
+  </li>
+</ul>
+
+<p>The [index-routing] middleware is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">/* eslint-disable no-undef */</span>
+<span class="odt-code-line">/* eslint-disable no-console */</span>
+<span class="odt-code-line">export default function<span style="color:#000000">(...args) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// Who is executing this code?</span>
+<span class="odt-code-line"><span style="color:#000000">  console.log(</span>&#x27;[index-routing], process.server=&#x27;<span style="color:#000000">, process.server, </span>&#x27;process.client=&#x27;<span style="color:#000000">, process.client)</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>who = process.server ? <span style="color:#a31515">&#x27;server&#x27; </span>: <span style="color:#a31515">&#x27;client&#x27;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>indexRouting = <span style="color:#a31515">&#x27;[index-routing &#x27; </span>+ who + <span style="color:#a31515">&#x27;]&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// number of arguments</span>
+<span class="odt-code-line">  console.log(indexRouting + <span style="color:#a31515">&#x27;, there are&#x27;</span>, args.length, <span style="color:#a31515">&#x27;argument(s)&#x27;</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// 1st argument</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>context = args[0]</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// context keys</span>
+<span class="odt-code-line">  dumpkeys(indexRouting + <span style="color:#a31515">&#x27;, context&#x27;</span>, context)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the application</span>
+<span class="odt-code-line">  dumpkeys(indexRouting + <span style="color:#a31515">&#x27;, context.app&#x27;</span>, context.app)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the route</span>
+<span class="odt-code-line">  dumpkeys(indexRouting + <span style="color:#a31515">&#x27;, context.route&#x27;</span>, context.route)</span>
+<span class="odt-code-line">  console.log(indexRouting + <span style="color:#a31515">&#x27;, context.route=&#x27;</span>, context.route)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// the router</span>
+<span class="odt-code-line">  dumpkeys(indexRouting + <span style="color:#a31515">&#x27;, context.app.router&#x27;</span>, context.app.router)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// router.options.routes</span>
+<span class="odt-code-line">  dumpkeys(indexRouting + <span style="color:#a31515">&#x27;, context.app.router.options.routes&#x27;</span>, context.app.router.options.routes)</span>
+<span class="odt-code-line">  console.log(indexRouting + <span style="color:#a31515">&#x27;, context.app.router.options.routes=&#x27;</span>, context.app.router.options.routes)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// where are we coming from?</span>
+<span class="odt-code-line">  <span style="color:#0000ff">if </span>(context.from) {</span>
+<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;from=&#x27;</span>, context.from)</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">function </span>dumpkeys(message, object) {</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// list of keys from [object]</span>
+<span class="odt-code-line">  <span style="color:#0000ff">const </span>line = <span style="color:#a31515">&#x27;List of keys [&#x27; </span>+ message + <span style="color:#a31515">&#x27;]&#x27;</span></span>
+<span class="odt-code-line">  console.log(line)</span>
+<span class="odt-code-line"><span style="color:#000000">  </span>// list of keys</span>
+<span class="odt-code-line">  <span style="color:#0000ff">if </span>(object) {</span>
+<span class="odt-code-line">    console.log(Object.keys(object))</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The code for [index-routing] is identical to that of [routing] and produces the same results. What interests us is seeing when these two middlewares are executed.</p>
+<h2 id="113-running-the-project">11.3. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
+<p>We run the project. The logs are as follows:</p>
+<p>The [routing] script is executed first by the server:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#__codelineno-0-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">[</span><span class="n">routing</span><span class="p">],</span> <span class="n">process</span><span class="o">.</span><span class="n">server</span><span class="o">=</span> <span class="n">true</span> <span class="n">process</span><span class="o">.</span><span class="n">client</span><span class="o">=</span> <span class="n">false</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">there</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">[</span> <span class="s1">&#39;isStatic&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="s1">&#39;isDev&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="s1">&#39;isHMR&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>  <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>  <span class="s1">&#39;payload&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>  <span class="s1">&#39;base&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>  <span class="s1">&#39;env&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>  <span class="s1">&#39;req&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>  <span class="s1">&#39;res&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="s1">&#39;ssrContext&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>  <span class="s1">&#39;redirect&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>  <span class="s1">&#39;beforeNuxtRender&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>  <span class="s1">&#39;route&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>  <span class="s1">&#39;next&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>  <span class="s1">&#39;_redirected&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>  <span class="s1">&#39;_errored&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>  <span class="s1">&#39;params&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>  <span class="s1">&#39;query&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>  <span class="s1">&#39;$axios&#39;</span> <span class="p">]</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="p">]</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="p">[</span> <span class="s1">&#39;router&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>  <span class="s1">&#39;nuxt&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>  <span class="s1">&#39;head&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>  <span class="s1">&#39;render&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>  <span class="s1">&#39;data&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>  <span class="s1">&#39;beforeCreate&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>  <span class="s1">&#39;created&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>  <span class="s1">&#39;mounted&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>  <span class="s1">&#39;watch&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>  <span class="s1">&#39;computed&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>  <span class="s1">&#39;methods&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>  <span class="s1">&#39;components&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>  <span class="s1">&#39;context&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>  <span class="s1">&#39;$axios&#39;</span> <span class="p">]</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="p">]</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>  <span class="s1">&#39;meta&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>  <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>  <span class="s1">&#39;hash&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>  <span class="s1">&#39;query&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>  <span class="s1">&#39;params&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>  <span class="s1">&#39;fullPath&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>  <span class="s1">&#39;matched&#39;</span> <span class="p">]</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="p">[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="o">=</span> <span class="p">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>  <span class="n">meta</span><span class="p">:</span> <span class="p">[</span> <span class="p">{}</span> <span class="p">],</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>  <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>  <span class="nb">hash</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>  <span class="n">query</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>  <span class="n">params</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>  <span class="n">fullPath</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>  <span class="n">matched</span><span class="p">:</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>   <span class="p">[</span> <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>       <span class="n">regex</span><span class="p">:</span> <span class="o">/^</span><span class="p">(</span><span class="err">?</span><span class="p">:</span>\<span class="o">/</span><span class="p">(</span><span class="err">?</span><span class="o">=</span><span class="err">$</span><span class="p">))</span><span class="err">?$</span><span class="o">/</span><span class="n">i</span><span class="p">,</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>       <span class="n">components</span><span class="p">:</span> <span class="p">[</span><span class="n">Object</span><span class="p">],</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>       <span class="n">instances</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>       <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>       <span class="n">parent</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>       <span class="n">matchAs</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>       <span class="n">redirect</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>       <span class="n">beforeEnter</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>       <span class="n">meta</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>       <span class="n">props</span><span class="p">:</span> <span class="p">{}</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="p">]</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="p">[</span> <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>  <span class="s1">&#39;apps&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>  <span class="s1">&#39;options&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>  <span class="s1">&#39;beforeHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>  <span class="s1">&#39;resolveHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>  <span class="s1">&#39;afterHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>  <span class="s1">&#39;matcher&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>  <span class="s1">&#39;fallback&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>  <span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>  <span class="s1">&#39;history&#39;</span> <span class="p">]</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="p">]</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="p">[</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span> <span class="p">]</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="p">[</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/page1&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_61cefe10</span><span class="p">],</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;page1&#39;</span> <span class="p">},</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>  <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/page2&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_61dd1591</span><span class="p">],</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;page2&#39;</span> <span class="p">},</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>  <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_00d5e140</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span> <span class="p">}</span> <span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>This is the same result we got with the plugins.</p>
+<ul>
+  <li>line 15: the [redirect] property is often used in middleware; it allows you to change the target of the current routing;
+  </li>
+</ul>
+
+<p>Then, because the page to be displayed is the [index] page, the server executes the [index-routing] script and displays the following logs:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span>
+<span class="normal"><a href="#__codelineno-1-56">56</a></span>
+<span class="normal"><a href="#__codelineno-1-57">57</a></span>
+<span class="normal"><a href="#__codelineno-1-58">58</a></span>
+<span class="normal"><a href="#__codelineno-1-59">59</a></span>
+<span class="normal"><a href="#__codelineno-1-60">60</a></span>
+<span class="normal"><a href="#__codelineno-1-61">61</a></span>
+<span class="normal"><a href="#__codelineno-1-62">62</a></span>
+<span class="normal"><a href="#__codelineno-1-63">63</a></span>
+<span class="normal"><a href="#__codelineno-1-64">64</a></span>
+<span class="normal"><a href="#__codelineno-1-65">65</a></span>
+<span class="normal"><a href="#__codelineno-1-66">66</a></span>
+<span class="normal"><a href="#__codelineno-1-67">67</a></span>
+<span class="normal"><a href="#__codelineno-1-68">68</a></span>
+<span class="normal"><a href="#__codelineno-1-69">69</a></span>
+<span class="normal"><a href="#__codelineno-1-70">70</a></span>
+<span class="normal"><a href="#__codelineno-1-71">71</a></span>
+<span class="normal"><a href="#__codelineno-1-72">72</a></span>
+<span class="normal"><a href="#__codelineno-1-73">73</a></span>
+<span class="normal"><a href="#__codelineno-1-74">74</a></span>
+<span class="normal"><a href="#__codelineno-1-75">75</a></span>
+<span class="normal"><a href="#__codelineno-1-76">76</a></span>
+<span class="normal"><a href="#__codelineno-1-77">77</a></span>
+<span class="normal"><a href="#__codelineno-1-78">78</a></span>
+<span class="normal"><a href="#__codelineno-1-79">79</a></span>
+<span class="normal"><a href="#__codelineno-1-80">80</a></span>
+<span class="normal"><a href="#__codelineno-1-81">81</a></span>
+<span class="normal"><a href="#__codelineno-1-82">82</a></span>
+<span class="normal"><a href="#__codelineno-1-83">83</a></span>
+<span class="normal"><a href="#__codelineno-1-84">84</a></span>
+<span class="normal"><a href="#__codelineno-1-85">85</a></span>
+<span class="normal"><a href="#__codelineno-1-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span><span class="p">],</span> <span class="n">process</span><span class="o">.</span><span class="n">server</span><span class="o">=</span> <span class="n">true</span> <span class="n">process</span><span class="o">.</span><span class="n">client</span><span class="o">=</span> <span class="n">false</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">there</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="p">]</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">[</span> <span class="s1">&#39;isStatic&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>  <span class="s1">&#39;isDev&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>  <span class="s1">&#39;isHMR&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>  <span class="s1">&#39;payload&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>  <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>  <span class="s1">&#39;base&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="s1">&#39;env&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>  <span class="s1">&#39;req&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>  <span class="s1">&#39;res&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>  <span class="s1">&#39;ssrContext&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>  <span class="s1">&#39;redirect&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>  <span class="s1">&#39;beforeNuxtRender&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>  <span class="s1">&#39;route&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>  <span class="s1">&#39;next&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>  <span class="s1">&#39;_redirected&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>  <span class="s1">&#39;_errored&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>  <span class="s1">&#39;params&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>  <span class="s1">&#39;query&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>  <span class="s1">&#39;$axios&#39;</span> <span class="p">]</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="p">]</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="p">[</span> <span class="s1">&#39;router&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>  <span class="s1">&#39;nuxt&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>  <span class="s1">&#39;head&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>  <span class="s1">&#39;render&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>  <span class="s1">&#39;data&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>  <span class="s1">&#39;beforeCreate&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="s1">&#39;created&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="s1">&#39;mounted&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>  <span class="s1">&#39;watch&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a>  <span class="s1">&#39;computed&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>  <span class="s1">&#39;methods&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>  <span class="s1">&#39;components&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a>  <span class="s1">&#39;context&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>  <span class="s1">&#39;$axios&#39;</span> <span class="p">]</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="p">]</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="p">[</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a>  <span class="s1">&#39;meta&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a>  <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a>  <span class="s1">&#39;hash&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a>  <span class="s1">&#39;query&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a>  <span class="s1">&#39;params&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a>  <span class="s1">&#39;fullPath&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a>  <span class="s1">&#39;matched&#39;</span> <span class="p">]</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="o">=</span> <span class="p">{</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a>  <span class="n">meta</span><span class="p">:</span> <span class="p">[</span> <span class="p">{}</span> <span class="p">],</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a>  <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a>  <span class="nb">hash</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a>  <span class="n">query</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a>  <span class="n">params</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a>  <span class="n">fullPath</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a>  <span class="n">matched</span><span class="p">:</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a>   <span class="p">[</span> <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a>       <span class="n">regex</span><span class="p">:</span> <span class="o">/^</span><span class="p">(</span><span class="err">?</span><span class="p">:</span>\<span class="o">/</span><span class="p">(</span><span class="err">?</span><span class="o">=</span><span class="err">$</span><span class="p">))</span><span class="err">?$</span><span class="o">/</span><span class="n">i</span><span class="p">,</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a>       <span class="n">components</span><span class="p">:</span> <span class="p">[</span><span class="n">Object</span><span class="p">],</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a>       <span class="n">instances</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a>       <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a>       <span class="n">parent</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a>       <span class="n">matchAs</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63"></a>       <span class="n">redirect</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64"></a>       <span class="n">beforeEnter</span><span class="p">:</span> <span class="n">undefined</span><span class="p">,</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65"></a>       <span class="n">meta</span><span class="p">:</span> <span class="p">{},</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66"></a>       <span class="n">props</span><span class="p">:</span> <span class="p">{}</span> <span class="p">}</span> <span class="p">]</span> <span class="p">}</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="p">]</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="p">[</span> <span class="s1">&#39;app&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69"></a>  <span class="s1">&#39;apps&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70"></a>  <span class="s1">&#39;options&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71"></a>  <span class="s1">&#39;beforeHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72"></a>  <span class="s1">&#39;resolveHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73"></a>  <span class="s1">&#39;afterHooks&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74"></a>  <span class="s1">&#39;matcher&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75"></a>  <span class="s1">&#39;fallback&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76"></a>  <span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77"></a>  <span class="s1">&#39;history&#39;</span> <span class="p">]</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="p">]</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="p">[</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span> <span class="p">]</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">server</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/page1&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81"></a>    <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_61cefe10</span><span class="p">],</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82"></a>    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;page1&#39;</span> <span class="p">},</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83"></a>  <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/page2&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84"></a>    <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_61dd1591</span><span class="p">],</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85"></a>    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;page2&#39;</span> <span class="p">},</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86"></a>  <span class="p">{</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="p">[</span><span class="n">Function</span><span class="p">:</span> <span class="n">_00d5e140</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;index&#39;</span> <span class="p">}</span> <span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>The results obtained with the [index-routing] script are similar to those obtained with the [routing] script.</p>
+<p>Once the [index] page is received by the client browser, the client scripts take over. The logs become as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>[home beforeCreate]
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>[home created]
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>[home beforeMount]
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>[home mounted]
+</code></pre></div></td></tr></table></div>
+<p>We can see, therefore, that when the application starts, <strong>the client does not execute any middleware</strong>. This means that this will happen every time the user forces a request to the server. Middleware is only executed by the client when navigating within the client. For example, let’s navigate to the [page1] page (we are currently on the [index] page) using the [Page 1] link. The logs are then as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">[</span><span class="n">routing</span><span class="p">],</span> <span class="n">process</span><span class="o">.</span><span class="n">server</span><span class="o">=</span> <span class="n">false</span> <span class="n">process</span><span class="o">.</span><span class="n">client</span><span class="o">=</span> <span class="n">true</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">[</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">there</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="p">]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;isStatic&quot;</span><span class="p">,</span> <span class="s2">&quot;isDev&quot;</span><span class="p">,</span> <span class="s2">&quot;isHMR&quot;</span><span class="p">,</span> <span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;payload&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span> <span class="s2">&quot;env&quot;</span><span class="p">,</span> <span class="s2">&quot;redirect&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxtState&quot;</span><span class="p">,</span> <span class="s2">&quot;route&quot;</span><span class="p">,</span> <span class="s2">&quot;next&quot;</span><span class="p">,</span> <span class="s2">&quot;_redirected&quot;</span><span class="p">,</span> <span class="s2">&quot;_errored&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxt&quot;</span><span class="p">,</span> <span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeCreate&quot;</span><span class="p">,</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;mounted&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span><span class="p">,</span> <span class="s2">&quot;computed&quot;</span><span class="p">,</span> <span class="s2">&quot;methods&quot;</span><span class="p">,</span> <span class="s2">&quot;components&quot;</span><span class="p">,</span> <span class="s2">&quot;context&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="p">]</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="s2">&quot;hash&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;fullPath&quot;</span><span class="p">,</span> <span class="s2">&quot;matched&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page1&quot;</span><span class="p">,</span> <span class="n">meta</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page1&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="err">…</span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="p">]</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;apps&quot;</span><span class="p">,</span> <span class="s2">&quot;options&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;resolveHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;afterHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;matcher&quot;</span><span class="p">,</span> <span class="s2">&quot;fallback&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="s2">&quot;history&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="p">]</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="p">[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">}]</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page1&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page1&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page2&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page2&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="n">length</span><span class="p">:</span> <span class="mi">3</span><span class="n">__proto__</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">[</span><span class="n">page1</span> <span class="n">beforeCreate</span><span class="p">]</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">[</span><span class="n">page1</span> <span class="n">created</span><span class="p">]</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="p">[</span><span class="n">page1</span> <span class="n">beforeMount</span><span class="p">]</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">[</span><span class="n">page1</span> <span class="n">mounted</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>line 2: the [routing] middleware is executed by the client;
+  </li>
+  <li>line 4: note the [from] property: this is the route we came from;
+  </li>
+  <li>line 9: [context.route] is the route we are going to;
+  </li>
+  <li>lines 15–18: display of the [page1] page;
+  </li>
+</ul>
+
+<p>Now let’s return to the [index] page using the [Home] link. The logs are then as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">[</span><span class="n">routing</span><span class="p">],</span> <span class="n">process</span><span class="o">.</span><span class="n">server</span><span class="o">=</span> <span class="n">false</span> <span class="n">process</span><span class="o">.</span><span class="n">client</span><span class="o">=</span> <span class="n">true</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">[</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">there</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="p">]</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;isStatic&quot;</span><span class="p">,</span> <span class="s2">&quot;isDev&quot;</span><span class="p">,</span> <span class="s2">&quot;isHMR&quot;</span><span class="p">,</span> <span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;payload&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span> <span class="s2">&quot;env&quot;</span><span class="p">,</span> <span class="s2">&quot;redirect&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxtState&quot;</span><span class="p">,</span> <span class="s2">&quot;route&quot;</span><span class="p">,</span> <span class="s2">&quot;next&quot;</span><span class="p">,</span> <span class="s2">&quot;_redirected&quot;</span><span class="p">,</span> <span class="s2">&quot;_errored&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="p">]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxt&quot;</span><span class="p">,</span> <span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeCreate&quot;</span><span class="p">,</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;mounted&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span><span class="p">,</span> <span class="s2">&quot;computed&quot;</span><span class="p">,</span> <span class="s2">&quot;methods&quot;</span><span class="p">,</span> <span class="s2">&quot;components&quot;</span><span class="p">,</span> <span class="s2">&quot;context&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="s2">&quot;hash&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;fullPath&quot;</span><span class="p">,</span> <span class="s2">&quot;matched&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="p">[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">meta</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="err">…</span><span class="p">}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="p">]</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;apps&quot;</span><span class="p">,</span> <span class="s2">&quot;options&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;resolveHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;afterHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;matcher&quot;</span><span class="p">,</span> <span class="s2">&quot;fallback&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="s2">&quot;history&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="p">]</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">[</span><span class="n">client</span> <span class="n">routing</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">}]</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page1&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page1&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page2&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page2&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="n">length</span><span class="p">:</span> <span class="mi">3</span><span class="n">__proto__</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span><span class="p">],</span> <span class="n">process</span><span class="o">.</span><span class="n">server</span><span class="o">=</span> <span class="n">false</span> <span class="n">process</span><span class="o">.</span><span class="n">client</span><span class="o">=</span> <span class="n">true</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">there</span> <span class="ow">is</span> <span class="mi">1</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="p">]</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;isStatic&quot;</span><span class="p">,</span> <span class="s2">&quot;isDev&quot;</span><span class="p">,</span> <span class="s2">&quot;isHMR&quot;</span><span class="p">,</span> <span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;payload&quot;</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span> <span class="s2">&quot;env&quot;</span><span class="p">,</span> <span class="s2">&quot;redirect&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxtState&quot;</span><span class="p">,</span> <span class="s2">&quot;route&quot;</span><span class="p">,</span> <span class="s2">&quot;next&quot;</span><span class="p">,</span> <span class="s2">&quot;_redirected&quot;</span><span class="p">,</span> <span class="s2">&quot;_errored&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">,</span> <span class="s2">&quot;from&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="p">]</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">,</span> <span class="s2">&quot;nuxt&quot;</span><span class="p">,</span> <span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="s2">&quot;render&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeCreate&quot;</span><span class="p">,</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;mounted&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span><span class="p">,</span> <span class="s2">&quot;computed&quot;</span><span class="p">,</span> <span class="s2">&quot;methods&quot;</span><span class="p">,</span> <span class="s2">&quot;components&quot;</span><span class="p">,</span> <span class="s2">&quot;context&quot;</span><span class="p">,</span> <span class="s2">&quot;$axios&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span><span class="p">]</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;meta&quot;</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="s2">&quot;hash&quot;</span><span class="p">,</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;params&quot;</span><span class="p">,</span> <span class="s2">&quot;fullPath&quot;</span><span class="p">,</span> <span class="s2">&quot;matched&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">route</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">meta</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="err">…</span><span class="p">}</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="p">]</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;apps&quot;</span><span class="p">,</span> <span class="s2">&quot;options&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;resolveHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;afterHooks&quot;</span><span class="p">,</span> <span class="s2">&quot;matcher&quot;</span><span class="p">,</span> <span class="s2">&quot;fallback&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="s2">&quot;history&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="n">List</span> <span class="n">of</span> <span class="n">keys</span> <span class="p">[[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="p">]</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">routing</span> <span class="n">client</span><span class="p">],</span> <span class="n">context</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">routes</span><span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">[{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">}]</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page1&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page1&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page2&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page2&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">component</span><span class="p">:</span> <span class="n">ƒ</span><span class="p">}</span><span class="n">length</span><span class="p">:</span> <span class="mi">3</span><span class="n">__proto__</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="n">from</span><span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;page1&quot;</span><span class="p">,</span> <span class="n">meta</span><span class="p">:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">path</span><span class="p">:</span> <span class="s2">&quot;/page1&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="err">…</span><span class="p">}</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="p">[</span><span class="n">home</span> <span class="n">beforeCreate</span><span class="p">]</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="p">[</span><span class="n">home</span> <span class="n">created</span><span class="p">]</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="p">[</span><span class="n">home</span> <span class="n">beforeMount</span><span class="p">]</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="p">[</span><span class="n">home</span> <span class="n">mounted</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>lines 1-15: the client executes the [routing] middleware. This is normal. It is executed every time the route changes;
+  </li>
+  <li>lines 16–29: the client executes the [index-routing] middleware, because:
+    <ul>
+      <li>[index] is the target of the current route (see line 23);
+      </li>
+      <li>the [index] page has defined a middleware named [index-routing];
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>We can see, then, that general routing middleware is executed by the client before the middleware attached to the pages.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
