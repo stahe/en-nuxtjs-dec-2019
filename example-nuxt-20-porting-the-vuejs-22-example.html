@@ -848,10 +848,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#176-step-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.6. Step 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#177-step-6" class="md-nav__link">
     <span class="md-ellipsis">
       
         17.7. Step 6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#178-step-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.8. Step 7
       
     </span>
   </a>
@@ -1959,11 +1981,9 @@
   <li>in [9-10], we see that the first simulation is indeed in the [store];
   </li>
   <li>in [5], the number of the last simulation has indeed been incremented;
-## 17.6. <span style="color: #4f81bd">**Step 5**</span>
-
   </li>
 </ul>
-
+<h2 id="176-step-5">17.6. <span style="color: #4f81bd"><strong>Step 5</strong></span></h2>
 <p>Now that we’ve run a simulation, let’s click the [List of Simulations] link. We get the following page:</p>
 <p><img src="images/10000000000009B1000004942FFAF358.png" style="width:16.409cm;height:7.752cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009B1000004942FFAF358.png" /></p>
 <p>The routing for the [nuxt] client was successful. Let’s look at the code for the [simulation-list] page:</p>
@@ -2293,11 +2313,9 @@
   <li>there is a redirect to the [index] page;
   </li>
   <li>the [mounted] method of the [index] page is executed. This starts a new JSON session with the tax calculation server. If the operation succeeds, the [started] property of the store becomes [true];
-## 17.8. <span style="color: #4f81bd">**Step 7**</span>
-
   </li>
 </ul>
-
+<h2 id="178-step-7">17.8. <span style="color: #4f81bd"><strong>Step 7</strong></span></h2>
 <p>At this point, the [nuxt-20] application has all the features of the [vuejs-22] application. The port seems complete.</p>
 <p>We’ll take it a step further in the [nuxt] spirit. The [mounted] method of the [index] page poses a problem. It launches an asynchronous operation that a search engine won’t wait for to finish. We know that in this case, we must place the asynchronous operation inside an [asyncData] function because then, the [nuxt] server executing it will wait for it to finish before delivering the page to the search engine.</p>
 <p>Here, we use the [asyncData] function written in the [nuxt-12] application for the [index] page:</p>

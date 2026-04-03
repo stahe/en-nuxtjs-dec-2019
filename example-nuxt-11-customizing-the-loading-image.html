@@ -725,6 +725,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#142-the-defaultvue-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2. The [default.vue] layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-the-page1-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3. The [page1] page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#144-the-index-page" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -744,8 +766,85 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="14.5. The [page2] page">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6. Execution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.6. Execution">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1461-nuxtconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.1. [nuxt.config]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1462-the-index-page-served-by-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.2. The [index] page served by the server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1463-the-page1-page-executed-by-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.3. The [page1] page executed by the server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1464-the-page2-page-executed-by-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.4. The [page2] page executed by the server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1465-the-index-page-executed-by-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.5. The [index] page executed by the client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1466-the-page1-page-executed-by-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.6. The [page1] page executed by the client
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#1467-the-page2-page-executed-by-the-client" class="md-nav__link">
@@ -906,14 +1005,11 @@
 <p>This event bus will handle only one event, [loading], which will be used by pages to start/stop the loading animation while waiting for an asynchronous function to complete;</p>
 <ul>
   <li>line 7: we create a function [$eventBus] (first argument) whose role will be to return the [eventBus] object we just created (second argument). This function is injected into the context so that it is available in the [context.app] and [this] objects of the pages;
-<a id="refheadingtoc131381849848624"></a>
-<a id="nuxt11defaultvue"></a>
-
-## 14.2. <span style="color: #4f81bd">**The [default.vue] layout**</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc131381849848624"></a>
+<a id="nuxt11defaultvue"></a></p>
+<h2 id="142-the-defaultvue-layout">14.2. <span style="color: #4f81bd"><strong>The [default.vue] layout</strong></span></h2>
 <p>The [default.vue] layout evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
@@ -1004,11 +1100,9 @@
     </ul>
   </li>
   <li>The logs on lines 53 and 58 will show us that the [showLoading] and [showErrorLoading] methods <b>are not executed </b>on the server side;
-## 14.3. <span style="color: #4f81bd">**The [page1] page**</span>
-
   </li>
 </ul>
-
+<h2 id="143-the-page1-page">14.3. <span style="color: #4f81bd"><strong>The [page1] page</strong></span></h2>
 <p>The code for page [page1] changes as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- view #1 --&gt;</span>
@@ -1320,13 +1414,10 @@
   <li>lines 60–67: we know that the [mounted] function is executed only by the client;
   </li>
   <li>line 63: the client checks whether the [<span style="color: #000000">showErrorLoading</span>] property has been set (by the server or the client, as appropriate). If so, it emits the [‘errorLoading’] event (line 65) so that the [default] page displays the error message [<span style="color: #0000ff">this</span><span style="color: #000000">.errorLoadingMessage</span>]. Ultimately, the server sends a page <b>without an error message displayed</b>. The error message is displayed at the last moment by the client when the page is ‘mounted’;
-## 14.6. <span style="color: #4f81bd">**Execution**</span>
-
-### 14.6.1. <span style="color: #4f81bd">**[nuxt.config]**</span>
-
   </li>
 </ul>
-
+<h2 id="146-execution">14.6. <span style="color: #4f81bd"><strong>Execution</strong></span></h2>
+<h3 id="1461-nuxtconfig">14.6.1. <span style="color: #4f81bd"><strong>[nuxt.config]</strong></span></h3>
 <p>The [nuxt.config.js] runtime file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">export default {</span>
@@ -1412,11 +1503,9 @@
   <li>line 22: set the [loading] property to [false] so that [nuxt] does not use its default loading image;
   </li>
   <li>line 31: the plugin that defines the event bus;
-### 14.6.2. <span style="color: #4f81bd">**The [index] page** *served by the* **server**</span>
-
   </li>
 </ul>
-
+<h3 id="1462-the-index-page-served-by-the-server">14.6.2. <span style="color: #4f81bd"><strong>The [index] page</strong> <em>served by the</em> <strong>server</strong></span></h3>
 <p>Let’s request the [index] page from the server (we type the URL [http://localhost:81/nuxt-11/] manually). The page displayed by the client browser is as follows:</p>
 <p><img src="images/10000000000009BD000002BC00286B31.png" style="width:16.491cm;height:4.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009BD000002BC00286B31.png" /></p>
 <p>The logs are as follows:</p>
@@ -1513,11 +1602,9 @@
   <li>line 57: we see that the server sent an object [d] representing the error that occurred on the server side;
   </li>
   <li>line 59: we see a property [error] whose value is the object [d]. We can assume that it is the presence of the [error] property in the page sent by the server that causes the client-side scripts to display the [error.vue] page with the [error] error;
-### 14.6.3. <span style="color: #4f81bd">**The [page1] page executed by the server**</span>
-
   </li>
 </ul>
-
+<h3 id="1463-the-page1-page-executed-by-the-server">14.6.3. <span style="color: #4f81bd"><strong>The [page1] page executed by the server</strong></span></h3>
 <p>We manually type the URL [http://localhost:81/nuxt-11/page1]. After 5 seconds, the browser displays the following page:</p>
 <p><img src="images/10000000000007E200000297DCE3A3BB.png" style="width:13.353cm;height:4.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E200000297DCE3A3BB.png" /></p>
 <p>The logs displayed are as follows:</p>
@@ -1526,11 +1613,9 @@
   <li>in [1], the server logs. Note that the [mShowLoading] method of the [default] page was not called;
   </li>
   <li>in [2], the client logs;
-### 14.6.4. <span style="color: #4f81bd">**The [page2] page executed by the server**</span>
-
   </li>
 </ul>
-
+<h3 id="1464-the-page2-page-executed-by-the-server">14.6.4. <span style="color: #4f81bd"><strong>The [page2] page executed by the server</strong></span></h3>
 <p>We manually type the URL [http://localhost:81/nuxt-11/page2]. After 5 seconds, the browser displays the following page:</p>
 <p><img src="images/10000000000007DD00000309D7D619B7.png" style="width:15.983cm;height:6.168cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DD00000309D7D619B7.png" /></p>
 <p>Let’s examine the logs displayed in the browser:</p>
@@ -1539,11 +1624,9 @@
   <li>in [1], the server logs. Recall that the server included the [showErrorLoading, errorLoadingMessage] properties in the page sent to the client browser. We know that these properties will then be included in the [data] of the page displayed by the client
   </li>
   <li>in [3], when the [page2] page is mounted, it finds the [showErrorLoading] property set to true. It then sends an event to the [default] page, so that it displays the error message sent by the server [4];
-### 14.6.5. <span style="color: #4f81bd">**The [index] page executed by the client**</span>
-
   </li>
 </ul>
-
+<h3 id="1465-the-index-page-executed-by-the-client">14.6.5. <span style="color: #4f81bd"><strong>The [index] page executed by the client</strong></span></h3>
 <p>We now use the navigation links to display the three pages. All pages displayed by the client are identical to those displayed by the server. The only difference is that the 5-second loading image is displayed each time.</p>
 <p>We start with the [index] page. The loading image is then displayed:</p>
 <p><img src="images/10000000000007F90000030E84F26BC0.png" style="width:13.503cm;height:5.173cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007F90000030E84F26BC0.png" /></p>
@@ -1589,11 +1672,9 @@
   <li>In [5], the [asyncData] function has finished its work;
   </li>
   <li>because the [asyncData] function generated an error with [context.error] (line 19), the [error] page is displayed [6];
-### 14.6.6. <span style="color: #4f81bd">**The [***page1***] page executed by the client**</span>
-
   </li>
 </ul>
-
+<h3 id="1466-the-page1-page-executed-by-the-client">14.6.6. <span style="color: #4f81bd"><strong>The [</strong><em>page1</em><strong>] page executed by the client</strong></span></h3>
 <p>After waiting 5 seconds, the client displays the following page:</p>
 <p><img src="images/10000000000007DD000002BB12ED4E01.png" style="width:15.983cm;height:5.549cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DD000002BB12ED4E01.png" /></p>
 <p>Let&#x27;s review the code for the [asyncData] function from [page1]:</p>

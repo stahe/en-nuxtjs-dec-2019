@@ -697,6 +697,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#132-configuring-the-asyncdata-progress-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. Configuring the [asyncData] progress bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3. Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -912,11 +934,9 @@
   <li><span style="color: #000000">lines 32–37: the asynchronous function of the promise is simulated with a 5-second wait (line 37);</span>
   </li>
   <li><span style="color: #000000">line 34: the result of the asynchronous function is returned as an object {result:...}. The asynchronous object returned by the [asyncData] function </span><b><span style="color: #000000">is integrated into the page’s [data] object</span></b><span style="color: #000000">. This is why the [result] object is available on line 7 of the template even though the page had not defined a [data] object;</span>
-## 13.2. <span style="color: #4f81bd">**Configuring** the **[asyncData]** progress bar</span>
-
   </li>
 </ul>
-
+<h2 id="132-configuring-the-asyncdata-progress-bar">13.2. <span style="color: #4f81bd"><strong>Configuring</strong> the <strong>[asyncData]</strong> progress bar</span></h2>
 <p>When the [page1] page is the target of a navigation within the client (SPA mode), the client executes the [asyncData] function, and [nuxt] then displays a progress bar that it hides once the [asyncData] function has returned its result. The [loading] property in the [nuxt.config.js] file allows you to configure this bar:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">loading: {</span>
@@ -936,11 +956,9 @@
   <li><span style="color: #000000">line 4: [throttle] is the delay in milliseconds before the animation starts. This prevents an animation image from appearing when the [asyncData] function returns its result quickly;</span>
   </li>
   <li><span style="color: #000000">line 5: [continuous] sets the behavior of the progress bar animation. By default, the bar grows gradually from 0% to 100% of its size, at a faster or slower rate depending on the wait time. With [continuous:true], the colored bar grows at a constant speed from 0 to 100% of its size, then repeats until the [asyncData] function returns its result;</span>
-## 13.3. <span style="color: #4f81bd">**Execution**</span>
-
   </li>
 </ul>
-
+<h2 id="133-execution">13.3. <span style="color: #4f81bd"><strong>Execution</strong></span></h2>
 <p><span style="color: #000000">Let’s launch the application, then </span><strong><span style="color: #000000">manually</span></strong><span style="color: #000000"> request the [page1] page from the server:</span></p>
 <p><img src="images/10000000000006E2000002C3032BE8AB.png" style="width:11.659cm;height:4.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E2000002C3032BE8AB.png" /></p>
 <p><span style="color: #000000">The logs are as follows:</span></p>

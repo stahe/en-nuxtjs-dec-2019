@@ -617,6 +617,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#102-the-common-mainjs-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. The [common / main.js] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-the-plugin-executed-by-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3. The plugin executed by the server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#104-the-servers-index-page" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -880,11 +902,9 @@
   <li>in [2], we will add a plugin shared by the client and the server;
   </li>
   <li>in [3], we will modify the [index] page slightly;
-## 10.2. <span style="color: #4f81bd">**The [common / main.js] plugin**</span>
-
   </li>
 </ul>
-
+<h2 id="102-the-common-mainjs-plugin">10.2. <span style="color: #4f81bd"><strong>The [common / main.js] plugin</strong></span></h2>
 <p>The [common / main.js] plugin is executed by both the client and the server: this is due to the following [nuxt.config.js] configuration:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">/*</span>
@@ -965,11 +985,9 @@
   <li>line 23: the [router.options.routes] object represents the application’s various routes;
   </li>
   <li>lines 27–28: the second argument of the plugin is the [inject] function that we used in the [nuxt-06] example;
-## 10.3. <span style="color: #4f81bd">**The plugin executed by the server**</span>
-
   </li>
 </ul>
-
+<h2 id="103-the-plugin-executed-by-the-server">10.3. <span style="color: #4f81bd"><strong>The plugin executed by the server</strong></span></h2>
 <p>When run, the server displays the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>

@@ -455,6 +455,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#42-porting-the-mainjs-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Porting the [main.js] file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#43-the-main-view-defaultvue" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -466,10 +477,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#44-the-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. The components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#45-the-pages" class="md-nav__link">
     <span class="md-ellipsis">
       
         4.5. The pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-the-nuxtconfigjs-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. The [nuxt.config.js] file
       
     </span>
   </a>
@@ -993,11 +1026,9 @@
   <li>line 66: specify the root URL of the [dvp] application (you can enter whatever you want);
   </li>
   <li>line 43: note that the [bootstrap-vue] library is referenced in the configuration;
-## 4.2. <span style="color: #4f81bd">**Porting the [main.js] file**</span>
-
   </li>
 </ul>
-
+<h2 id="42-porting-the-mainjs-file">4.2. <span style="color: #4f81bd"><strong>Porting the [main.js] file</strong></span></h2>
 <p>The [main.js] file for the [vuejs-11] project was as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">// imports</span>
@@ -1065,11 +1096,9 @@
 
 <ul>
   <li>On line 9, in the [vuejs-11] project, we had the &lt;<b>router-view </b>/&gt; tag instead of the &lt;<b>nuxt </b>/&gt; tag used here. Both seem to work. I tried both of them without seeing any change. I kept the &lt;<b>nuxt </b>/&gt; tag, which is the recommended one. It displays the current view, i.e., the target page of the current route;
-## 4.4. <span style="color: #4f81bd">**The components**</span>
-
   </li>
 </ul>
-
+<h2 id="44-the-components">4.4. <span style="color: #4f81bd"><strong>The components</strong></span></h2>
 <p><img src="images/100000000000016E000000D5488BFE06.png" style="width:3.872cm;height:2.252cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016E000000D5488BFE06.png" /></p>
 <p>Compared to the [vuejs-11] project, the [layout, navigation] components remain unchanged:</p>
 <p>[<strong>components / layout.vue</strong>]</p>
@@ -1245,11 +1274,9 @@
   <li>line 29: we also want to know if the lifecycle functions receive arguments. We will indeed discover that [nuxt] passes information to certain functions. We want to know if the lifecycle functions are among them;
   </li>
   <li>We repeat the same code for all four functions;
-## 4.6. <span style="color: #4f81bd">**The [nuxt.config.js] file**</span>
-
   </li>
 </ul>
-
+<h2 id="46-the-nuxtconfigjs-file">4.6. <span style="color: #4f81bd"><strong>The [nuxt.config.js] file</strong></span></h2>
 <p>This file controls the execution of the [dvp] project. It was described on page<a href="#nuxt01-config"><u><span style="color: #0563c1"> 33</span></u></a>.</p>
 <h2 id="47-running-the-project">4.7. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
 <p>We run the project:</p>

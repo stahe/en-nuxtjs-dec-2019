@@ -493,6 +493,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#512-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2. Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -561,6 +572,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#531-the-page-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.1. The page code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#532-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -610,6 +632,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#543-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.3. Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -649,6 +682,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#553-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.3. Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -659,6 +703,17 @@
     <span class="md-ellipsis">
       
         5.6. Navigation in the [Vue] application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7. Summary
       
     </span>
   </a>
@@ -1092,14 +1147,11 @@
   <li>line 7: the [index] page will display the value of its [value] property (line 28);
   </li>
   <li>lines 36–45: it’s important to remember here that the [created] function is executed on both the server and the client. Lines 40–42: the server will set the value of the [value] property to 10. The client, however, does not modify this value. We simply want to know if this value is retained by the client. We’ll find out that it isn’t;
-<a id="refheadingtoc106094921827936"></a>
-<a id="nuxt02indexexecution"></a>
-
-### 5.1.2. <span style="color: #4f81bd">**Execution**</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc106094921827936"></a>
+<a id="nuxt02indexexecution"></a></p>
+<h3 id="512-execution">5.1.2. <span style="color: #4f81bd"><strong>Execution</strong></span></h3>
 <p>We modify the [/nuxt.config.js] file to run the [nuxt-02] project:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">...</span>
@@ -1615,11 +1667,9 @@
   <li>the server includes calculated information in the page;
   </li>
   <li>the client does not modify this information;
-### 5.3.1. <span style="color: #4f81bd">**The page code**</span>
-
   </li>
 </ul>
-
+<h3 id="531-the-page-code">5.3.1. <span style="color: #4f81bd"><strong>The page code</strong></span></h3>
 <p>The code for page [page2] changes as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- page2 --&gt;</span>
@@ -2076,11 +2126,9 @@
   <li>line 41: artificially, we signal the success of the [Promise] after one second (see document <a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"><u><span style="color: #0563c1">|Introduction to </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"><u><span style="color: #0563c1">ECMAScript 6 </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"><u><span style="color: #0563c1">through</span></u></a> Examples|);
   </li>
   <li>line 45: the [then] method is then executed. Here, the [store] counter is incremented;
-### 5.4.3. <span style="color: #4f81bd">**Execution**</span>
-
   </li>
 </ul>
-
+<h3 id="543-execution">5.4.3. <span style="color: #4f81bd"><strong>Execution</strong></span></h3>
 <p>We run the [nuxt-02] project and manually type [localhost:<strong>81/nuxt-02/page3</strong>] to trigger the server. As with the [index] page at startup:</p>
 <ul>
   <li>the server executes the [page3.vue] page;
@@ -2461,11 +2509,9 @@
   <li>line 36: we retrieve the result of the asynchronous function returned on line 41 after 10 seconds (line 42);
   </li>
   <li>lines 50–54: in the [created] method, which runs on both the server and the client, the counter is assigned to the page’s [value] property;
-### 5.5.3. <span style="color: #4f81bd">**Execution**</span>
-
   </li>
 </ul>
-
+<h3 id="553-execution">5.5.3. <span style="color: #4f81bd"><strong>Execution</strong></span></h3>
 <p>Run the [nuxt-02] project and manually type [localhost:<strong>81/nuxt-02/page4</strong>] to trigger the server. As with the initial launch of the [index] page:</p>
 <ul>
   <li>the server executes the [page4.vue] page;
@@ -2651,11 +2697,9 @@
   <li>After 10 seconds, the asynchronous function completes and the counter is set to 52 on line 23;
   </li>
   <li>when navigating back to the [page4] page, the value 52 is then displayed;
-## 5.7. <span style="color: #4f81bd">**Summary**</span>
-
   </li>
 </ul>
-
+<h2 id="57-summary">5.7. <span style="color: #4f81bd"><strong>Summary</strong></span></h2>
 <p>From our various tests, we can conclude the following:</p>
 <ul>
   <li>if the [index] page must contain external data, this data can be fetched by the server using the [asyncData] function;

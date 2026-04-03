@@ -590,6 +590,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#92-the-concept-of-a-nuxt-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. The concept of a [nuxt] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#93-the-server-session-plugin" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -601,10 +612,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#94-session-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4. Session Initialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-the-clients-client-session-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5. The client’s [client / session] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-the-index-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6. The [index] page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#97-the-page1-page" class="md-nav__link">
     <span class="md-ellipsis">
       
         9.7. The [page1] page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-running-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.8. Running the project
       
     </span>
   </a>
@@ -872,11 +927,9 @@
 <p><img src="images/10000000000001640000024717468ECB.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024717468ECB.png" /></p>
 <ul>
   <li>In [1], we will add a [plugins] folder;
-## 9.2. <span style="color: #4f81bd">**The concept of a [nuxt] plugin**</span>
-
   </li>
 </ul>
-
+<h2 id="92-the-concept-of-a-nuxt-plugin">9.2. <span style="color: #4f81bd"><strong>The concept of a [nuxt] plugin</strong></span></h2>
 <p>[nuxt] refers to [plugin] as any code executed when the application starts, even before the [nuxtServerInit] function is executed by the server, which until now was the first user function to be executed. The application’s plugins must be declared in the [plugins] key of the [nuxt.config.js] configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">  <span style="color:#008000">/*</span></span>
@@ -1002,13 +1055,11 @@
       <li>the [$session] function returns a [session] object with a single [value] key;
       </li>
       <li>Upon initial session creation, the [value] object has only one key [initStoreDone] (lines 29–31). The key [initStoreDone:false] indicates that the store has not yet been added to the session. This will be done by the [nuxtServerInit] function;
-## 9.4. <span style="color: #4f81bd">**Session Initialization**</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<h2 id="94-session-initialization">9.4. <span style="color: #4f81bd"><strong>Session Initialization</strong></span></h2>
 <p>Once the [session / server] plugin is executed by the server, the server will execute the following [store / index.js] script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1102,11 +1153,9 @@
     </ul>
   </li>
   <li>line 61: the session is saved in the session cookie. Note that this involves placing the cookie in the HTTP response that the server will send to the client browser;
-## 9.5. <span style="color: #4f81bd">**The client’s [client / session] plugin**</span>
-
   </li>
 </ul>
-
+<h2 id="95-the-clients-client-session-plugin">9.5. <span style="color: #4f81bd"><strong>The client’s [client / session] plugin</strong></span></h2>
 <p>Once the server has executed the [plugins / server / session] and [store / index] scripts, it will send one of the pages [index, page1] to the client browser. The server’s HTTP response will include the session cookie. Once the page is received by the client browser, the client-side scripts embedded in the page will execute. The [client / session] plugin will then execute:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1143,11 +1192,9 @@
   <li>line 11: the value of the client session is retrieved from the session cookie sent by the [nuxt] server;
   </li>
   <li>lines 13–15: as with the server session, the client session has a [save] function that allows the session value, [this.value] on line 14, to be saved in the session cookie stored in the browser;
-## 9.6. <span style="color: #4f81bd">**The [index] page**</span>
-
   </li>
 </ul>
-
+<h2 id="96-the-index-page">9.6. <span style="color: #4f81bd"><strong>The [index] page</strong></span></h2>
 <p>The [index] page evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- [index] page --&gt;</span>
@@ -1323,11 +1370,9 @@
 
 <ul>
   <li>line 47: the main difference is that we’re adding the current session to the page’s properties (lines 29–33). This will make the session reactive. When the [incrementCounter] function increments the session’s elements, the [page1] view will be updated;
-## 9.8. <span style="color: #4f81bd">**Running the project**</span>
-
   </li>
 </ul>
-
+<h2 id="98-running-the-project">9.8. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
 <p>Before running the project, check your browser’s session cookie and, if it exists, delete it so that the server creates a new session:</p>
 <p><img src="images/10000000000005B000000269DCC3E5FE.png" style="width:11.561cm;height:4.898cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B000000269DCC3E5FE.png" /></p>
 <p>Now let’s request the URL [http://localhost:81/nuxt-06/]:</p>

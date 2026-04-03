@@ -779,6 +779,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#162-nuxt-client-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2. [nuxt] client routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-server-routing-nuxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3. Server Routing [Nuxt]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#164-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -913,11 +935,9 @@
   <li>line 4: server routing is implemented by the script [middleware/server/routing];
   </li>
   <li>line 5: client routing is implemented by the [middleware/client/routing] script;
-## 16.2. <span style="color: #4f81bd">**[nuxt] client routing**</span>
-
   </li>
 </ul>
-
+<h2 id="162-nuxt-client-routing">16.2. <span style="color: #4f81bd"><strong>[nuxt] client routing</strong></span></h2>
 <p>Client-side routing [nuxt] remains the same as it was in [nuxt-12]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -971,14 +991,11 @@
   <li>Lines 7–11: The [AdminData Request] option is only available if the JSON session has started, the user is authenticated, and the [AdminData] has not yet been retrieved. If any of these three conditions is not met (jSON session not started, user not authenticated, or [AdminData] data already retrieved), the option is not offered;
   </li>
   <li>line 15: the [End Tax Session] option is available as soon as the JSON session has started and the user is authenticated; otherwise, it is not available;
-<a id="refheadingtoc1463512091980367"></a>
-<a id="nuxt13routagenuxtserver"></a>
-
-## 16.3. <span style="color: #4f81bd">**Server Routing [Nuxt]**</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc1463512091980367"></a>
+<a id="nuxt13routagenuxtserver"></a></p>
+<h2 id="163-server-routing-nuxt">16.3. <span style="color: #4f81bd"><strong>Server Routing [Nuxt]</strong></span></h2>
 <p>Server routing is generally more complex than client-side routing because the user can type any URL into their browser’s address bar. We can let that happen (after all, the user isn’t supposed to do that) or try to control it. That’s what we’ll do here, for the sake of this example, because in the case of the [nuxt-12] application, we can easily do without it since the tax calculation server is well-protected against these manually entered URLs and knows how to send the appropriate error messages. We saw this in [next-12], where there was no routing control.</p>
 <p>Routing on a [nuxt] server is very different from that on a [nuxt] client in terms of redirection:</p>
 <ul>

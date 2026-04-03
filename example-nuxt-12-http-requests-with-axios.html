@@ -752,6 +752,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#152-project-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2. Project directory structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#153-the-nuxtconfigjs-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -760,7 +771,29 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="15.3. The [nuxt.config.js] configuration file">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-the-ui-layer-of-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4. The [UI] layer of the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-the-dao-layers-of-the-nuxt-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5. The [dao] layers of the [nuxt] application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.5. The [dao] layers of the [nuxt] application">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -799,7 +832,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="15.6. The [nuxt] session">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-nuxt-session-management-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.7. [nuxt] session management plugins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.7. [nuxt] session management plugins">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -814,10 +858,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1572-the-nuxt-session-management-plugin-for-the-nuxt-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.7.2. The [nuxt] session management plugin for the [nuxt] client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#158-plugins-for-the-dao-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.8. Plugins for the [dao] layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.8. Plugins for the [dao] layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1581-the-dao-layer-plugin-for-the-nuxt-client" class="md-nav__link">
     <span class="md-ellipsis">
       
         15.8.1. The [dao] layer plugin for the [nuxt] client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1582-the-dao-layer-plugin-for-the-nuxt-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.8.2. The [dao] layer plugin for the [nuxt] server
       
     </span>
   </a>
@@ -841,6 +924,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1510-the-plgeventbus-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.10. The [plgEventBus] plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1511-the-components-of-the-nuxt-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.11. The components of the [Nuxt] application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1512-the-nuxt-application-layouts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -857,6 +962,17 @@
     <span class="md-ellipsis">
       
         15.12.1. [default]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15122-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.12.2. [error]
       
     </span>
   </a>
@@ -891,6 +1007,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1515-the-authentication-page-executed-by-the-nuxt-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.15. The [authentication] page executed by the [nuxt] server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1516-the-authentication-page-executed-by-the-nuxt-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -917,6 +1044,17 @@
     <span class="md-ellipsis">
       
         15.18. The [fin-session] page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1519-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.19. Execution
       
     </span>
   </a>
@@ -1042,11 +1180,9 @@
   <li>In [1], the [node.js] server delivers the [nuxt] pages to the browser [2]. It is the [web] layer [8] of the server that delivers these pages. To deliver the page, the server may have requested external data from the data server [3]. It is the [DAO] layer [9] that makes the necessary HTTP requests;
   </li>
   <li>With each page request to the [Node.js] server [1], the browser [2] receives the entire [Nuxt] application, which then runs in SPA mode. The [UI] (User Interface) block [4] displays [Vue.js] pages to the user. The user’s actions or the natural lifecycle of the pages can trigger requests for external data from the data server [3]. The [DAO] layer [5] then makes the necessary HTTP requests;
-## 15.2. <span style="color: #4f81bd">**Project directory structure**</span>
-
   </li>
 </ul>
-
+<h2 id="152-project-directory-structure">15.2. <span style="color: #4f81bd"><strong>Project directory structure</strong></span></h2>
 <p><img src="images/100000000000013E0000014735A17401.png" style="width:3.373cm;height:3.468cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013E0000014735A17401.png" /></p>
 <h2 id="153-the-nuxtconfigjs-configuration-file">15.3. <span style="color: #4f81bd"><strong>The [nuxt.config.js] configuration file</strong></span></h2>
 <p>The project will be controlled by the following [nuxt.config.js] file:</p>
@@ -1169,11 +1305,9 @@
   <li>line 94: Nuxt session lifetime (5 min);
   </li>
   <li>line 77: client and [nuxt] server navigation will be controlled by routing middleware;
-## 15.4. <span style="color: #4f81bd">The [UI] layer **of the application**</span>
-
   </li>
 </ul>
-
+<h2 id="154-the-ui-layer-of-the-application">15.4. <span style="color: #4f81bd">The [UI] layer <strong>of the application</strong></span></h2>
 <p><img src="images/100000000000017F000000DE689E29B4.png" style="width:5.069cm;height:2.939cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F000000DE689E29B4.png" /></p>
 <p>We will give the [nuxt] application access to the tax calculation server’s API via the following view:</p>
 <p><img src="images/1000000000000762000002C2F3B83243.png" style="width:15.002cm;height:5.604cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000762000002C2F3B83243.png" /></p>
@@ -1189,12 +1323,10 @@
       <li>[AdminData Request]: corresponds to the [get-admindata] page. This page requests data from the tax calculation server—referred to here as [adminData]—which enables tax calculation. The displayed result is similar to [3];
       </li>
       <li>[End Tax Session]: corresponds to the [end-session] page. This page sends a PHP end-of-session request to the tax calculation server. The server then cancels the current PHP session and initializes a new, blank one;
-## 15.5. <span style="color: #4f81bd">**The [dao] layers of the [nuxt] application**</span>
-
       </li>
     </ul>
 </ol>
-
+<h2 id="155-the-dao-layers-of-the-nuxt-application">15.5. <span style="color: #4f81bd"><strong>The [dao] layers of the [nuxt] application</strong></span></h2>
 <p>As mentioned above, the architecture of the [nuxt] application will be as follows:</p>
 <p><img src="images/10000000000004660000036A2523CCDB.png" style="width:8.939cm;height:6.939cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004660000036A2523CCDB.png" /></p>
 <ul>
@@ -1994,13 +2126,11 @@
   <li>lines 20–26: the [reset] method resets the [nuxt] session;
     <ul>
       <li>line 23: the Vuex store is reset and then saved to the session on line 25;
-## 15.7. <span style="color: #4f81bd">**[nuxt] session management plugins**</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<h2 id="157-nuxt-session-management-plugins">15.7. <span style="color: #4f81bd"><strong>[nuxt] session management plugins</strong></span></h2>
 <p><img src="images/100000000000017A0000012467AB3E41.png" style="width:4.001cm;height:3.09cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017A0000012467AB3E41.png" /></p>
 <h3 id="1571-the-nuxt-session-management-plugin-for-the-nuxt-server">15.7.1. <span style="color: #4f81bd"><strong>The [nuxt] session management plugin for the [nuxt]</strong> <em>server</em></span></h3>
 <p>When the application starts, the [nuxt] server runs first. It is therefore responsible for initializing the [nuxt] session. The [server/plgSession] script is as follows:</p>
@@ -2040,11 +2170,9 @@
   <li>lines 15–19: If the [nuxt] session cookie existed, then on line 18 we store its value in the session imported on line 4;
   </li>
   <li>line 22: the session has been either initialized or restored. We make it available via the [$session] function;
-### 15.7.2. <span style="color: #4f81bd">**The [nuxt] session management plugin for the [nuxt] client**</span>
-
   </li>
 </ul>
-
+<h3 id="1572-the-nuxt-session-management-plugin-for-the-nuxt-client">15.7.2. <span style="color: #4f81bd"><strong>The [nuxt] session management plugin for the [nuxt] client</strong></span></h3>
 <p>The [client/plgSession] script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -2069,11 +2197,9 @@
   <li>line 10: we retrieve the current [nuxt] session from the [nuxt-session] cookie;
   </li>
   <li>line 13: we return the [nuxt] session imported on line 4 via the injected function [$session];
-## 15.8. <span style="color: #4f81bd">**Plugins for the [dao] layers**</span>
-
   </li>
 </ul>
-
+<h2 id="158-plugins-for-the-dao-layers">15.8. <span style="color: #4f81bd"><strong>Plugins for the [dao] layers</strong></span></h2>
 <p><img src="images/100000000000017A0000012408FEBC3E.png" style="width:4.001cm;height:3.09cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017A0000012408FEBC3E.png" /></p>
 <h3 id="1581-the-dao-layer-plugin-for-the-nuxt-client">15.8.1. <span style="color: #4f81bd"><strong>The [dao] layer plugin for the [nuxt] client</strong></span></h3>
 <p>The [client/plgDao] script is as follows:</p>
@@ -2126,11 +2252,9 @@
   <li>[<b>context.app.$dao()</b>] where the context is known;
   </li>
   <li>[<b>this.$dao()</b>] in a [Vue.js] page;
-### 15.8.2. <span style="color: #4f81bd">**The [dao] layer plugin for the [nuxt]** *server*</span>
-
   </li>
 </ul>
-
+<h3 id="1582-the-dao-layer-plugin-for-the-nuxt-server">15.8.2. <span style="color: #4f81bd"><strong>The [dao] layer plugin for the [nuxt]</strong> <em>server</em></span></h3>
 <p>The [server/plgDao] script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -2292,11 +2416,9 @@
   <li>lines 51–55: if the store was initialized, we use it, line 54, to initialize the store with the value contained in the session;
   </li>
   <li>line 57: in all cases, the session is saved in the [nuxt-session] cookie, along with the store it contains;
-## 15.10. <span style="color: #4f81bd">**The [plgEventBus] plugin**</span>
-
   </li>
 </ul>
-
+<h2 id="1510-the-plgeventbus-plugin">15.10. <span style="color: #4f81bd"><strong>The [plgEventBus] plugin</strong></span></h2>
 <p><img src="images/100000000000015400000128D21929CA.png" style="width:3.602cm;height:3.134cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015400000128D21929CA.png" /></p>
 <p>This plugin aims to make an event bus accessible to the [nuxt] client via a [$eventBus] function injected into the [nuxt] client context. There is no need to inject it into the [nuxt] server context because the server cannot handle events. However, we have already seen that injecting it on the server side and then using it does not cause an error.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2318,11 +2440,9 @@
   <li>[<b>context.app.$eventBus()</b>] where the context is available;
   </li>
   <li>[<b>this.$eventBus()</b>] in the client&#x27;s [Vue.js] pages;
-## 15.11. <span style="color: #4f81bd">**The components of the [Nuxt] application**</span>
-
   </li>
 </ul>
-
+<h2 id="1511-the-components-of-the-nuxt-application">15.11. <span style="color: #4f81bd"><strong>The components of the [Nuxt] application</strong></span></h2>
 <p><img src="images/100000000000013300000073816BB325.png" style="width:4.06cm;height:1.52cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013300000073816BB325.png" /></p>
 <p>The [layout] component is the one from the previous examples:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -2475,13 +2595,11 @@
       <li>display an error message by emitting the [‘errorLoading’, true] event on the event bus;
       </li>
       <li>hide the error message by emitting the [‘errorLoading’, false] event on the event bus;
-### 15.12.2. <span style="color: #4f81bd">**[error]**</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<h3 id="15122-error">15.12.2. <span style="color: #4f81bd"><strong>[error]</strong></span></h3>
 <p>The [error] layout displays a system error message (not managed by the developer):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -2693,14 +2811,11 @@
   <li>The properties [showErrorLoading, errorLoadingMessage] are used by the [mounted] method: on line 4, the [showErrorLoading] property is checked. If it is true, on line 6, the client’s [nuxt] event bus is used to signal that there is an error message to display;
   </li>
   <li>the [errorLoading] event triggered on line 6 is intercepted by the [layouts/default] page described in the <a href="../../../../../../st-2020/st-2020/cours/nuxtjs/masters/02/chap-15.docx#nuxt12_layouts"><u><span style="color: #0563c1">linked</span></u></a> section;
-<a id="refheadingtoc132086849848624"></a>
-<a id="nuxt12authentificationpage"></a>
-
-## 15.15. <span style="color: #4f81bd">**The [authentication] page executed by the [nuxt] server**</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc132086849848624"></a>
+<a id="nuxt12authentificationpage"></a></p>
+<h2 id="1515-the-authentication-page-executed-by-the-nuxt-server">15.15. <span style="color: #4f81bd"><strong>The [authentication] page executed by the [nuxt] server</strong></span></h2>
 <p>The [authentication] page is responsible for authenticating a user with the tax calculation server. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- authentication page --&gt;</span>
@@ -3333,11 +3448,9 @@
   <li>Line 18: The PHP session cookie retrieved by the client [nuxt]&#x27;s [dao] layer is stored, placed in the store (line 20), and then saved in the [nuxt] session (lines 22–23);
   </li>
   <li>From there on, everything works fine because we know that the [dao] layer of the [nuxt] server will retrieve the PHP session cookie from the [nuxt] session;
-## 15.19. <span style="color: #4f81bd">**Execution**</span>
-
   </li>
 </ul>
-
+<h2 id="1519-execution">15.19. <span style="color: #4f81bd"><strong>Execution</strong></span></h2>
 <p>To run this example, you must first delete the [nuxt] session cookie and the PHP cookie from the browser running the [nuxt] client to start with a clean slate. Below is an example using the Chrome browser:</p>
 <p><img src="images/1000000000000380000001D2F02C8ECA.png" style="width:9.479cm;height:4.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000380000001D2F02C8ECA.png" /></p>
 <h2 id="1520-conclusion">15.20. <span style="color: #4f81bd"><strong>Conclusion</strong></span></h2>
