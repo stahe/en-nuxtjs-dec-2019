@@ -852,7 +852,7 @@
 
 
 
-<h1 id="11-example-nuxt-08-routing-middleware">11. <span style="color: #365f91"><strong>Example [nuxt-08]: Routing middleware</strong></span></h1>
+<h1 id="11-example-nuxt-08-routing-middleware">11. <span style="color: #365f91">Example [nuxt-08]: Routing middleware</span></h1>
 <p>In this example, we introduce the concept of routing middleware, scripts executed whenever a route changes.</p>
 <p>Example [nuxt-08] is initially created by cloning the [nuxt-01] project:</p>
 <p><img src="images/10000000000001AA000001DCD2565E0F.png" style="width:4.51cm;height:5.039cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001DCD2565E0F.png" /></p>
@@ -863,7 +863,7 @@
   <li>routing applied to a specific page, when that page is the routing target. This routing is then declared in that target page;
   </li>
 </ul>
-<h2 id="111-general-routing">11.1. <span style="color: #4f81bd"><strong>General Routing</strong></span></h2>
+<h2 id="111-general-routing">11.1. <span style="color: #4f81bd">General Routing</span></h2>
 <p>The [middleware/routing.js] file will handle general routing. It is declared as follows in the [nuxt.config.js] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">  router: {</span>
@@ -918,7 +918,7 @@
   <li>lines 4–25: we display the properties of various objects to determine what is usable. We will find that the middleware context is nearly identical to the plugin context;
   </li>
 </ul>
-<h2 id="112-routing-for-a-specific-page">11.2. <span style="color: #4f81bd"><strong>Routing for a specific page</strong></span></h2>
+<h2 id="112-routing-for-a-specific-page">11.2. <span style="color: #4f81bd">Routing for a specific page</span></h2>
 <p>We want to control how users arrive at the [index] page. To do this, we need to add the [middleware] property to this [index] page:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
@@ -1008,7 +1008,7 @@
 </code></pre></div>
 
 <p>The code for [index-routing] is identical to that of [routing] and produces the same results. What interests us is seeing when these two middlewares are executed.</p>
-<h2 id="113-running-the-project">11.3. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
+<h2 id="113-running-the-project">11.3. <span style="color: #4f81bd">Running the project</span></h2>
 <p>We run the project. The logs are as follows:</p>
 <p>The [routing] script is executed first by the server:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>

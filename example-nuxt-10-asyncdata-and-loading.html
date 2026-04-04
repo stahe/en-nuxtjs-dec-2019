@@ -852,7 +852,7 @@
 
 
 
-<h1 id="13-example-nuxt-10-asyncdata-and-loading">13. <span style="color: #365f91"><strong>Example [nuxt-10]: asyncData and loading</strong></span></h1>
+<h1 id="13-example-nuxt-10-asyncdata-and-loading">13. <span style="color: #365f91">Example [nuxt-10]: asyncData and loading</span></h1>
 <p><span style="color: #000000">The [asyncData] function in a page allows for the asynchronous loading of data, which is often external. [nuxt] waits for the [asyncData] function to finish before starting the page’s lifecycle. The page is therefore only rendered once the external data has been obtained. It is executed by both the server and the client according to the following rules:</span></p>
 <ul>
   <li><span style="color: #000000">when the page is requested directly from the server, only the server executes the [asyncData] function;</span>
@@ -866,7 +866,7 @@
 <p><span style="color: #000000">The [nuxt-10] example is initially created by cloning the [nuxt-01] project:</span></p>
 <p><img src="images/100000000000015200000172AFB124D6.png" style="width:3.581cm;height:3.919cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015200000172AFB124D6.png" /></p>
 <p><span style="color: #000000">Only the [page1] page changes.</span></p>
-<h2 id="131-the-page1-page">13.1. <span style="color: #4f81bd"><strong>The [page1] page</strong></span></h2>
+<h2 id="131-the-page1-page">13.1. <span style="color: #4f81bd">The [page1] page</span></h2>
 <p><span style="color: #000000">The code for the [page1] page is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- view #1 --&gt;</span>
@@ -958,7 +958,7 @@
   <li><span style="color: #000000">line 5: [continuous] sets the behavior of the progress bar animation. By default, the bar grows gradually from 0% to 100% of its size, at a faster or slower rate depending on the wait time. With [continuous:true], the colored bar grows at a constant speed from 0 to 100% of its size, then repeats until the [asyncData] function returns its result;</span>
   </li>
 </ul>
-<h2 id="133-execution">13.3. <span style="color: #4f81bd"><strong>Execution</strong></span></h2>
+<h2 id="133-execution">13.3. <span style="color: #4f81bd">Execution</span></h2>
 <p><span style="color: #000000">Let’s launch the application, then </span><strong><span style="color: #000000">manually</span></strong><span style="color: #000000"> request the [page1] page from the server:</span></p>
 <p><img src="images/10000000000006E2000002C3032BE8AB.png" style="width:11.659cm;height:4.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E2000002C3032BE8AB.png" /></p>
 <p><span style="color: #000000">The logs are as follows:</span></p>
@@ -1009,7 +1009,7 @@
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">li </span><span style="color:#0000ff">class=&quot;nav-item&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                      </span></span>
+<span class="odt-code-line">                      </span>
 <span class="odt-code-line">                        Page 2</span>
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>

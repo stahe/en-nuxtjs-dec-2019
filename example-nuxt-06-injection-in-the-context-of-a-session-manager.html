@@ -918,8 +918,8 @@
 
 
 
-<h1 id="9-example-nuxt-06-injection-in-the-context-of-a-session-manager">9. <span style="color: #365f91"><strong>Example [nuxt-06]: Injection in the context of a session manager</strong></span></h1>
-<h2 id="91-overview">9.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h2>
+<h1 id="9-example-nuxt-06-injection-in-the-context-of-a-session-manager">9. <span style="color: #365f91">Example [nuxt-06]: Injection in the context of a session manager</span></h1>
+<h2 id="91-overview">9.1. <span style="color: #4f81bd">Overview</span></h2>
 <p>Example [nuxt-05] showed that the store can be persisted even when the user forces server calls. Store elements are reactive so that if they are integrated into views, those views react to changes in the store. You may also want to persist elements throughout client/server exchanges without wanting them to be reactive, simply because they are not displayed by views. You can then store these in the session without them being in the store.</p>
 <p>The store is easily accessible through properties such as [context.app.$store] outside of views or [this.$store] within views. We would like something similar for the session, something like [context.app.$session] or [this.$session]. We will see that this is possible thanks to the concept of injection. However, we cannot inject objects into the context, only functions. This function will then be available via the expressions [context.app.$session<strong><span style="color: #c9211e">()</span></strong>] or [this.$session<strong><span style="color: #c9211e">()</span></strong>].</p>
 <p>Finally, we’ll introduce the [nuxt] concept of [plugin].</p>
@@ -929,7 +929,7 @@
   <li>In [1], we will add a [plugins] folder;
   </li>
 </ul>
-<h2 id="92-the-concept-of-a-nuxt-plugin">9.2. <span style="color: #4f81bd"><strong>The concept of a [nuxt] plugin</strong></span></h2>
+<h2 id="92-the-concept-of-a-nuxt-plugin">9.2. <span style="color: #4f81bd">The concept of a [nuxt] plugin</span></h2>
 <p>[nuxt] refers to [plugin] as any code executed when the application starts, even before the [nuxtServerInit] function is executed by the server, which until now was the first user function to be executed. The application’s plugins must be declared in the [plugins] key of the [nuxt.config.js] configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">  <span style="color:#008000">/*</span></span>
@@ -957,7 +957,7 @@
 </ul>
 
 <p><img src="images/10000000000001640000024711C4FD7E.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024711C4FD7E.png" /></p>
-<h2 id="93-the-server-session-plugin">9.3. <span style="color: #4f81bd"><strong>The server [session] plugin</strong></span></h2>
+<h2 id="93-the-server-session-plugin">9.3. <span style="color: #4f81bd">The server [session] plugin</span></h2>
 <p>The [server / session.js] plugin is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1059,7 +1059,7 @@
     </ul>
   </li>
 </ul>
-<h2 id="94-session-initialization">9.4. <span style="color: #4f81bd"><strong>Session Initialization</strong></span></h2>
+<h2 id="94-session-initialization">9.4. <span style="color: #4f81bd">Session Initialization</span></h2>
 <p>Once the [session / server] plugin is executed by the server, the server will execute the following [store / index.js] script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1155,7 +1155,7 @@
   <li>line 61: the session is saved in the session cookie. Note that this involves placing the cookie in the HTTP response that the server will send to the client browser;
   </li>
 </ul>
-<h2 id="95-the-clients-client-session-plugin">9.5. <span style="color: #4f81bd"><strong>The client’s [client / session] plugin</strong></span></h2>
+<h2 id="95-the-clients-client-session-plugin">9.5. <span style="color: #4f81bd">The client’s [client / session] plugin</span></h2>
 <p>Once the server has executed the [plugins / server / session] and [store / index] scripts, it will send one of the pages [index, page1] to the client browser. The server’s HTTP response will include the session cookie. Once the page is received by the client browser, the client-side scripts embedded in the page will execute. The [client / session] plugin will then execute:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1194,7 +1194,7 @@
   <li>lines 13–15: as with the server session, the client session has a [save] function that allows the session value, [this.value] on line 14, to be saved in the session cookie stored in the browser;
   </li>
 </ul>
-<h2 id="96-the-index-page">9.6. <span style="color: #4f81bd"><strong>The [index] page</strong></span></h2>
+<h2 id="96-the-index-page">9.6. <span style="color: #4f81bd">The [index] page</span></h2>
 <p>The [index] page evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- [index] page --&gt;</span>
@@ -1289,7 +1289,7 @@
 </ul>
 
 <p>The purpose of the [index] page is to demonstrate that the session is not reactive, whereas the store is. When we increment the session elements, we will see that the view is not updated. The [page1] view presents a solution to this problem.</p>
-<h2 id="97-the-page1-page">9.7. <span style="color: #4f81bd"><strong>The [page1] page</strong></span></h2>
+<h2 id="97-the-page1-page">9.7. <span style="color: #4f81bd">The [page1] page</span></h2>
 <p>The [page1] page is created by copying the [index] page and then modifying it slightly:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- page [index] --&gt;</span>
@@ -1372,7 +1372,7 @@
   <li>line 47: the main difference is that we’re adding the current session to the page’s properties (lines 29–33). This will make the session reactive. When the [incrementCounter] function increments the session’s elements, the [page1] view will be updated;
   </li>
 </ul>
-<h2 id="98-running-the-project">9.8. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
+<h2 id="98-running-the-project">9.8. <span style="color: #4f81bd">Running the project</span></h2>
 <p>Before running the project, check your browser’s session cookie and, if it exists, delete it so that the server creates a new session:</p>
 <p><img src="images/10000000000005B000000269DCC3E5FE.png" style="width:11.561cm;height:4.898cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B000000269DCC3E5FE.png" /></p>
 <p>Now let’s request the URL [http://localhost:81/nuxt-06/]:</p>

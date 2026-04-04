@@ -896,9 +896,9 @@
 
 
 
-<h1 id="4-example-nuxt-01-routing-and-navigation">4. <span style="color: #365f91"><strong>Example [nuxt-01]: Routing and Navigation</strong></span></h1>
+<h1 id="4-example-nuxt-01-routing-and-navigation">4. <span style="color: #365f91">Example [nuxt-01]: Routing and Navigation</span></h1>
 <p>We will build a series of simple examples to gradually discover how a [nuxt] application works. We will start by porting the [vuejs-11] application from the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">through</span></u></a> examples|, to first discover what differentiates the code organization of a [nuxt] application from that of a [vue] application.</p>
-<h2 id="41-project-directory-structure">4.1. <span style="color: #4f81bd"><strong>Project Directory Structure</strong></span></h2>
+<h2 id="41-project-directory-structure">4.1. <span style="color: #4f81bd">Project Directory Structure</span></h2>
 <p>The [vuejs-11] project was a project involving navigation between views:</p>
 <p><img src="images/10000000000009DA000002ED622669F6.png" style="width:16.679cm;height:4.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009DA000002ED622669F6.png" /></p>
 <p>The source code directory structure of the [vuejs-11] project was as follows:</p>
@@ -1028,7 +1028,7 @@
   <li>line 43: note that the [bootstrap-vue] library is referenced in the configuration;
   </li>
 </ul>
-<h2 id="42-porting-the-mainjs-file">4.2. <span style="color: #4f81bd"><strong>Porting the [main.js] file</strong></span></h2>
+<h2 id="42-porting-the-mainjs-file">4.2. <span style="color: #4f81bd">Porting the [main.js] file</span></h2>
 <p>The [main.js] file for the [vuejs-11] project was as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">// imports</span>
@@ -1098,7 +1098,7 @@
   <li>On line 9, in the [vuejs-11] project, we had the &lt;<b>router-view </b>/&gt; tag instead of the &lt;<b>nuxt </b>/&gt; tag used here. Both seem to work. I tried both of them without seeing any change. I kept the &lt;<b>nuxt </b>/&gt; tag, which is the recommended one. It displays the current view, i.e., the target page of the current route;
   </li>
 </ul>
-<h2 id="44-the-components">4.4. <span style="color: #4f81bd"><strong>The components</strong></span></h2>
+<h2 id="44-the-components">4.4. <span style="color: #4f81bd">The components</span></h2>
 <p><img src="images/100000000000016E000000D5488BFE06.png" style="width:3.872cm;height:2.252cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016E000000D5488BFE06.png" /></p>
 <p>Compared to the [vuejs-11] project, the [layout, navigation] components remain unchanged:</p>
 <p>[<strong>components / layout.vue</strong>]</p>
@@ -1192,7 +1192,7 @@
 </code></pre></div>
 
 <p>The &lt;<strong>b-nav-item</strong>&gt; tag is replaced by the &lt;<strong>nuxt-link</strong>&gt; tag, which denotes a routing link. In practice, I didn’t notice any major difference—nothing that would tip the scales in favor of one tag over the other.</p>
-<h2 id="45-the-pages">4.5. <span style="color: #4f81bd"><strong>The pages</strong></span></h2>
+<h2 id="45-the-pages">4.5. <span style="color: #4f81bd">The pages</span></h2>
 <p><img src="images/10000000000001790000010343016F8A.png" style="width:4.001cm;height:2.748cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001790000010343016F8A.png" /></p>
 <p>The [index.vue] page displays the following view:</p>
 <p><img src="images/10000000000006D2000002C6CB778E4C.png" style="width:16.17cm;height:6.576cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D2000002C6CB778E4C.png" /></p>
@@ -1276,9 +1276,9 @@
   <li>We repeat the same code for all four functions;
   </li>
 </ul>
-<h2 id="46-the-nuxtconfigjs-file">4.6. <span style="color: #4f81bd"><strong>The [nuxt.config.js] file</strong></span></h2>
+<h2 id="46-the-nuxtconfigjs-file">4.6. <span style="color: #4f81bd">The [nuxt.config.js] file</span></h2>
 <p>This file controls the execution of the [dvp] project. It was described on page<a href="#nuxt01-config"><u><span style="color: #0563c1"> 33</span></u></a>.</p>
-<h2 id="47-running-the-project">4.7. <span style="color: #4f81bd"><strong>Running the project</strong></span></h2>
+<h2 id="47-running-the-project">4.7. <span style="color: #4f81bd">Running the project</span></h2>
 <p>We run the project:</p>
 <p><img src="images/1000000000000307000000E286F6CC26.png" style="width:8.2cm;height:2.392cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000307000000E286F6CC26.png" /></p>
 <p>The page displayed is as follows:</p>
@@ -1357,7 +1357,7 @@
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">li </span><span style="color:#0000ff">class=&quot;nav-item&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                      </span></span>
+<span class="odt-code-line">                      </span>
 <span class="odt-code-line">                        Page 1</span>
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
@@ -1448,7 +1448,7 @@
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">li </span><span style="color:#0000ff">class=&quot;nav-item&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                      </span></span>
+<span class="odt-code-line">                      </span>
 <span class="odt-code-line">                        Page 1</span>
 <span class="odt-code-line">                      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
@@ -1523,7 +1523,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">div </span>id=&quot;__layout&quot;&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">div </span>class=&quot;container&quot;&gt;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;card&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">          </span></span>
+<span class="odt-code-line">          </span>
 <span class="odt-code-line"><span style="color:#000000">            </span>&lt;<span style="color:#800000">div </span>role=&quot;alert&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; align=&quot;center&quot; class=&quot;alert alert-success&quot;&gt;&lt;<span style="color:#800000">h4</span>&gt;<span style="color:#000000">[nuxt-01]: Routing and Navigation</span>&lt;<span style="color:#800000">/h4</span>&gt;&lt;<span style="color:#800000">/div</span>&gt; &lt;<span style="color:#800000">div</span>&gt;</span>
 <span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;row&quot;&gt;</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#800000">div </span><span style="color:#0000ff">class=&quot;col-2&quot;&gt;</span></span>

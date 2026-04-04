@@ -968,7 +968,7 @@
 
 
 
-<h1 id="14-example-nuxt-11-customizing-the-loading-image">14. <span style="color: #365f91"><strong>Example [nuxt-11]: Customizing the loading image</strong></span></h1>
+<h1 id="14-example-nuxt-11-customizing-the-loading-image">14. <span style="color: #365f91">Example [nuxt-11]: Customizing the loading image</span></h1>
 <p>By default, the [nuxt] loading image is a progress bar. Example [nuxt-11] shows that you can replace it with your own loading image:</p>
 <p><img src="images/10000000000008550000030A852B5A87.png" style="width:14.109cm;height:5.147cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008550000030A852B5A87.png" /></p>
 <p>The [nuxt-11] example also shows how to handle loading errors.</p>
@@ -976,9 +976,9 @@
 <p>The [nuxt-11] example is initially derived from the [nuxt-10] example:</p>
 <p><img src="images/100000000000011E00000154E95F9BA4.png" style="width:3.782cm;height:4.494cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011E00000154E95F9BA4.png" /></p>
 <p>In [1], we will add a plugin for the client that will be responsible for managing events between components.</p>
-<p><a id="refheadingtoc1254732440889551"></a>
-<a id="nuxt11eventbus"></a></p>
-<h2 id="141-the-event-bus-plugin">14.1. <span style="color: #4f81bd"><strong>The [event-bus] plugin</strong></span></h2>
+<p><a id="nuxt11eventbus"></a>
+<a id="refheadingtoc1254732440889551"></a></p>
+<h2 id="141-the-event-bus-plugin">14.1. <span style="color: #4f81bd">The [event-bus] plugin</span></h2>
 <p>The [event-bus] plugin will be executed by both the client and the server, but we’ll see that it doesn’t work on the server side. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">// create an event bus between views</span>
@@ -1007,9 +1007,9 @@
   <li>line 7: we create a function [$eventBus] (first argument) whose role will be to return the [eventBus] object we just created (second argument). This function is injected into the context so that it is available in the [context.app] and [this] objects of the pages;
   </li>
 </ul>
-<p><a id="refheadingtoc131381849848624"></a>
-<a id="nuxt11defaultvue"></a></p>
-<h2 id="142-the-defaultvue-layout">14.2. <span style="color: #4f81bd"><strong>The [default.vue] layout</strong></span></h2>
+<p><a id="nuxt11defaultvue"></a>
+<a id="refheadingtoc131381849848624"></a></p>
+<h2 id="142-the-defaultvue-layout">14.2. <span style="color: #4f81bd">The [default.vue] layout</span></h2>
 <p>The [default.vue] layout evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
@@ -1102,7 +1102,7 @@
   <li>The logs on lines 53 and 58 will show us that the [showLoading] and [showErrorLoading] methods <b>are not executed </b>on the server side;
   </li>
 </ul>
-<h2 id="143-the-page1-page">14.3. <span style="color: #4f81bd"><strong>The [page1] page</strong></span></h2>
+<h2 id="143-the-page1-page">14.3. <span style="color: #4f81bd">The [page1] page</span></h2>
 <p>The code for page [page1] changes as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- view #1 --&gt;</span>
@@ -1180,7 +1180,7 @@
 </ul>
 
 <p><strong>Note</strong>: At runtime, when the [page1] page is requested from the server, the loading image is not displayed. In the logs, we see that on the server side, the [default.mShowLoading] method is not called. In any case, seeing the loading image makes no sense when the page is requested from the server. The server only sends the page to the client browser once the [asyncData] function has finished. The loading image is therefore unnecessary. This will be the case for all pages in the application requested directly from the server.</p>
-<h2 id="144-the-index-page">14.4. <span style="color: #4f81bd"><strong>The [index] page</strong></span></h2>
+<h2 id="144-the-index-page">14.4. <span style="color: #4f81bd">The [index] page</span></h2>
 <p>The code for the [index] page is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">&lt;!-- Home page --&gt;</span>
@@ -1325,7 +1325,7 @@
 </code></pre></div>
 
 <p>When [nuxt] renders the [error.vue] page, it passes the error that occurred to it as a [props] property (line 33). If the error was caused by [context.error(<strong>object1</strong>)], the [props] property of the [error.vue] page will have the value [<strong>object1</strong>]. The [nuxt] documentation states that [object1] must have at least the [statusCode, message] attributes. Line 9 displays the JSON string of the received [object1] object.</p>
-<h2 id="145-the-page2-page">14.5. <span style="color: #4f81bd"><strong>The [page2] page</strong></span></h2>
+<h2 id="145-the-page2-page">14.5. <span style="color: #4f81bd">The [page2] page</span></h2>
 <p>The [page2] page shows another way to handle the error:</p>
 <ul>
   <li>in [page1], the error is displayed in a separate page [error.vue];
@@ -1416,8 +1416,8 @@
   <li>line 63: the client checks whether the [<span style="color: #000000">showErrorLoading</span>] property has been set (by the server or the client, as appropriate). If so, it emits the [‘errorLoading’] event (line 65) so that the [default] page displays the error message [<span style="color: #0000ff">this</span><span style="color: #000000">.errorLoadingMessage</span>]. Ultimately, the server sends a page <b>without an error message displayed</b>. The error message is displayed at the last moment by the client when the page is ‘mounted’;
   </li>
 </ul>
-<h2 id="146-execution">14.6. <span style="color: #4f81bd"><strong>Execution</strong></span></h2>
-<h3 id="1461-nuxtconfig">14.6.1. <span style="color: #4f81bd"><strong>[nuxt.config]</strong></span></h3>
+<h2 id="146-execution">14.6. <span style="color: #4f81bd">Execution</span></h2>
+<h3 id="1461-nuxtconfig">14.6.1. <span style="color: #4f81bd">[nuxt.config]</span></h3>
 <p>The [nuxt.config.js] runtime file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">export default {</span>
@@ -1604,7 +1604,7 @@
   <li>line 59: we see a property [error] whose value is the object [d]. We can assume that it is the presence of the [error] property in the page sent by the server that causes the client-side scripts to display the [error.vue] page with the [error] error;
   </li>
 </ul>
-<h3 id="1463-the-page1-page-executed-by-the-server">14.6.3. <span style="color: #4f81bd"><strong>The [page1] page executed by the server</strong></span></h3>
+<h3 id="1463-the-page1-page-executed-by-the-server">14.6.3. <span style="color: #4f81bd">The [page1] page executed by the server</span></h3>
 <p>We manually type the URL [http://localhost:81/nuxt-11/page1]. After 5 seconds, the browser displays the following page:</p>
 <p><img src="images/10000000000007E200000297DCE3A3BB.png" style="width:13.353cm;height:4.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E200000297DCE3A3BB.png" /></p>
 <p>The logs displayed are as follows:</p>
@@ -1615,7 +1615,7 @@
   <li>in [2], the client logs;
   </li>
 </ul>
-<h3 id="1464-the-page2-page-executed-by-the-server">14.6.4. <span style="color: #4f81bd"><strong>The [page2] page executed by the server</strong></span></h3>
+<h3 id="1464-the-page2-page-executed-by-the-server">14.6.4. <span style="color: #4f81bd">The [page2] page executed by the server</span></h3>
 <p>We manually type the URL [http://localhost:81/nuxt-11/page2]. After 5 seconds, the browser displays the following page:</p>
 <p><img src="images/10000000000007DD00000309D7D619B7.png" style="width:15.983cm;height:6.168cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DD00000309D7D619B7.png" /></p>
 <p>Let’s examine the logs displayed in the browser:</p>
@@ -1626,7 +1626,7 @@
   <li>in [3], when the [page2] page is mounted, it finds the [showErrorLoading] property set to true. It then sends an event to the [default] page, so that it displays the error message sent by the server [4];
   </li>
 </ul>
-<h3 id="1465-the-index-page-executed-by-the-client">14.6.5. <span style="color: #4f81bd"><strong>The [index] page executed by the client</strong></span></h3>
+<h3 id="1465-the-index-page-executed-by-the-client">14.6.5. <span style="color: #4f81bd">The [index] page executed by the client</span></h3>
 <p>We now use the navigation links to display the three pages. All pages displayed by the client are identical to those displayed by the server. The only difference is that the 5-second loading image is displayed each time.</p>
 <p>We start with the [index] page. The loading image is then displayed:</p>
 <p><img src="images/10000000000007F90000030E84F26BC0.png" style="width:13.503cm;height:5.173cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007F90000030E84F26BC0.png" /></p>

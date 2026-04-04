@@ -951,8 +951,8 @@
 
 
 
-<h1 id="3-a-first-nuxtjs-application">3. <span style="color: #365f91"><strong>A First [nuxt.js] Application</strong></span></h1>
-<h2 id="31-creating-the-application">3.1. <span style="color: #4f81bd"><strong>Creating the application</strong></span></h2>
+<h1 id="3-a-first-nuxtjs-application">3. <span style="color: #365f91">A First [nuxt.js] Application</span></h1>
+<h2 id="31-creating-the-application">3.1. <span style="color: #4f81bd">Creating the application</span></h2>
 <p>For our [nuxt.js] development, we will continue to use VS Code. We have created an empty [dvp] folder where we will place our examples. Then we open this folder:</p>
 <p><img src="images/10000000000005D80000015ECBE6E729.png" style="width:15.829cm;height:3.704cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005D80000015ECBE6E729.png" /></p>
 <p>We save the workspace under the name [intro-nuxtjs] [3-5]:</p>
@@ -1014,14 +1014,14 @@
 
 <p>Let’s request the URL [http://localhost:3000/] in a browser:</p>
 <p><img src="images/10000000000004A6000005A60E05D66D.png" style="width:6.301cm;height:7.657cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A6000005A60E05D66D.png" /></p>
-<h2 id="32-description-of-the-directory-structure-of-a-nuxt-application">3.2. <span style="color: #4f81bd"><strong>Description of the directory structure of a [nuxt] application</strong></span></h2>
+<h2 id="32-description-of-the-directory-structure-of-a-nuxt-application">3.2. <span style="color: #4f81bd">Description of the directory structure of a [nuxt] application</span></h2>
 <p>Let’s look at the directory structure of the created application:</p>
 <p><img src="images/1000000000000595000004527634DC81.png" style="width:13.229cm;height:10.239cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000595000004527634DC81.png" /></p>
 <p>The role of the folders is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>assets</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">uncompiled application resources (images, etc.);</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>static</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">files in this folder will be available at the root of the application. We place files in this folder that need to be found at the root of the application, such as the [robots.txt] file intended for search engines;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>components</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the application’s [view] components used in [layouts] and [pages];</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>layouts</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the [Vue] components of the application used to layout the [pages];</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>pages</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the [Vue] components displayed by the application’s various routes. These could be called the application’s views. Pages play a special role in [Nuxt]: routes are dynamically created based on the directory structure found in the [pages] folder;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>middleware</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">scripts executed whenever a route changes. They allow you to control these routes;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>plugins</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">has a misleading name. It can contain plugins as well as standard scripts. The scripts found in this folder are executed when the application starts;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>store</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">if it contains a script [index.js], then this script defines an instance of the [Vuex] store;</div></td></tr></table>
 
 <p>If a folder is empty, it can be removed from the directory structure. Above, the [assets, static, middleware, plugins, store] folders can be removed [2].</p>
-<h2 id="33-the-configuration-file-nuxtconfig">3.3. <span style="color: #4f81bd"><strong>The configuration file [nuxt.config]</strong></span></h2>
+<h2 id="33-the-configuration-file-nuxtconfig">3.3. <span style="color: #4f81bd">The configuration file [nuxt.config]</span></h2>
 <p>The application’s execution is controlled by the following [nuxt.config.js] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line">export default <span style="color:#000000">{</span></span>
@@ -1264,7 +1264,7 @@
   <li>in [3], the application’s root URL;
   </li>
 </ul>
-<h2 id="34-the-layouts-folder">3.4. <span style="color: #4f81bd"><strong>The [layouts] folder</strong></span></h2>
+<h2 id="34-the-layouts-folder">3.4. <span style="color: #4f81bd">The [layouts] folder</span></h2>
 <p><img src="images/100000000000019A00000209E43B4A81.png" style="width:3.799cm;height:4.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019A00000209E43B4A81.png" /></p>
 <p>The [layouts] folder is intended for layout components. By default, the component named [default.vue] is used. In this project, it is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1336,7 +1336,7 @@
 </ul>
 
 <p>We can see that the primary purpose of the [default.vue] page here is to apply a style to routed pages.</p>
-<h2 id="35-the-pages-folder">3.5. <span style="color: #4f81bd"><strong>The [pages] folder</strong></span></h2>
+<h2 id="35-the-pages-folder">3.5. <span style="color: #4f81bd">The [pages] folder</span></h2>
 <p><img src="images/10000000000001AE000002497EC1638B.png" style="width:3.979cm;height:5.415cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AE000002497EC1638B.png" /></p>
 <p>The [pages] folder contains the routed views, which are what the user sees. The [index.vue] page is the application’s home page. With [nuxt.js], there is no routing file. Routes are determined based on the structure of the [pages] folder. Here, the presence of an [index.vue] file automatically creates a route named [index] with a path of [/index], which is shortened to [/] since it is the home page. Thus, the following route is created:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        { name: &#39;index&#39;, path: &#39;/&#39; }
@@ -1416,7 +1416,7 @@
 <p>The [template] in lines 1–25 displays the following view:</p>
 <p><img src="images/1000000000000349000003C28C65C94A.png" style="width:5.009cm;height:5.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000349000003C28C65C94A.png" /></p>
 <p>Image [1] is generated by line 4 of the [template]. We can see that the page uses a component called [logo]. This is defined in lines 27–35 of the page’s script. In line 28, the notation [~] refers to the project root.</p>
-<h2 id="36-the-logo-component">3.6. <span style="color: #4f81bd"><strong>The [Logo] component</strong></span></h2>
+<h2 id="36-the-logo-component">3.6. <span style="color: #4f81bd">The [Logo] component</span></h2>
 <p><img src="images/10000000000001750000023EAC91A888.png" style="width:3.45cm;height:5.311cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001750000023EAC91A888.png" /></p>
 <p>The [Logo.vue] component is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1502,7 +1502,7 @@
 </code></pre></div>
 
 <p>This component consists primarily of styles and animations to create an animated image.</p>
-<h2 id="37-vue-devtools">3.7. <span style="color: #4f81bd"><strong>Vue DevTools</strong></span></h2>
+<h2 id="37-vue-devtools">3.7. <span style="color: #4f81bd">Vue DevTools</span></h2>
 <p>[Vue DevTools] is the browser extension that allows you to inspect [nuxt.js] and [vue.js] objects in the browser. We’ve already used it in the chapter on [vue.js]. Let’s examine what this tool finds when our app’s home page is displayed:</p>
 <p><img src="images/10000000000008ED0000028BFAABC330.png" style="width:15.122cm;height:4.307cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008ED0000028BFAABC330.png" /></p>
 <ul>
@@ -1513,7 +1513,7 @@
 </ul>
 
 <p>As a simple exercise, let’s display this route in the console.</p>
-<h2 id="38-modifying-the-home-page">3.8. <span style="color: #4f81bd"><strong>Modifying the Home Page</strong></span></h2>
+<h2 id="38-modifying-the-home-page">3.8. <span style="color: #4f81bd">Modifying the Home Page</span></h2>
 <p>We’re going to modify the [index.vue] file. In our project setup, we’ve installed two dependencies:</p>
 <ul>
   <li>[eslint]: which checks the syntax of JavaScript files and Vue components. If the [ESLint] extension for VSCode has been installed, this syntax is checked as you type, and errors are immediately flagged;
@@ -1691,7 +1691,7 @@
 <span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">div </span>class=&quot;container&quot;&gt;</span>
 <span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">logo </span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span></span>
+<span class="odt-code-line">      </span>
 <span class="odt-code-line">        nuxt-intro</span>
 <span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/h1</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">h2 </span>class=&quot;subtitle&quot;&gt;</span>
@@ -1753,7 +1753,7 @@
 
 <p>It is therefore the server [3] that distinguishes a [Nuxt] application from a [Vue] application. This server is called upon every time the user manually requests a page. It processes the same [.vue] pages as the [Vue] client [1]. It is a JavaScript server capable of executing the scripts present on the page. This can, for example, change how the homepage is generated using external data: whereas a [vue] application necessarily fetches this data from the client [1], here it can be fetched by the server [3] before the page is sent to the client. The homepage thus becomes meaningful and can help improve the application’s SEO.</p>
 <p><strong>Note</strong>: In development mode, the three entities [1, 2, 3] are often on the same machine. This will be the case here for all our examples.</p>
-<h2 id="39-moving-the-applications-source-code-to-a-separate-folder">3.9. <span style="color: #4f81bd"><strong>Moving the application’s source code to a separate folder</strong></span></h2>
+<h2 id="39-moving-the-applications-source-code-to-a-separate-folder">3.9. <span style="color: #4f81bd">Moving the application’s source code to a separate folder</span></h2>
 <p>Next, we will create various [nuxt] applications in the same [dvp] folder. This is because the [node_modules] dependencies folder generated for each [nuxt] project can be several hundred megabytes in size. We will create various folders [nuxt-00, nuxt-01, ...] within the [dvp] folder to hold the source code for the examples to be tested. Then we will use the configuration file [nuxt-config.js] to specify the location of the source code for the [dvp] project, which will remain the sole [nuxt] project in this tutorial.</p>
 <p>We move the source code of the application initially generated by the [yarn create nuxt-app] command into a [nuxt-00] folder:</p>
 <p><img src="images/1000000000000472000003BE4895B017.png" style="width:12.04cm;height:10.135cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000472000003BE4895B017.png" /></p>
@@ -1809,9 +1809,9 @@
 
 <p>Once this is done, the [dvp] project is executed as before:</p>
 <p><img src="images/10000000000004F6000002E2FA7C784D.png" style="width:15.122cm;height:8.788cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F6000002E2FA7C784D.png" /></p>
-<p><a id="refheadingtoc641993669820992"></a>
-<a id="nuxt00deploiement"></a></p>
-<h2 id="310-deploying-the-nuxt-00-application">3.10. <span style="color: #4f81bd"><strong>Deploying the [nuxt-00] application</strong></span></h2>
+<p><a id="nuxt00deploiement"></a>
+<a id="refheadingtoc641993669820992"></a></p>
+<h2 id="310-deploying-the-nuxt-00-application">3.10. <span style="color: #4f81bd">Deploying the [nuxt-00] application</span></h2>
 <p>We will run the [nuxt-00] application in an environment other than VSCode’s built-in environment.</p>
 <p>First, we compile the application:</p>
 <p><img src="images/1000000000000541000001DEF6E54525.png" style="width:16.013cm;height:5.69cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000541000001DEF6E54525.png" /></p>
@@ -1872,7 +1872,7 @@
 <p>In [3], we see that a server has been launched and is listening at the URL [http://192.168.1.128:81/nuxt-00/]. Now let’s request this URL using a browser [4]. We see the same result as before. In the terminal, logs have been written [5]. This is the log placed in the [created] method of the [index.vue] page, which was executed by the [node.js] server.</p>
 <p><img src="images/100000000000052C00000273F1C84847.png" style="width:17.521cm;height:8.297cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052C00000273F1C84847.png" /></p>
 <p>On the browser side [6], we also see the log from the [created] method of the [index.vue] page, but this time executed by the client.</p>
-<h2 id="311-setting-up-a-secure-server">3.11. <span style="color: #4f81bd"><strong>Setting up a secure server</strong></span></h2>
+<h2 id="311-setting-up-a-secure-server">3.11. <span style="color: #4f81bd">Setting up a secure server</span></h2>
 <p>Above, the application’s URL is [http://192.168.1.128/nuxt-00/]. We’d like it to be [https://192.168.1.128/nuxt-00/]. So we need to set up a secure server. Here’s how to do it.</p>
 <p><strong>Note</strong>: This method was taken from the article [<a href="https://stackoverflow.com/questions/56966137/how-to-run-nuxt-npm-run-dev-with-https-in-localhost"><u><span style="color: #0563c1">https://stackoverflow.com/questions/56966137/how-to-run-nuxt-npm-run-dev-with-https-in-localhost</span></u></a>].</p>
 <p>First, we create a private key and a public key using [openssl]. [openssl] is normally installed along with the Laragon server. As a result, this command is available in any Laragon terminal. So let’s open a Laragon terminal and navigate to the folder of the deployed application:</p>
@@ -1920,7 +1920,7 @@
 <p>Lines 18–21 implement the [https] protocol.</p>
 <p>Now let’s run the application again:</p>
 <p><img src="images/100000000000053B000002FE950936A1.png" style="width:17.709cm;height:10.132cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053B000002FE950936A1.png" /></p>
-<h2 id="312-end-of-the-first-example">3.12. <span style="color: #4f81bd"><strong>End of the first example</strong></span></h2>
+<h2 id="312-end-of-the-first-example">3.12. <span style="color: #4f81bd">End of the first example</span></h2>
 <p>The first example is now complete. It has taught us many [nuxt] concepts. We will now develop other examples that we will place in folders [nuxt-01, nuxt-02, ...]. Since these examples will use a different [nuxt.config.js] file, we will save the [nuxt.config.js] file used to run each of them in their respective folders:</p>
 <p><img src="images/1000000000000119000000EDFBC7D7D9.png" style="width:2.979cm;height:2.514cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000119000000EDFBC7D7D9.png" /></p>
 

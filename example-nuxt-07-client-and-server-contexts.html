@@ -885,8 +885,8 @@
 
 
 
-<h1 id="10-example-nuxt-07-client-and-server-contexts">10. <span style="color: #365f91"><strong>Example [nuxt-07]: Client and Server Contexts</strong></span></h1>
-<h2 id="101-introduction">10.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<h1 id="10-example-nuxt-07-client-and-server-contexts">10. <span style="color: #365f91">Example [nuxt-07]: Client and Server Contexts</span></h1>
+<h2 id="101-introduction">10.1. <span style="color: #4f81bd">Introduction</span></h2>
 <p>Example [nuxt-07] aims to explore the [context] object on both the server-side and client-side. It is important to remember that these two components of [nuxt] applications are separate: <strong>they share</strong> nothing except:</p>
 <ul>
   <li>what the server chooses to send to the client (in the HTTP response and the rendered page);
@@ -987,7 +987,7 @@
   <li>lines 27–28: the second argument of the plugin is the [inject] function that we used in the [nuxt-06] example;
   </li>
 </ul>
-<h2 id="103-the-plugin-executed-by-the-server">10.3. <span style="color: #4f81bd"><strong>The plugin executed by the server</strong></span></h2>
+<h2 id="103-the-plugin-executed-by-the-server">10.3. <span style="color: #4f81bd">The plugin executed by the server</span></h2>
 <p>When run, the server displays the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1481,7 +1481,7 @@
 <a id="__codelineno-8-23" name="__codelineno-8-23"></a>]
 </code></pre></div></td></tr></table></div>
 <p>These are the same properties as in the plugin&#x27;s [context] object.</p>
-<h2 id="105-the-plugin-executed-by-the-client">10.5. <span style="color: #4f81bd"><strong>The plugin executed by the client</strong></span></h2>
+<h2 id="105-the-plugin-executed-by-the-client">10.5. <span style="color: #4f81bd">The plugin executed by the client</span></h2>
 <p>Once the server has sent the [index] page to the client browser, the client-side scripts take over. The [main.js] plugin will then be executed. These logs are as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
@@ -1514,7 +1514,7 @@
 <a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="n">inject</span><span class="o">=</span><span class="w"> </span><span class="k">function</span>
 </code></pre></div></td></tr></table></div>
 <p>We find properties similar to those found on the server side, with some properties missing and others appearing. For example, in line 4, the [req, res] properties—which were the client browser’s HTTP requests and the server’s HTTP response—are missing.</p>
-<h2 id="106-the-clients-index-page">10.6. <span style="color: #4f81bd"><strong>The client&#x27;s [index] page</strong></span></h2>
+<h2 id="106-the-clients-index-page">10.6. <span style="color: #4f81bd">The client&#x27;s [index] page</span></h2>
 <p>The client&#x27;s [index] page produces the following logs:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>

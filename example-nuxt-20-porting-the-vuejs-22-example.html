@@ -938,8 +938,8 @@
 
 
 
-<h1 id="17-example-nuxt-20-porting-the-vuejs-22-example">17. <span style="color: #365f91"><strong>Example [nuxt-20]: Porting the [vuejs-22] example</strong></span></h1>
-<h2 id="171-introduction">17.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<h1 id="17-example-nuxt-20-porting-the-vuejs-22-example">17. <span style="color: #365f91">Example [nuxt-20]: Porting the [vuejs-22] example</span></h1>
+<h2 id="171-introduction">17.1. <span style="color: #4f81bd">Introduction</span></h2>
 <p>Here, we propose to port the [vuejs-22] example, which was a [vue.js] SPA-type application, into a [nuxt] SSR context. [vuejs-22] was a client application for the tax calculation server that presented the following views:</p>
 <p>The first view is the authentication view:</p>
 <p><img src="images/1000000000000770000004AA35461DA4.png" style="width:12.591cm;height:7.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000770000004AA35461DA4.png" /></p>
@@ -952,7 +952,7 @@
 <p>If we now delete the last simulation, we get the following new view:</p>
 <p><img src="images/10000000000008BE0000036F87B3657D.png" style="width:14.803cm;height:5.814cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008BE0000036F87B3657D.png" /></p>
 <p>We will gradually migrate the [vuejs-22] application to the [nuxt-20] application. We will not re-explain the code from [vuejs-22]. Readers are encouraged to review the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">Framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">Through</span></u></a> Examples|. The various steps should highlight the differences between a [vuejs] application and a [nuxt] application.</p>
-<h2 id="172-step-1">17.2. <span style="color: #4f81bd"><strong>Step 1</strong></span></h2>
+<h2 id="172-step-1">17.2. <span style="color: #4f81bd">Step 1</span></h2>
 <p>The [nuxt-20] project is initially created by cloning the [nuxt-12] project. This is indeed a good starting point:</p>
 <ul>
   <li>it can communicate with the tax calculation server;
@@ -1215,7 +1215,7 @@
 <p>For now, we’ll simply rename [created] to [created2] so that the [created] lifecycle function isn’t executed [3].</p>
 <p>We save the change and reload the [index] page in the browser. This time it works:</p>
 <p><img src="images/10000000000007C400000509C14D0463.png" style="width:13.152cm;height:8.527cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C400000509C14D0463.png" /></p>
-<h2 id="173-step-2">17.3. <span style="color: #4f81bd"><strong>Step 2</strong></span></h2>
+<h2 id="173-step-2">17.3. <span style="color: #4f81bd">Step 2</span></h2>
 <p>The pages of the [vuejs-22] project used the following injected elements:</p>
 <ul>
   <li>$dao: for the [dao] layer of the [vue.js] client;
@@ -1448,7 +1448,7 @@
 <p>The screenshot above is a Chrome screenshot. Once this is done, the URL [http://localhost:81/nuxt-20/] returns the following result:</p>
 <p><img src="images/100000000000072B00000398677385A3.png" style="width:12.13cm;height:6.082cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000072B00000398677385A3.png" /></p>
 <p>The error was handled correctly by the [vuejs-22] project. It continues to be handled correctly by the [nuxt-20] project.</p>
-<h2 id="174-step-3">17.4. <span style="color: #4f81bd"><strong>Step 3</strong></span></h2>
+<h2 id="174-step-3">17.4. <span style="color: #4f81bd">Step 3</span></h2>
 <p>Now that we have the authentication page, we need to look at the code that runs when the user clicks the [Validate] button:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line">// event handlers</span>
@@ -1629,7 +1629,7 @@
 <p>We have successfully reached the tax calculation page. Now let’s look at the logs:</p>
 <p><img src="images/100000000000093900000288327278F0.png" style="width:15.619cm;height:4.286cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000093900000288327278F0.png" /></p>
 <p>In [2], we see that the authentication status has been correctly stored. In [3-4], we see that the [taxAdminData] data has been retrieved, which allows the tax to be calculated by the [Métier] class.</p>
-<h2 id="175-step-4">17.5. <span style="color: #4f81bd"><strong>Step 4</strong></span></h2>
+<h2 id="175-step-4">17.5. <span style="color: #4f81bd">Step 4</span></h2>
 <p>Let’s examine the [calcul-impot] page we obtained:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">&lt;!-- HTML definition of the view --&gt;</span>
@@ -1983,7 +1983,7 @@
   <li>in [5], the number of the last simulation has indeed been incremented;
   </li>
 </ul>
-<h2 id="176-step-5">17.6. <span style="color: #4f81bd"><strong>Step 5</strong></span></h2>
+<h2 id="176-step-5">17.6. <span style="color: #4f81bd">Step 5</span></h2>
 <p>Now that we’ve run a simulation, let’s click the [List of Simulations] link. We get the following page:</p>
 <p><img src="images/10000000000009B1000004942FFAF358.png" style="width:16.409cm;height:7.752cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009B1000004942FFAF358.png" /></p>
 <p>The routing for the [nuxt] client was successful. Let’s look at the code for the [simulation-list] page:</p>
@@ -2112,7 +2112,7 @@
 <p>We get the following page:</p>
 <p><img src="images/100000000000076F0000062923B49C95.png" style="width:12.591cm;height:10.433cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076F0000062923B49C95.png" /></p>
 <p>So the routing worked.</p>
-<h2 id="177-step-6">17.7. <span style="color: #4f81bd"><strong>Step 6</strong></span></h2>
+<h2 id="177-step-6">17.7. <span style="color: #4f81bd">Step 6</span></h2>
 <p>We still need to handle the [End Session] navigation option in the navigation menu:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line">// Menu options</span>
@@ -2315,7 +2315,7 @@
   <li>the [mounted] method of the [index] page is executed. This starts a new JSON session with the tax calculation server. If the operation succeeds, the [started] property of the store becomes [true];
   </li>
 </ul>
-<h2 id="178-step-7">17.8. <span style="color: #4f81bd"><strong>Step 7</strong></span></h2>
+<h2 id="178-step-7">17.8. <span style="color: #4f81bd">Step 7</span></h2>
 <p>At this point, the [nuxt-20] application has all the features of the [vuejs-22] application. The port seems complete.</p>
 <p>We’ll take it a step further in the [nuxt] spirit. The [mounted] method of the [index] page poses a problem. It launches an asynchronous operation that a search engine won’t wait for to finish. We know that in this case, we must place the asynchronous operation inside an [asyncData] function because then, the [nuxt] server executing it will wait for it to finish before delivering the page to the search engine.</p>
 <p>Here, we use the [asyncData] function written in the [nuxt-12] application for the [index] page:</p>
@@ -2587,7 +2587,7 @@
 </code></pre></div>
 
 <p>Lines 5–10: We retrieve the PHP session cookie initiated by the [nuxt] server from the store. Once this change is made, the tax calculation page loads successfully, indicating that authentication worked.</p>
-<h2 id="179-step-8">17.9. <span style="color: #4f81bd"><strong>Step 8</strong></span></h2>
+<h2 id="179-step-8">17.9. <span style="color: #4f81bd">Step 8</span></h2>
 <p>We have a functional application that works in the [nuxt] spirit. As we did for the [nuxt-13] application, we will focus on the [nuxt] server navigation. As previously mentioned, the user is not supposed to manually type the application’s URLs. They are supposed to use the links presented to them, which are executed by the [nuxt] client, which then operates in SPA mode. Nevertheless, we will ensure that navigation on the [nuxt] server always keeps the application in a stable state.</p>
 <p>From the study conducted for [nuxt-13] (see <a href="../../../../../../st-2020/st-2020/cours/nuxtjs/masters/02/chap-16.docx#nuxt13_routage_nuxtserver"><u><span style="color: #0563c1">linked</span></u></a> paragraph), we know that we need to:</p>
 <ul>
@@ -2782,9 +2782,9 @@
 <p>To run the tests, make sure to start from a clean slate by deleting the [nuxt] session cookie and the PHP session cookie with the tax calculation server:</p>
 <p><img src="images/100000000000050E0000020FBB8D80C3.png" style="width:10.269cm;height:4.182cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000050E0000020FBB8D80C3.png" /></p>
 <p>To test the [nuxt] server’s routing, try all possible URLs [/, /tax-calculation, /simulation-list] on each page. Each time, the application must remain in a consistent state.</p>
-<h2 id="1710-step-9">17.10. <span style="color: #4f81bd"><strong>Step 9</strong></span></h2>
+<h2 id="1710-step-9">17.10. <span style="color: #4f81bd">Step 9</span></h2>
 <p>Step 9 involves deploying the [nuxt-20] application. This requires hosting that provides a [node.js] environment to run the [nuxt] server. I do not have this. The reader can follow the procedures described in the <a href="../../../../../../st-2020/st-2020/cours/nuxtjs/masters/02/chap-03.docx#nuxt00_deploiement"><u><span style="color: #0563c1">linked</span></u></a> section to deploy the [nuxt-20] application on their development machine and secure it with an HTTPS protocol.</p>
-<h2 id="1711-conclusion">17.11. <span style="color: #4f81bd"><strong>Conclusion</strong></span></h2>
+<h2 id="1711-conclusion">17.11. <span style="color: #4f81bd">Conclusion</span></h2>
 <p>The porting of the [vuejs-22] application to the [nuxt-20] application is now complete. Let’s review a few key points from this port:</p>
 <ul>
   <li>the [vuejs-22] pages have been retained;

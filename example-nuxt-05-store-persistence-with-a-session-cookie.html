@@ -885,7 +885,7 @@
 
 
 
-<h1 id="8-example-nuxt-05-store-persistence-with-a-session-cookie">8. <span style="color: #365f91"><strong>Example [nuxt-05]: Store persistence with a session cookie</strong></span></h1>
+<h1 id="8-example-nuxt-05-store-persistence-with-a-session-cookie">8. <span style="color: #365f91">Example [nuxt-05]: Store persistence with a session cookie</span></h1>
 <p><strong>Objective</strong>: We want the [Vuex] store not to be reset with every request to the server. To achieve this, we will use a session cookie:</p>
 <ul>
   <li>the store will be initialized by the server and stored by it in a session cookie;
@@ -895,7 +895,7 @@
   <li>the server can then retrieve this session cookie and work with the store it contains, a store updated by the client;
   </li>
 </ul>
-<h2 id="81-overview">8.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h2>
+<h2 id="81-overview">8.1. <span style="color: #4f81bd">Overview</span></h2>
 <p>The [nuxt-05] project is initially created by cloning the [nuxt-04] project:</p>
 <p><img src="images/100000000000014D00000194D2B72658.png" style="width:3.53cm;height:4.283cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D00000194D2B72658.png" /></p>
 <p>We will see that only the [store/index.js] file will change.</p>
@@ -919,7 +919,7 @@
 <span class="odt-code-line">},</span>
 </code></pre></div>
 
-<h2 id="82-the-configuration-file-nuxtconfigjs">8.2. <span style="color: #4f81bd"><strong>The configuration file [nuxt.config.js]</strong></span></h2>
+<h2 id="82-the-configuration-file-nuxtconfigjs">8.2. <span style="color: #4f81bd">The configuration file [nuxt.config.js]</span></h2>
 <p>In order for [nuxt] to use cookies from [cookie-universal-nuxt], you must declare this module in the [nuxt.config.js] configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line">...</span>
@@ -1036,7 +1036,7 @@
   <li>line 80: the [maxAge] attribute will be the maximum lifetime of the session cookie, measured from the last time the cookie was initialized. This duration is expressed in seconds. Here, we have set a lifetime of 5 minutes;
   </li>
 </ul>
-<h2 id="83-the-principle-of-store-persistence">8.3. <span style="color: #4f81bd"><strong>The principle of store persistence</strong></span></h2>
+<h2 id="83-the-principle-of-store-persistence">8.3. <span style="color: #4f81bd">The principle of store persistence</span></h2>
 <p>Cookies exchanged between the client and the server are available on both sides (client and server) in:</p>
 <ul>
   <li>[context.app.$cookies] wherever the [context] object is available, i.e., almost everywhere;
@@ -1061,7 +1061,7 @@
   <li>there will therefore be continuity of the store between the client and the server;
   </li>
 </ul>
-<h2 id="84-initializing-the-store">8.4. <span style="color: #4f81bd"><strong>Initializing the store</strong></span></h2>
+<h2 id="84-initializing-the-store">8.4. <span style="color: #4f81bd">Initializing the store</span></h2>
 <p>The store is implemented in the [store / index.js] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line">/* eslint-disable no-console */</span>
@@ -1205,7 +1205,7 @@
     </ul>
   </li>
 </ul>
-<h2 id="85-incrementing-the-store-counter">8.5. <span style="color: #4f81bd"><strong>Incrementing the store counter</strong></span></h2>
+<h2 id="85-incrementing-the-store-counter">8.5. <span style="color: #4f81bd">Incrementing the store counter</span></h2>
 <p>The counter increment in the [index.vue] page works as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
@@ -1233,7 +1233,7 @@
   <li>The cookie&#x27;s lifespan is [context.env.maxAge], which is available here in the property [this.$nuxt.context.env.maxAge];
   </li>
 </ul>
-<h2 id="86-running-the-nuxt-05-example">8.6. <span style="color: #4f81bd"><strong>Running the [nuxt-05] example</strong></span></h2>
+<h2 id="86-running-the-nuxt-05-example">8.6. <span style="color: #4f81bd">Running the [nuxt-05] example</span></h2>
 <p>We launch the [nuxt-05] application:</p>
 <p><img src="images/10000000000004A4000000C393512E1D.png" style="width:15.722cm;height:2.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A4000000C393512E1D.png" /></p>
 <p>The following screenshots are from a Chrome browser. We request the URL [http://localhost:81/nuxt-05/]. <strong>Don’t forget</strong> the final / after /nuxt-05, otherwise you won’t get the expected results:</p>
