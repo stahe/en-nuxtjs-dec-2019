@@ -924,21 +924,21 @@
 <p>The store is easily accessible through properties such as [context.app.$store] outside of views or [this.$store] within views. We would like something similar for the session, something like [context.app.$session] or [this.$session]. We will see that this is possible thanks to the concept of injection. However, we cannot inject objects into the context, only functions. This function will then be available via the expressions [context.app.$session<strong><span style="color: #c9211e">()</span></strong>] or [this.$session<strong><span style="color: #c9211e">()</span></strong>].</p>
 <p>Finally, we’ll introduce the [nuxt] concept of [plugin].</p>
 <p>The [nuxt-06] example is initially created by cloning the [nuxt-05] project:</p>
-<p><img src="images/10000000000001640000024717468ECB.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024717468ECB.png" /></p>
+<p><img src="images/10000000000001640000024717468ECB.png" width="142" height="233" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024717468ECB.png" /></p>
 <ul>
   <li>In [1], we will add a [plugins] folder;
   </li>
 </ul>
 <h2 id="92-the-concept-of-a-nuxt-plugin">9.2. <span style="color: #4f81bd">The concept of a [nuxt] plugin</span></h2>
 <p>[nuxt] refers to [plugin] as any code executed when the application starts, even before the [nuxtServerInit] function is executed by the server, which until now was the first user function to be executed. The application’s plugins must be declared in the [plugins] key of the [nuxt.config.js] configuration file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line">  <span style="color:#008000">/*</span></span>
-<span class="odt-code-line">   ** Plugins to load before mounting the App</span>
-<span class="odt-code-line">   */</span>
-<span class="odt-code-line">  plugins: [</span>
-<span class="odt-code-line"><span style="color:#000000">    { src: </span>&#x27;~/plugins/client/session&#x27;<span style="color:#000000">, mode: </span>&#x27;client&#x27; <span style="color:#000000">},</span></span>
-<span class="odt-code-line"><span style="color:#000000">    { src: </span>&#x27;~/plugins/server/session&#x27;<span style="color:#000000">, mode: </span>&#x27;server&#x27; <span style="color:#000000">}</span></span>
-<span class="odt-code-line">],</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   ** Plugins to load before mounting the App</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  plugins: [</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    { src: </span>&#x27;~/plugins/client/session&#x27;<span style="color:#000000">, mode: </span>&#x27;client&#x27;<span style="color:#000000"> },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    { src: </span>&#x27;~/plugins/server/session&#x27;<span style="color:#000000">, mode: </span>&#x27;server&#x27;<span style="color:#000000"> }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">],</span></span>
 </code></pre></div>
 
 <ul>
@@ -956,41 +956,41 @@
   </li>
 </ul>
 
-<p><img src="images/10000000000001640000024711C4FD7E.png" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024711C4FD7E.png" /></p>
+<p><img src="images/10000000000001640000024711C4FD7E.png" width="142" height="233" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024711C4FD7E.png" /></p>
 <h2 id="93-the-server-session-plugin">9.3. <span style="color: #4f81bd">The server [session] plugin</span></h2>
 <p>The [server / session.js] plugin is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line"><span style="color:#0000ff">export default </span>(context, inject) =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// server session management</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// Is there an existing session?</span>
-<span class="odt-code-line">  <span style="color:#0000ff">let </span>value = context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>)</span>
-<span class="odt-code-line">  <span style="color:#0000ff">if </span>(!value) {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// new session</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;[session server plugin], starting a new session&quot;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">    value = initValue</span>
-<span class="odt-code-line">  } <span style="color:#0000ff">else </span>{</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// existing session</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;[session server plugin], resuming an existing session&quot;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// session definition</span>
-<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// session content</span>
-<span class="odt-code-line">    value,</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// save the session to a cookie</span>
-<span class="odt-code-line">    save(context) {</span>
-<span class="odt-code-line">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// inject a function into [context, Vue] that will return the current session</span>
-<span class="odt-code-line">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">// initial value of the session</span>
-<span class="odt-code-line"><span style="color:#0000ff">const </span>initValue = {</span>
-<span class="odt-code-line">  initSessionDone: <span style="color:#0000ff">false</span></span>
-<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion de la session serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// y-a-t-il une session existante ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">let</span> value = context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!value) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// nouvelle session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;[plugin session server], démarrage d&#x27;une nouvelle session&quot;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    value = initValue</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session existante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;[plugin session server], reprise d&#x27;une session existante&quot;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// définition de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// contenu de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    value,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// sauvegarde de la session dans un cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    save(context) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on injecte une fonction dans [context, Vue] qui rendra la session courante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// valeur initiale de la session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span> initValue = {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  initSessionDone: <span style="color:#0000ff">false</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <ul>
@@ -1061,71 +1061,71 @@
 </ul>
 <h2 id="94-session-initialization">9.4. <span style="color: #4f81bd">Session Initialization</span></h2>
 <p>Once the [session / server] plugin is executed by the server, the server will execute the following [store / index.js] script:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line"><span style="color:#0000ff">export const </span>state = () =&gt; ({</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// counter</span>
-<span class="odt-code-line">  counter: 0</span>
-<span class="odt-code-line">})</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">export const </span>mutations = {</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// Increment the counter by a value [inc]</span>
-<span class="odt-code-line">  increment(state, inc) {</span>
-<span class="odt-code-line">    state.counter += inc</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// replace the state</span>
-<span class="odt-code-line">  replace(state, newState) {</span>
-<span class="odt-code-line">    <span style="color:#0000ff">for </span>(<span style="color:#0000ff">const </span>attr <span style="color:#0000ff">in </span>newState) {</span>
-<span class="odt-code-line">      state[attr] = newState[attr]</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">export const </span>actions = {</span>
-<span class="odt-code-line">  <span style="color:#0000ff">async </span>nuxtServerInit(store, context) {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// Who executes this code?</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;nuxtServerInit, client=&#x27;</span>, process.client, <span style="color:#a31515">&#x27;server=&#x27;</span>, process.server, <span style="color:#a31515">&#x27;env=&#x27;</span>, context.env)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// waiting for a promise to resolve</span>
-<span class="odt-code-line">    <span style="color:#0000ff">await new </span>Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// we normally have an asynchronous function here</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// We simulate it with a one-second delay</span>
-<span class="odt-code-line">      setTimeout(() =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span>// initialize session</span>
-<span class="odt-code-line">        initSession(store, context)</span>
-<span class="odt-code-line"><span style="color:#000000">        </span>// success</span>
-<span class="odt-code-line">        resolve()</span>
-<span class="odt-code-line">      }, 1000)</span>
-<span class="odt-code-line">    })</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">function </span>initSession(store, context) {</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// store is the store to be initialized</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// retrieve the session</span>
-<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = context.app.$session()</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// Has the session already been initialized?</span>
-<span class="odt-code-line">  <span style="color:#0000ff">if </span>(!session.value.initSessionDone) {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// start a new store</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, initializing a new session&quot;<span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// Initialize the store</span>
-<span class="odt-code-line">    store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 77)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// Set the store in the session</span>
-<span class="odt-code-line">    session.value.store = store.state</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// initialize a new session</span>
-<span class="odt-code-line">    session.value.somethingImportant = { x: 2, y: 4 }</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// the session is now initialized</span>
-<span class="odt-code-line">    session.value.initSessionDone = <span style="color:#0000ff">true</span></span>
-<span class="odt-code-line">  } <span style="color:#0000ff">else </span>{</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, resuming an existing store&quot;<span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// Update the store with the session store</span>
-<span class="odt-code-line">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, session.value.store)</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// save the session</span>
-<span class="odt-code-line">  session.save(context)</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// log</span>
-<span class="odt-code-line">  console.log(<span style="color:#a31515">&#x27;initSession completed, store=&#x27;</span>, store.state, <span style="color:#a31515">&#x27;session=&#x27;</span>, session.value)</span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">const</span> state = () =&gt; ({</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// meter</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  counter: 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">const</span> mutations = {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// increment counter by one [inc] value</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  increment(state, inc) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    state.counter += inc</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// state replacement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  replace(state, newState) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">for</span> (<span style="color:#0000ff">const</span> attr <span style="color:#0000ff">in</span> newState) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      state[attr] = newState[attr]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">const</span> actions = {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> nuxtServerInit(store, context) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// who executes this code?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;nuxtServerInit, client=&#x27;</span>, process.client, <span style="color:#a31515">&#x27;serveur=&#x27;</span>, process.server, <span style="color:#a31515">&#x27;env=&#x27;</span>, context.env)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// waiting for a promise to be fulfilled</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">await</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// this is normally an asynchronous function</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate it with a one-second wait</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      setTimeout(() =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// init session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        initSession(store, context)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// success</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        resolve()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }, 1000)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">function</span> initSession(store, context) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// store is the blind to be initialized</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// has the session already been initiated?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!session.value.initSessionDone) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start a new blind</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, initialisation d&#x27;une nouvelle session&quot;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initialize the blind</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 77)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// put the blind in the session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    session.value.store = store.state</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initialize a new session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    session.value.somethingImportant = { x: 2, y: 4 }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the session is now initialized</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    session.value.initSessionDone = <span style="color:#0000ff">true</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, reprise d&#x27;un store existant&quot;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// update the store with the session store</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, session.value.store)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;initSession terminé, store=&#x27;</span>, store.state, <span style="color:#a31515">&#x27;session=&#x27;</span>, session.value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>Compared to the store in the [nuxt-05] project, only the [initSession] function (formerly <em>initStore</em>) in lines 38–60 has changed:</p>
@@ -1158,26 +1158,26 @@
 <h2 id="95-the-clients-client-session-plugin">9.5. <span style="color: #4f81bd">The client’s [client / session] plugin</span></h2>
 <p>Once the server has executed the [plugins / server / session] and [store / index] scripts, it will send one of the pages [index, page1] to the client browser. The server’s HTTP response will include the session cookie. Once the page is received by the client browser, the client-side scripts embedded in the page will execute. The [client / session] plugin will then execute:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line"><span style="color:#0000ff">export default </span>(context, inject) =&gt; {</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// client session management</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// the session must exist, initialized by the server</span>
-<span class="odt-code-line"><span style="color:#000000">  console.log(</span>&#x27;[client session plugin], resuming the server session&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// session definition</span>
-<span class="odt-code-line">  <span style="color:#0000ff">const </span>session = {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// session content</span>
-<span class="odt-code-line">    value: context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>),</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// Save the session to a cookie</span>
-<span class="odt-code-line">    save(context) {</span>
-<span class="odt-code-line">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// We inject a function into [context, Vue] that will return the current session</span>
-<span class="odt-code-line">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span>
-<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion de la session client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// la session existe forcément, initialisée par le serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[plugin session client], reprise de la session du serveur&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// définition de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// contenu de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    value: context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// sauvegarde de la session dans un cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    save(context) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on injecte une fonction dans [context, Vue] qui rendra la session courante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <ul>
@@ -1196,74 +1196,74 @@
 </ul>
 <h2 id="96-the-index-page">9.6. <span style="color: #4f81bd">The [index] page</span></h2>
 <p>The [index] page evolves as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">&lt;!-- [index] page --&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout </span><span style="color:#ff0000">:</span>left=&quot;true&quot; <span style="color:#ff0000">:</span>right=&quot;true&quot;&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- navigation --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation </span>slot=&quot;left&quot; /&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- message--&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template </span>slot=&quot;right&quot;&gt;</span>
-<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt; </span>Home - session= <span style="font-weight:bold">{{ </span><span style="color:#800080">jsonSession </span><span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{ </span><span style="color:#800080">$store.state.counter </span><span style="font-weight:bold">}} </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;!-- button --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button </span>@click=&quot;incrementCounter&quot; class=&quot;ml-3&quot; variant=&quot;primary&quot;&gt;<span style="color:#000000">Increment</span>&lt;<span style="color:#800000">/b-button</span>&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span>/Layout<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">/* eslint-disable no-undef */</span>
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
-<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
-<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
-<span class="odt-code-line">  components: {</span>
-<span class="odt-code-line">    Layout,</span>
-<span class="odt-code-line">    Navigation</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  computed: {</span>
-<span class="odt-code-line">    jsonSession() {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span>JSON.stringify(<span style="color:#0000ff">this</span>.$session().value)</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
-<span class="odt-code-line">  beforeCreate() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  created() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.$session().value)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  beforeMount() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  mounted() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
-<span class="odt-code-line">  methods: {</span>
-<span class="odt-code-line">    incrementCounter() {</span>
-<span class="odt-code-line">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// increment the counter by 1</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// update session</span>
-<span class="odt-code-line">      <span style="color:#0000ff">const </span>session = <span style="color:#0000ff">this</span>.$session()</span>
-<span class="odt-code-line">      session.value.store = <span style="color:#0000ff">this</span>.$store.state</span>
-<span class="odt-code-line">      session.value.somethingImportant.x++</span>
-<span class="odt-code-line">      session.value.somethingImportant.y++</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// Save the session to the session cookie</span>
-<span class="odt-code-line">      session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- page [index] --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span> Home - session= <span style="font-weight:bold">{{</span> <span style="color:#800080">jsonSession</span> <span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{</span> <span style="color:#800080">$store.state.counter</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- bouton --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">@click</span>=&quot;incrementCounter&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;ml-3&quot;<span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;<span style="color:#000000">Incrémenter</span>&lt;/<span style="color:#800000">b-button</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-undef */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  computed: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    jsonSession() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> JSON.stringify(<span style="color:#0000ff">this</span>.$session().value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.$session().value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// counter increment of 1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// session modification</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = <span style="color:#0000ff">this</span>.$session()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      session.value.store = <span style="color:#0000ff">this</span>.$store.state</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      session.value.somethingImportant.x++</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      session.value.somethingImportant.y++</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save session in session cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <p>Keep in mind that this page runs on both the server and the client.</p>
@@ -1291,81 +1291,81 @@
 <p>The purpose of the [index] page is to demonstrate that the session is not reactive, whereas the store is. When we increment the session elements, we will see that the view is not updated. The [page1] view presents a solution to this problem.</p>
 <h2 id="97-the-page1-page">9.7. <span style="color: #4f81bd">The [page1] page</span></h2>
 <p>The [page1] page is created by copying the [index] page and then modifying it slightly:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">&lt;!-- page [index] --&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout </span><span style="color:#ff0000">:</span>left=&quot;true&quot; <span style="color:#ff0000">:</span>right=&quot;true&quot;&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- navigation --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation </span>slot=&quot;left&quot; /&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- message--&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template </span>slot=&quot;right&quot;&gt;</span>
-<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt; </span>Page1 - session= <span style="font-weight:bold">{{ </span><span style="color:#800080">jsonSession </span><span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{ </span><span style="color:#800080">$store.state.counter </span><span style="font-weight:bold">}} </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;!-- button --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button </span>@click=&quot;incrementCounter&quot; class=&quot;ml-3&quot; variant=&quot;primary&quot;&gt;<span style="color:#000000">Increment</span>&lt;<span style="color:#800000">/b-button</span>&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span>/Layout<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">/* eslint-disable no-undef */</span>
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
-<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
-<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
-<span class="odt-code-line">  components: {</span>
-<span class="odt-code-line">    Layout,</span>
-<span class="odt-code-line">    Navigation</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  data() {</span>
-<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
-<span class="odt-code-line">      session: {}</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  computed: {</span>
-<span class="odt-code-line">    jsonSession() {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span>JSON.stringify(<span style="color:#0000ff">this</span>.session.value)</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
-<span class="odt-code-line">  beforeCreate() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  created() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// add the session to the page&#x27;s reactive properties</span>
-<span class="odt-code-line">    <span style="color:#0000ff">this</span>.session = <span style="color:#0000ff">this</span>.$session()</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// log</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[page1 created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.session.value)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  beforeMount() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  mounted() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
-<span class="odt-code-line">  methods: {</span>
-<span class="odt-code-line">    incrementCounter() {</span>
-<span class="odt-code-line">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// increment the counter by 1</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// update session</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.store = <span style="color:#0000ff">this</span>.$store.state</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.x++</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.y++</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// Save the session to the session cookie</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- page [index] --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span> Page1 - session= <span style="font-weight:bold">{{</span> <span style="color:#800080">jsonSession</span> <span style="font-weight:bold">}}</span>, counter= <span style="font-weight:bold">{{</span> <span style="color:#800080">$store.state.counter</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- bouton --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">@click</span>=&quot;incrementCounter&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;ml-3&quot;<span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;<span style="color:#000000">Incrémenter</span>&lt;/<span style="color:#800000">b-button</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-undef */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  data() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      session: {}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  computed: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    jsonSession() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> JSON.stringify(<span style="color:#0000ff">this</span>.session.value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// set the session in the page&#x27;s reactive properties</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.session = <span style="color:#0000ff">this</span>.$session()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.session.value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// counter increment of 1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// session modification</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.value.store = <span style="color:#0000ff">this</span>.$store.state</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.x++</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.y++</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save session in session cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.save(<span style="color:#0000ff">this</span>.$nuxt.context)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -1374,11 +1374,11 @@
 </ul>
 <h2 id="98-running-the-project">9.8. <span style="color: #4f81bd">Running the project</span></h2>
 <p>Before running the project, check your browser’s session cookie and, if it exists, delete it so that the server creates a new session:</p>
-<p><img src="images/10000000000005B000000269DCC3E5FE.png" style="width:11.561cm;height:4.898cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B000000269DCC3E5FE.png" /></p>
+<p><img src="images/10000000000005B000000269DCC3E5FE.png" width="437" height="185" style="width:11.561cm;height:4.898cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B000000269DCC3E5FE.png" /></p>
 <p>Now let’s request the URL [http://localhost:81/nuxt-06/]:</p>
-<p><img src="images/100000000000092300000281C960AAD6.png" style="width:15.469cm;height:4.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000092300000281C960AAD6.png" /></p>
+<p><img src="images/100000000000092300000281C960AAD6.png" width="585" height="160" style="width:15.469cm;height:4.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000092300000281C960AAD6.png" /></p>
 <p>The browser logs are then as follows:</p>
-<p><img src="images/10000000000004F4000003E43312D2E8.png" style="width:10.059cm;height:7.902cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F4000003E43312D2E8.png" /></p>
+<p><img src="images/10000000000004F4000003E43312D2E8.png" width="380" height="299" style="width:10.059cm;height:7.902cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F4000003E43312D2E8.png" /></p>
 <ul>
   <li>In [2], the server starts a new session in the server&#x27;s [session] plugin;
   </li>
@@ -1391,14 +1391,14 @@
 </ul>
 
 <p>Now let’s increment the counter three times:</p>
-<p><img src="images/10000000000009A40000028069157B07.png" style="width:16.32cm;height:4.232cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009A40000028069157B07.png" /></p>
+<p><img src="images/10000000000009A40000028069157B07.png" width="617" height="160" style="width:16.32cm;height:4.232cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009A40000028069157B07.png" /></p>
 <ul>
   <li>in [3], the counter has been incremented but not the session in [2]. While [3] displays the store, which is reactive, [2] displays the session, which is not reactive:
   </li>
 </ul>
 
 <p>Now let’s reload the page (F5). The logs are as follows after this reload:</p>
-<p><img src="images/10000000000004DC000003D69FCEB1CF.png" style="width:9.871cm;height:7.793cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DC000003D69FCEB1CF.png" /></p>
+<p><img src="images/10000000000004DC000003D69FCEB1CF.png" width="373" height="295" style="width:9.871cm;height:7.793cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DC000003D69FCEB1CF.png" /></p>
 <ul>
   <li>In [2], we see that the server received a session cookie sent by the client browser;
   </li>
@@ -1409,14 +1409,14 @@
 </ul>
 
 <p>The page sent by the server is then as follows;</p>
-<p><img src="images/10000000000009340000026FAD722BCF.png" style="width:15.58cm;height:4.12cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009340000026FAD722BCF.png" /></p>
+<p><img src="images/10000000000009340000026FAD722BCF.png" width="589" height="156" style="width:15.58cm;height:4.12cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009340000026FAD722BCF.png" /></p>
 <p>The conclusion drawn from this page is that the session can carry elements other than the store, but these are not reactive.</p>
 <p>Now let’s click on the [Page 1] [4] link. The new page displayed is as follows:</p>
-<p><img src="images/10000000000008380000023A4AB5718A.png" style="width:13.921cm;height:3.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008380000023A4AB5718A.png" /></p>
+<p><img src="images/10000000000008380000023A4AB5718A.png" width="526" height="143" style="width:13.921cm;height:3.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008380000023A4AB5718A.png" /></p>
 <p>Then let’s use the [Increment] button three times. The page becomes the following:</p>
-<p><img src="images/1000000000000864000002439DF02F45.png" style="width:14.212cm;height:3.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000864000002439DF02F45.png" /></p>
+<p><img src="images/1000000000000864000002439DF02F45.png" width="537" height="145" style="width:14.212cm;height:3.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000864000002439DF02F45.png" /></p>
 <p>This time, the session is displayed correctly in [2]. It is reactive here. This can be seen in the logs:</p>
-<p><img src="images/100000000000048E0000040829D81976.png" style="width:9.26cm;height:8.197cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048E0000040829D81976.png" /></p>
+<p><img src="images/100000000000048E0000040829D81976.png" width="350" height="310" style="width:9.26cm;height:8.197cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048E0000040829D81976.png" /></p>
 <ul>
   <li>in [1-3], the session values;
   </li>
@@ -1425,19 +1425,19 @@
 </ul>
 
 <p>Now let’s click the [Home] link [4]. We get the following page:</p>
-<p><img src="images/100000000000099B000002872FBB8CC2.png" style="width:16.26cm;height:4.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000099B000002872FBB8CC2.png" /></p>
+<p><img src="images/100000000000099B000002872FBB8CC2.png" width="615" height="162" style="width:16.26cm;height:4.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000099B000002872FBB8CC2.png" /></p>
 <p>Then click the [Increment] button [4] twice. The page changes to the following:</p>
-<p><img src="images/100000000000083A000002373763BAAB.png" style="width:13.929cm;height:3.75cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000083A000002373763BAAB.png" /></p>
+<p><img src="images/100000000000083A000002373763BAAB.png" width="526" height="142" style="width:13.929cm;height:3.75cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000083A000002373763BAAB.png" /></p>
 <p>We can see that here too, the session has become reactive [2].</p>
 <p>Let’s retrieve the value returned by the [this.$session()] function:</p>
-<p><img src="images/10000000000006B40000035665CD6F32.png" style="width:13.623cm;height:6.779cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B40000035665CD6F32.png" /></p>
+<p><img src="images/10000000000006B40000035665CD6F32.png" width="515" height="256" style="width:13.623cm;height:6.779cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B40000035665CD6F32.png" /></p>
 <ul>
   <li>In the [View] tab, select the current page [Home] to obtain its reference [$vm0] [3];
   </li>
 </ul>
 
 <p>Then, in the [Console] tab [4], let’s retrieve the value of the function [$vm0.$session()]:</p>
-<p><img src="images/10000000000004DD00000257D109F034.png" style="width:16.469cm;height:7.923cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DD00000257D109F034.png" /></p>
+<p><img src="images/10000000000004DD00000257D109F034.png" width="622" height="299" style="width:16.469cm;height:7.923cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DD00000257D109F034.png" /></p>
 <ul>
   <li>in [5], we see that the session has become reactive, whereas it was not initially;
   </li>
@@ -1494,8 +1494,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

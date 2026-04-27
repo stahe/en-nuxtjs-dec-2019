@@ -794,72 +794,72 @@
 </ul>
 
 <p>The [nuxt-04] project is initially created by cloning the [nuxt-03] project:</p>
-<p><img src="images/10000000000001970000018C0984BDAE.png" style="width:4.309cm;height:4.195cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001970000018C0984BDAE.png" /></p>
+<p><img src="images/10000000000001970000018C0984BDAE.png" width="163" height="159" style="width:4.309cm;height:4.195cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001970000018C0984BDAE.png" /></p>
 <p>Only the [index] page changes:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">&lt;!-- [index] page --&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout </span><span style="color:#ff0000">:</span>left=&quot;true&quot; <span style="color:#ff0000">:</span>right=&quot;true&quot;&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- navigation --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation </span>slot=&quot;left&quot; /&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- message--&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template </span>slot=&quot;right&quot;&gt;</span>
-<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert </span><span style="color:#ff0000">show </span><span style="color:#0000ff">variant=&quot;warning&quot;&gt; </span>Home - value= <span style="font-weight:bold">{{ </span><span style="color:#800080">value </span><span style="font-weight:bold">}} </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">/b-alert</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;!-- button --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button </span>@click=&quot;incrementCounter&quot; class=&quot;ml-3&quot; variant=&quot;primary&quot;&gt;<span style="color:#000000">Increment</span>&lt;<span style="color:#800000">/b-button</span>&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span>/Layout<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/template<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">/* eslint-disable no-undef */</span>
-<span class="odt-code-line">/* eslint-disable no-console */</span>
-<span class="odt-code-line">/* eslint-disable nuxt/no-env-in-hooks */</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Layout </span><span style="color:#0000ff">from </span>&#x27;@/components/layout&#x27;</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">Navigation </span><span style="color:#0000ff">from </span>&#x27;@/components/navigation&#x27;</span>
-<span class="odt-code-line">export default <span style="color:#000000">{</span></span>
-<span class="odt-code-line">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// components used</span>
-<span class="odt-code-line">  components: {</span>
-<span class="odt-code-line">    Layout,</span>
-<span class="odt-code-line">    Navigation</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  data() {</span>
-<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
-<span class="odt-code-line">      value: 0</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// lifecycle</span>
-<span class="odt-code-line">  beforeCreate() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  created() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client and server</span>
-<span class="odt-code-line">    <span style="color:#0000ff">this</span>.value = <span style="color:#0000ff">this</span>.$store.state.counter</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home created], value=&#x27;</span>, <span style="color:#0000ff">this</span>.value)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  beforeMount() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  mounted() {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// client only</span>
-<span class="odt-code-line">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// event handling</span>
-<span class="odt-code-line">  methods: {</span>
-<span class="odt-code-line">    incrementCounter() {</span>
-<span class="odt-code-line">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// increment the counter by 1</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span>
-<span class="odt-code-line"><span style="color:#000000">      </span>// update the displayed value</span>
-<span class="odt-code-line">      <span style="color:#0000ff">this</span>.value = <span style="color:#0000ff">this</span>.$store.state.counter</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/script<span style="color:#0000ff">&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- page [index] --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span> Home - value= <span style="font-weight:bold">{{</span> <span style="color:#800080">value</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- bouton --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">@click</span>=&quot;incrementCounter&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;ml-3&quot;<span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;<span style="color:#000000">Incrémenter</span>&lt;/<span style="color:#800000">b-button</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-undef */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  data() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      value: 0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.value = <span style="color:#0000ff">this</span>.$store.state.counter</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home created], value=&#x27;</span>, <span style="color:#0000ff">this</span>.value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// counter increment of 1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// change display value</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.value = <span style="color:#0000ff">this</span>.$store.state.counter</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -874,37 +874,37 @@
 </ul>
 
 <p>Run the [nuxt-04] project with the following [nuxt.config.js] file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">// source code directory</span>
-<span class="odt-code-line">  srcDir: <span style="color:#a31515">&#x27;nuxt-04&#x27;</span>,</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// router</span>
-<span class="odt-code-line">  router: {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// application URL root</span>
-<span class="odt-code-line"><span style="color:#000000">    base: </span>&#x27;/nuxt-04/&#x27;</span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line"><span style="color:#000000">  </span>// server</span>
-<span class="odt-code-line">  server: {</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// server port, 3000 by default</span>
-<span class="odt-code-line">    port: 81,</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// network addresses listened to, default is localhost: 127.0.0.1</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>// 0.0.0.0 = all network addresses on the machine</span>
-<span class="odt-code-line"><span style="color:#000000">    host: </span>&#x27;localhost&#x27;</span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">// source code directory</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  srcDir: <span style="color:#a31515">&#x27;nuxt-04&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-04/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// service port, default 3000</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    port: 81,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// network addresses listened to, default localhost: 127.0.0.1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// 0.0.0.0 = all the machine&#x27;s network addresses</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    host: </span>&#x27;localhost&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>When executed, the first page displayed is as follows:</p>
-<p><img src="images/10000000000006140000029B71F9DB39.png" style="width:12.353cm;height:5.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006140000029B71F9DB39.png" /></p>
+<p><img src="images/10000000000006140000029B71F9DB39.png" width="467" height="200" style="width:12.353cm;height:5.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006140000029B71F9DB39.png" /></p>
 <p>By clicking the [3] button several times, the following new page appears:</p>
-<p><img src="images/10000000000006080000026FFEE2C398.png" style="width:12.263cm;height:4.948cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006080000026FFEE2C398.png" /></p>
+<p><img src="images/10000000000006080000026FFEE2C398.png" width="463" height="187" style="width:12.263cm;height:4.948cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006080000026FFEE2C398.png" /></p>
 <p>If you use link [3], you get the following page:</p>
-<p><img src="images/100000000000060C00000233F80A9994.png" style="width:12.293cm;height:4.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060C00000233F80A9994.png" /></p>
+<p><img src="images/100000000000060C00000233F80A9994.png" width="465" height="169" style="width:12.293cm;height:4.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060C00000233F80A9994.png" /></p>
 <ul>
   <li>In [2], the [page1] [1] page correctly displays the counter value;
   </li>
 </ul>
 
 <p>Now, let’s refresh the page with [3]. The new page is as follows:</p>
-<p><img src="images/10000000000004DD0000017FF4470033.png" style="width:16.469cm;height:5.068cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000017FF4470033.png" /></p>
+<p><img src="images/10000000000004DD0000017FF4470033.png" width="622" height="192" style="width:16.469cm;height:5.068cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000017FF4470033.png" /></p>
 <ul>
   <li>In [2], we have lost the current counter value. We have returned to its initial value;
   </li>
@@ -948,41 +948,41 @@
 <span class="normal"><a href="#__codelineno-0-30">30</a></span>
 <span class="normal"><a href="#__codelineno-0-31">31</a></span>
 <span class="normal"><a href="#__codelineno-0-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/* eslint-disable no-console */</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">export</span><span class="w"> </span><span class="n">const</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="err">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">counter</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="n">counter</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="err">}</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">   </span><span class="c1">// account</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">counter</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">})</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">export</span><span class="w"> </span><span class="n">const</span><span class="w"> </span><span class="n">mutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="k">Increment</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">[</span><span class="n">inc</span><span class="p">]</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="k">increment</span><span class="p">(</span><span class="k">state</span><span class="p">,</span><span class="w"> </span><span class="n">inc</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="k">state</span><span class="p">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">inc</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="err">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="err">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">mutations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">   </span><span class="c1">// increment counter by one [inc] value</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="nx">increment</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">inc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="nx">state</span><span class="p">.</span><span class="nx">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">inc</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">export</span><span class="w"> </span><span class="n">const</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="n">async</span><span class="w"> </span><span class="n">nuxtServerInit</span><span class="p">(</span><span class="n">store</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Who</span><span class="w"> </span><span class="n">executes</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">code</span><span class="o">?</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit, client=&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">process</span><span class="p">.</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;server=&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">process</span><span class="p">.</span><span class="n">server</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">promise</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">resolve</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="n">await</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span><span class="w"> </span><span class="n">reject</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">      </span><span class="o">//</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">normally</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">asynchronous</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">here</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">      </span><span class="o">//</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">simulate</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">one</span><span class="o">-</span><span class="k">second</span><span class="w"> </span><span class="n">delay</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">      </span><span class="n">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">success</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="n">resolve</span><span class="p">()</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">      </span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="err">}</span><span class="p">)</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">store</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="n">store</span><span class="p">.</span><span class="k">commit</span><span class="p">(</span><span class="s1">&#39;increment&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">53</span><span class="p">)</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">log</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit commit completed&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">  </span><span class="err">}</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="err">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">nuxtServerInit</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">     </span><span class="c1">// who executes this code?</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit, client=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;serveur=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">server</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">     </span><span class="c1">// waiting for a promise to be fulfilled</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">       </span><span class="c1">// this is normally an asynchronous function</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">       </span><span class="c1">// we simulate it with a one-second wait</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">      </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">         </span><span class="c1">// success</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="nx">resolve</span><span class="p">()</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">     </span><span class="c1">// modify the blind</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="nx">store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;increment&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">53</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">     </span><span class="c1">// log</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit commit terminé&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Line 28 sets the counter to 53.</p>
 <p>Let’s examine the HTTP request made by the browser when we refreshed the [page1] page:</p>
-<p><img src="images/100000000000045E0000029C0D65900B.png" style="width:8.871cm;height:5.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045E0000029C0D65900B.png" /></p>
+<p><img src="images/100000000000045E0000029C0D65900B.png" width="335" height="200" style="width:8.871cm;height:5.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045E0000029C0D65900B.png" /></p>
 <p>We can see that in addition to the [page1] page [1], the client requests a number of scripts from the server. Note the scripts [pages_index, pages_page1], which are the scripts associated with the [index, page] pages. These scripts are provided with every request to the server, regardless of the page requested;</p>
 <p>In [1], the page [page1] is requested from the server with the following HTTP request:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1044,8 +1044,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
