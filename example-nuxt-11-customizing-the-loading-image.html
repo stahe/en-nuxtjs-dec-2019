@@ -1269,7 +1269,7 @@
 <p>Whether [asyncData] is executed by the client or the server, in the event of a [context.error], [nuxt] displays the [<strong>layouts/error.vue</strong>] page:</p>
 <p><img src="images/1000000000000172000001D9BB99F161.png" width="148" height="189" style="width:3.911cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000172000001D9BB99F161.png" /></p>
 <p>Although it is a page, the [error.vue] page is looked for in the [layouts] folder (perhaps to prevent it from being included in the application’s routes?). Here, the [error.vue] page is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- définition HTML de la vue --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- mise en page --&gt;</span></span></span>
@@ -1296,28 +1296,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Error&#x27;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// propriété [props]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// property [props]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; <span style="color:#a31515">&#x27;waiting ...&#x27;</span> } },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cycle de vie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client et serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client et serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error created, error=]&#x27;</span>, <span style="color:#0000ff">this</span>.error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client seulement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client seulement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>

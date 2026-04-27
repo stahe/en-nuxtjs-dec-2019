@@ -1891,24 +1891,24 @@
 
 <p>These two files constitute a self-signed certificate. Most browsers only accept them after approval by the user who requested the page.</p>
 <p>The [server.key, server.crt] files must now be used by the web application. To do this, the [nuxt.config.js] file must be modified as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> path </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;path&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> fs </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;fs&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// routeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// racine des URL de l&#x27;application</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-00/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// port de service, 3000 par défaut</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// service port, default 3000</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    port: 81,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// adresses réseau écoutées, par défaut localhost : 127.0.0.1</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// 0.0.0.0 = toutes les adresses réseau de la machine</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// network addresses listened to, default localhost: 127.0.0.1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// 0.0.0.0 = all the machine&#x27;s network addresses</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    host: <span style="color:#a31515">&#x27;0.0.0.0&#x27;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// certificat autosigné</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// self-signed certificate</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    https: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      key: fs.readFileSync(path.resolve(__dirname, <span style="color:#a31515">&#x27;server.key&#x27;</span>)),</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      cert: fs.readFileSync(path.resolve(__dirname, <span style="color:#a31515">&#x27;server.crt&#x27;</span>))</span></span>

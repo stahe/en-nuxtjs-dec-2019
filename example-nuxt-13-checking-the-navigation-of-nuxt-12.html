@@ -939,22 +939,22 @@
 </ul>
 <h2 id="162-nuxt-client-routing">16.2. <span style="color: #4f81bd">[nuxt] client routing</span></h2>
 <p>Client-side routing [nuxt] remains the same as it was in [nuxt-12]:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware client], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion du cookie de la session PHP dans le navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le cookie de la session PHP du navigateur doit être identique à celui trouvé en session nuxt</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// l&#x27;acion [fin-session] reçoit un nouveau cookie PHP (serveur comme client nuxt)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// si c&#x27;est le serveur qui le reçoit, le client doit le transmettre au navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// pour ses propres échanges avec le serveur PHP</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on est ici dans un routing client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// management of the PHP session cookie in the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the browser&#x27;s PHP session cookie must be identical to the one found in the nuxt session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// acion [fin-session] receives a new cookie PHP (server as nuxt client)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if the server receives it, the client must pass it on to the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// for its own exchanges with the PHP server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// this is customer routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on récupère le cookie de la session PHP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session cookie PHP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> phpSessionCookie = context.store.state.phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (phpSessionCookie) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// s&#x27;il existe, on affecte le cookie de session PHP au navigateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// if it exists, we assign the PHP session cookie to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    document.cookie = phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1209,7 +1209,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData canceled]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[succès]&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">     // customer [nuxt]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // customer [nuxt]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>

@@ -959,35 +959,35 @@
 <p><img src="images/10000000000001640000024711C4FD7E.png" width="142" height="233" style="width:3.769cm;height:6.174cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001640000024711C4FD7E.png" /></p>
 <h2 id="93-the-server-session-plugin">9.3. <span style="color: #4f81bd">The server [session] plugin</span></h2>
 <p>The [server / session.js] plugin is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion de la session serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server session management</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// y-a-t-il une session existante ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// is there an existing session?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">let</span> value = context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!value) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// nouvelle session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// new session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;[plugin session server], démarrage d&#x27;une nouvelle session&quot;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    value = initValue</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session existante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// existing session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;[plugin session server], reprise d&#x27;une session existante&quot;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// définition de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// session definition</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// contenu de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session content</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    value,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// sauvegarde de la session dans un cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// save the session in a cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    save(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on injecte une fonction dans [context, Vue] qui rendra la session courante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we inject a function into [context, Vue] that will render the current session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// valeur initiale de la session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// initial session value</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span> initValue = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  initSessionDone: <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -1157,25 +1157,25 @@
 </ul>
 <h2 id="95-the-clients-client-session-plugin">9.5. <span style="color: #4f81bd">The client’s [client / session] plugin</span></h2>
 <p>Once the server has executed the [plugins / server / session] and [store / index] scripts, it will send one of the pages [index, page1] to the client browser. The server’s HTTP response will include the session cookie. Once the page is received by the client browser, the client-side scripts embedded in the page will execute. The [client / session] plugin will then execute:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion de la session client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// customer session management</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// la session existe forcément, initialisée par le serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the session necessarily exists, initialized by the server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[plugin session client], reprise de la session du serveur&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// définition de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// session definition</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// contenu de la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session content</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    value: context.app.$cookies.get(<span style="color:#a31515">&#x27;session&#x27;</span>),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// sauvegarde de la session dans un cookie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// save the session in a cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    save(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.app.$cookies.set(<span style="color:#a31515">&#x27;session&#x27;</span>, <span style="color:#0000ff">this</span>.value, { path: context.base, maxAge: context.env.maxAge })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on injecte une fonction dans [context, Vue] qui rendra la session courante</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we inject a function into [context, Vue] that will render the current session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>

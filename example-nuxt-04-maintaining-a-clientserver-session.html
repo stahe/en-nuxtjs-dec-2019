@@ -949,7 +949,7 @@
 <span class="normal"><a href="#__codelineno-0-31">31</a></span>
 <span class="normal"><a href="#__codelineno-0-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/* eslint-disable no-console */</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">   </span><span class="c1">// account</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">      </span><span class="c1">// account</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">counter</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">})</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>
@@ -962,20 +962,20 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">nuxtServerInit</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">     </span><span class="c1">// who executes this code?</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">          </span><span class="c1">// who executes this code?</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit, client=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;serveur=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">server</span><span class="p">)</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">     </span><span class="c1">// waiting for a promise to be fulfilled</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">       </span><span class="c1">// this is normally an asynchronous function</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">       </span><span class="c1">// we simulate it with a one-second wait</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">      </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">         </span><span class="c1">// success</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">                  </span><span class="c1">// success</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="nx">resolve</span><span class="p">()</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="p">})</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">     </span><span class="c1">// modify the blind</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="nx">store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;increment&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">53</span><span class="p">)</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">     </span><span class="c1">// log</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">          </span><span class="c1">// log</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;nuxtServerInit commit terminé&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="p">}</span>

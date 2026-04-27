@@ -1436,7 +1436,7 @@
 <h3 id="1551-the-dao-layer-of-the-nuxt-server">15.5.1. <span style="color: #4f81bd">The [DAO] layer of the [Nuxt] server</span></h3>
 <p><img src="images/100000000000012F000000DF11652A9A.png" width="121" height="89" style="width:3.21cm;height:2.364cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012F000000DF11652A9A.png" /></p>
 <p>The [node.js] server [1] will use the [DAO] layer described in the document<a id="hlk43129255"></a> <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">through</span></u></a> examples|. Here is the code again:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&#x27;use strict&#x27;;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
@@ -1444,115 +1444,115 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">class<span style="color:#000000"> </span><span style="color:#2b91af">Dao</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// constructeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// manufacturer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">constructor</span>(axios) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.axios = axios;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// cookie de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.sessionCookieName = <span style="color:#a31515">&quot;PHPSESSID&quot;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.sessionCookie = <span style="color:#a31515">&#x27;&#x27;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// init session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span>  initSession() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP [get /main.php?action=init-session&amp;type=json]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=init-session&amp;type=json]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;GET&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        action: <span style="color:#a31515">&#x27;init-session&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        type: <span style="color:#a31515">&#x27;json&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span>  authentifierUtilisateur(user, password) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP [post /main.php?action=authentifier-utilisateur]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;POST&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&#x27;Content-type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// corps du POST</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// body of POST</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      data: qs.stringify({</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        user: user,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        password: password</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        action: </span>&#x27;authentifier-utilisateur&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> getAdminData() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP [get /main.php?action=get-admindata]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=get-admindata]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;GET&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        action: <span style="color:#a31515">&#x27;get-admindata&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> data = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> data;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span>  getRemoteData(options) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// pour le cookie de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// for the session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (!options.headers) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      options.headers = {};</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    options.headers.Cookie = <span style="color:#0000ff">this</span>.sessionCookie;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">let</span> response;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// requête asynchrone</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous request</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      response = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.axios.request(<span style="color:#a31515">&#x27;main.php&#x27;</span>, options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (error) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// le paramètre [error] est une instance d&#x27;exception - elle peut avoir diverses formes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [error] parameter is an exception instance - it can take various forms</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (error.response) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// la réponse du serveur est dans [error.response]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the server response is in [error.response]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        response = error.response;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on relance l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error restart</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> error;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// response est l&#x27;ensemble de la réponse HTTP du serveur (entêtes HTTP + réponse elle-même)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on récupère le cookie de session s&#x27;il existe</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// response is the entire HTTP response from the server (HTTP headers + response itself)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// retrieve the session cookie if it exists</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> setCookie = response.headers<span style="font-weight:bold">[&#x27;set-cookie&#x27;]</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (setCookie) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// setCookie est un tableau</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on cherche le cookie de session dans ce tableau</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// setCookie is an array</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// look for the session cookie in this table</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">let</span> trouvé = <span style="color:#0000ff">false</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">let</span> i = 0;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">while</span> (!trouvé &amp;&amp; i &lt; setCookie.length) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on cherche le cookie de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// look for the session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">const</span> results = RegExp(<span style="color:#a31515">&#x27;^(&#x27;</span> + <span style="color:#0000ff">this</span>.sessionCookieName + <span style="color:#a31515">&#x27;.+?);&#x27;</span>).exec(setCookie<span style="font-weight:bold">[i]</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (results) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// on mémorise le cookie de session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// the session cookie is stored</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// eslint-disable-next-line require-atomic-updates</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">this</span>.sessionCookie = results<span style="font-weight:bold">[1]</span>;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// on a trouvé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we found</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          trouvé = <span style="color:#0000ff">true</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// élément suivant</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// next item</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          i++;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// la réponse du serveur est dans [response.data]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the server response is in [response.data]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> response.data;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// export de la classe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// class export</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> Dao;</span></span></span>
 </code></pre></div>
 
@@ -1885,92 +1885,92 @@
 <h3 id="1552-the-dao-layer-of-the-nuxt-client">15.5.2. <span style="color: #4f81bd">The [dao] layer of the [nuxt] client</span></h3>
 <p><img src="images/100000000000012F000000DF1A53B038.png" width="121" height="89" style="width:3.21cm;height:2.364cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012F000000DF1A53B038.png" /></p>
 <p>For the [nuxt] client running in a browser, we use the code from the [Dao] class in the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">through</span></u></a> examples|:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">&quot;use strict&quot;<span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> qs </span>from<span style="color:#000000"> </span><span style="color:#a31515">&quot;qs&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">class<span style="color:#000000"> </span><span style="color:#2b91af">Dao</span><span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// constructeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// manufacturer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">constructor</span>(axios) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.axios = axios;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// init session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> initSession() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP [get /main.php?action=init-session&amp;type=json]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=init-session&amp;type=json]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;GET&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        action: <span style="color:#a31515">&quot;init-session&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        type: <span style="color:#a31515">&quot;json&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> authentifierUtilisateur(user, password) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP [post /main.php?action=authentifier-utilisateur]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;POST&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&quot;Content-type&quot;<span style="color:#000000">: </span>&quot;application/x-www-form-urlencoded&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// corps du POST</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// body of POST</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      data: qs.stringify({</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        user: user,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        password: password</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        action: </span>&quot;authentifier-utilisateur&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> getAdminData() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// options de la requête HHTP  [get /main.php?action=get-admindata]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=get-admindata]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;GET&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// paramètres de l&#x27;URL</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      params: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        action: <span style="color:#a31515">&quot;get-admindata&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> data = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.getRemoteData(options);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> data;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> getRemoteData(options) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// exécution de la requête HTTP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// execute query HTTP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">let</span> response;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// requête asynchrone</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous request</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      response = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.axios.request(<span style="color:#a31515">&quot;main.php&quot;</span>, options);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (error) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// le paramètre [error] est une instance d&#x27;exception - elle peut avoir diverses formes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [error] parameter is an exception instance - it can take various forms</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (error.response) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// la réponse du serveur est dans [error.response]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the server response is in [error.response]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        response = error.response;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on relance l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// error restart</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> error;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// response est l&#x27;ensemble de la réponse HTTP du serveur (entêtes HTTP + réponse elle-même)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// la réponse du serveur est dans [response.data]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// response is the entire HTTP response from the server (HTTP headers + response itself)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the server response is in [response.data]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> response.data;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// export de la classe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// class export</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> Dao;</span></span></span>
 </code></pre></div>
 
@@ -2601,7 +2601,7 @@
 </ul>
 <h3 id="15122-error">15.12.2. <span style="color: #4f81bd">[error]</span></h3>
 <p>The [error] layout displays a system error message (not managed by the developer):</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- définition HTML de la vue --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- mise en page --&gt;</span></span></span>
@@ -2628,28 +2628,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Error&#x27;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// propriété [props]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// property [props]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; <span style="color:#a31515">&#x27;waiting ...&#x27;</span> } },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cycle de vie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client et serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client et serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error created, error=]&#x27;</span>, <span style="color:#0000ff">this</span>.error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client seulement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client seulement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -3361,22 +3361,22 @@
 </ul>
 
 <p>The script  [middleware/client/routing] is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware client], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion du cookie de la session PHP dans le navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le cookie de la session PHP du navigateur doit être identique à celui trouvé en session nuxt</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// l&#x27;acion [fin-session] reçoit un nouveau cookie PHP (serveur comme client nuxt)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// si c&#x27;est le serveur qui le reçoit, le client doit le transmettre au navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// pour ses propres échanges avec le serveur PHP</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on est ici dans un routing client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// management of the PHP session cookie in the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the browser&#x27;s PHP session cookie must be identical to the one found in the nuxt session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// acion [fin-session] receives a new cookie PHP (server as nuxt client)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if the server receives it, the client must pass it on to the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// for its own exchanges with the PHP server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// this is customer routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on récupère le cookie de la session PHP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session cookie PHP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> phpSessionCookie = context.store.state.phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (phpSessionCookie) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// s&#x27;il existe, on affecte le cookie de session PHP au navigateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// if it exists, we assign the PHP session cookie to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    document.cookie = phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
