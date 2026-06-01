@@ -12,13 +12,13 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-13-checking-the-navigation-of-nuxt-12.html">
+        <link rel="canonical" href="https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-13-checking-navigation-from-nuxt-12.html">
       
       
         <link rel="prev" href="example-nuxt-12-http-requests-with-axios.html">
       
       
-        <link rel="next" href="example-nuxt-20-porting-the-vuejs-22-example.html">
+        <link rel="next" href="example-nuxt-20-porting-the-example-vuejs-22.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>16. Example [nuxt-13]: Checking the navigation of [nuxt-12] - An Introduction to the NUXT.JS Framework Through Examples</title>
+        <title>16. Example [nuxt-13]: checking navigation from [nuxt-12] - An Introduction to the NUXT.JS Framework Through Examples</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#16-example-nuxt-13-checking-the-navigation-of-nuxt-12" class="md-skip">
+        <a href="#16-example-nuxt-13-checking-navigation-from-nuxt-12" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+              16. Example [nuxt-13]: checking navigation from [nuxt-12]
             
           </span>
         </div>
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+      <a href="introduction-to-the-nuxt-frameworkjs.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. Introduction to the NUXT.JS framework
+    1. Introduction to the NUXT framework.JS
   
 
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Example [nuxt-01]: Routing and Navigation
+    4. Example [nuxt-01]: routing and navigation
   
 
     
@@ -418,7 +420,7 @@
   <span class="md-ellipsis">
     
   
-    5. Example [nuxt-02]: Server and Client Pages
+    5. Example [nuxt-02]: server and client pages
   
 
     
@@ -519,14 +521,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link">
+      <a href="example-nuxt-06-injection-within-the-context-of-a-session-manager.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Example [nuxt-06]: Injection in the context of a session manager
+    9. Example [nuxt-06]: injection within the context of a session manager
   
 
     
@@ -553,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    10. Example [nuxt-07]: Client and Server Contexts
+    10. Example [nuxt-07]: client and server contexts
   
 
     
@@ -580,7 +582,7 @@
   <span class="md-ellipsis">
     
   
-    11. Example [nuxt-08]: Routing middleware
+    11. Example [nuxt-08]: routing middleware
   
 
     
@@ -607,7 +609,7 @@
   <span class="md-ellipsis">
     
   
-    12. Example [nuxt-09]: Controlling Navigation
+    12. Example [nuxt-09]: controlling navigation
   
 
     
@@ -724,7 +726,7 @@
   <span class="md-ellipsis">
     
   
-    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+    16. Example [nuxt-13]: checking navigation from [nuxt-12]
   
 
     
@@ -735,14 +737,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link md-nav__link--active">
+      <a href="example-nuxt-13-checking-navigation-from-nuxt-12.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+    16. Example [nuxt-13]: checking navigation from [nuxt-12]
   
 
     
@@ -779,10 +781,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#162-nuxt-client-routing" class="md-nav__link">
+  <a href="#162-client-routing-nuxt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        16.2. [nuxt] client routing
+        16.2. Client routing [nuxt]
       
     </span>
   </a>
@@ -790,10 +792,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#163-server-routing-nuxt" class="md-nav__link">
+  <a href="#163-server-routing-for-nuxt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        16.3. Server Routing [Nuxt]
+        16.3. Server Routing for [nuxt]
       
     </span>
   </a>
@@ -837,14 +839,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+      <a href="example-nuxt-20-porting-the-example-vuejs-22.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    17. Example [nuxt-20]: Porting the [vuejs-22] example
+    17. Example [nuxt-20]: porting the example [vuejs-22]
   
 
     
@@ -874,37 +876,37 @@
 
 
 
-<h1 id="16-example-nuxt-13-checking-the-navigation-of-nuxt-12">16. <span style="color: #365f91">Example [nuxt-13]: Checking the navigation of [nuxt-12]</span></h1>
-<p>In this example, we are focusing on the navigation of [nuxt-12]. We did not do this in [nuxt-12] because controlling navigation would have added complexity to an already complex example.</p>
-<p><strong>Objective</strong>: we want the user to be able to perform only authorized actions:</p>
+<h1 id="16-example-nuxt-13-checking-navigation-from-nuxt-12">16. <span style="color: #365f91">Example [nuxt-13]: checking navigation from [nuxt-12]</span></h1>
+<p>In this example, we are looking at navigation from [nuxt-12]. We did not do this in [nuxt-12] because checking navigation would have added complexity to an already complex example.</p>
+<p><strong>Objective</strong>: We want to ensure that the user can only perform authorized actions:</p>
 <ul>
-  <li>if the JSON session has not started, then only the URL [/] is allowed;
+  <li>if session jSON has not started, then only URL and [/] are allowed;
   </li>
-  <li>if the JSON session has started but the user is not authenticated, then only the URL [/authentication] is allowed;
+  <li>if session jSON has started but the user is not authenticated, then only URL and [/authentification] are authorized;
   </li>
-  <li>if the JSON session has started and the user is authenticated, then only the URLs [/get-admindata, /end-session] are allowed;
+  <li>if the jSON session has started and the user is authenticated, then only URL and [/get-admindata, /fin-session] are authorized;
   </li>
-  <li>when the current routing target is not authorized, a redirect to an authorized URL will be performed;
+  <li>when the current routing target is not authorized, a redirection to an authorized URL will be performed;
   </li>
 </ul>
 
-<p>The [nuxt-13] example is initially obtained by copying the [nuxt-12] example:</p>
+<p>The example [nuxt-13] is initially obtained by copying the example [nuxt-12]:</p>
 <p><img src="images/100000000000016A000002088749E060.png" width="145" height="208" style="width:3.829cm;height:5.502cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016A000002088749E060.png" /></p>
-<p>The changes will be made in the routing folder [middleware].</p>
+<p>The changes will be made in the [middleware] routing folder.</p>
 <h2 id="161-routing-for-the-nuxt-application">16.1. <span style="color: #4f81bd">Routing for the [nuxt] application</span></h2>
-<p>The application’s routing is configured as follows in the [nuxt.config] file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<p>The application routing is configured as follows in the [nuxt.config] file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">// router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: <span style="color:#a31515">&#x27;/nuxt-13/&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-13/&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// routing middleware</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [<span style="color:#a31515">&#x27;routing&#x27;</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [&#x27;routing&#x27;]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
 <ul>
-  <li>line 6: the application&#x27;s routing is controlled by the [middleware/routing] file;
+  <li>line 6: the application&#x27;s routing is controlled by the file [middleware/routing];
   </li>
 </ul>
 
@@ -912,33 +914,33 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// on importe les middleware du serveur et du client</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> serverRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./server/routing&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> clientRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./client/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// import server and client middleware</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import serverRouting from &#x27;./server/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import clientRouting from &#x27;./client/routing&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;[middleware], process.server&#x27;</span>, process.server, <span style="color:#a31515">&#x27;, process.client=&#x27;</span>, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (process.server) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// routage serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// server routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    serverRouting(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// routage client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    clientRouting(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <ul>
-  <li>lines 10–16: client and server [nuxt] routing are handled differently. This is a major point of difference between them;
+  <li>lines 10–16: we handle client and server routing for [nuxt] differently. This is a point where they differ significantly;
   </li>
-  <li>line 4: server routing is implemented by the script [middleware/server/routing];
+  <li>Line 4: Server routing is implemented by the script [middleware/server/routing];
   </li>
-  <li>line 5: client routing is implemented by the [middleware/client/routing] script;
+  <li>Line 5: Client routing is implemented by the script [middleware/client/routing];
   </li>
 </ul>
-<h2 id="162-nuxt-client-routing">16.2. <span style="color: #4f81bd">[nuxt] client routing</span></h2>
-<p>Client-side routing [nuxt] remains the same as it was in [nuxt-12]:</p>
+<h2 id="162-client-routing-nuxt">16.2. <span style="color: #4f81bd">Client routing [nuxt]</span></h2>
+<p>Client routing [nuxt] remains the same as in [nuxt-12]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
@@ -962,8 +964,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>To prevent the client from accessing unauthorized routes, we will simply offer only the authorized routes in the client navigation menu. The [components/navigation] component becomes the following:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<p>To prevent the client from accessing unauthorized routes, we will simply offer them only the authorized routes in the navigation client menu. The [components/navigation] component becomes the following:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- bootstrap menu with three options --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav</span><span style="color:#000000"> </span>vertical<span style="color:#0000ff">&gt;</span></span></span>
@@ -986,37 +988,37 @@
 </code></pre></div>
 
 <ul>
-  <li>line 4: the [Authentication] option is only available if the JSON session has started but the user is not authenticated. If the JSON session has not started or the user is already authenticated, then the option is not available;
+  <li>Line 4: option [Authentification] is only offered if session jSON has started but the user is not authenticated. If the jSON session has not started or the user is already authenticated, then option is not offered;
   </li>
-  <li>Lines 7–11: The [AdminData Request] option is only available if the JSON session has started, the user is authenticated, and the [AdminData] has not yet been retrieved. If any of these three conditions is not met (jSON session not started, user not authenticated, or [AdminData] data already retrieved), the option is not offered;
+  <li>lines 7–11: option and [Requête AdminData] are offered only if the jSON session has started, the user is authenticated, and the [AdminData] data has not yet been retrieved. If any of these three conditions is not met (session jSON not started, user not authenticated, or the [AdminData] data already retrieved), the option is not offered;
   </li>
-  <li>line 15: the [End Tax Session] option is available as soon as the JSON session has started and the user is authenticated; otherwise, it is not available;
+  <li>Line 15: option is offered as soon as the jSON session has started and the user is authenticated; otherwise, it is not offered;
   </li>
 </ul>
-<p><a id="refheadingtoc1463512091980367"></a>
-<a id="nuxt13routagenuxtserver"></a></p>
-<h2 id="163-server-routing-nuxt">16.3. <span style="color: #4f81bd">Server Routing [Nuxt]</span></h2>
-<p>Server routing is generally more complex than client-side routing because the user can type any URL into their browser’s address bar. We can let that happen (after all, the user isn’t supposed to do that) or try to control it. That’s what we’ll do here, for the sake of this example, because in the case of the [nuxt-12] application, we can easily do without it since the tax calculation server is well-protected against these manually entered URLs and knows how to send the appropriate error messages. We saw this in [next-12], where there was no routing control.</p>
-<p>Routing on a [nuxt] server is very different from that on a [nuxt] client in terms of redirection:</p>
+<p><span id="nuxt13routagenuxtserver" name="nuxt13routagenuxtserver" class="odt-bookmark-anchor"></span>
+<span id="refheadingtoc1463512091980367" name="refheadingtoc1463512091980367" class="odt-bookmark-anchor"></span></p>
+<h2 id="163-server-routing-for-nuxt">16.3. <span style="color: #4f81bd">Server Routing for [nuxt]</span></h2>
+<p>Server routing is generally more complex than client routing because the user can type any URL into their browser’s address bar. We can let that happen (after all, the user isn’t supposed to do that) or try to control things. That is what we will do here, for the sake of this example, because in the case of the [nuxt-12] application, we can easily do without it since the tax calculation server is well protected against these manually entered URL and knows how to send the appropriate error messages. We saw this in [next-12], where there was no routing control.</p>
+<p>Routing on a [nuxt] server differs significantly from that of a [nuxt] client in terms of redirection:</p>
 <ul>
-  <li>when a [nuxt] server is redirected, it sends a redirect request to the client browser with the redirect target. The browser then makes a new request to the [nuxt] server, asking for the target that was sent to it. It’s as if the user had manually typed in the URL of the redirect target: the entire [nuxt] application restarts, and with it, its entire lifecycle (server plugins, store, server routing, pages);
+  <li>when a [nuxt] server is redirected, it sends a redirect command to the client browser with the redirect target. The browser then makes a new request to the [nuxt] server, asking for the target that was sent to it. It is as if the user had manually typed in the URL of the redirect target: the entire [nuxt] application restarts, and thus its entire lifecycle (server plugins, store, server routing, pages);
   </li>
-  <li>when a [nuxt] client is redirected, none of this happens. There is simply a page change, the same as would have occurred if the user had clicked a link leading to the redirect target. The lifecycle is then different (client-side routing, rendering the route’s target);
+  <li>when a client [nuxt] is redirected, nothing like that happens. There is a simple page change, the same as would have occurred if the user had clicked on a link leading to the redirect target. The lifecycle is then different (client routing, displaying the route target);
   </li>
 </ul>
 
-<p>For this reason, it is preferable to separate client-side routing from server-side routing, even though the two code bases may appear similar.</p>
+<p>For this reason, it is preferable to separate client routing from server routing even if the two codes may appear similar.</p>
 <p>The server routing script [middleware/server/routing] will be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware server], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware server], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on récupère quelques informations dans le store [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the store [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.store</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// d&#x27;où vient-on ?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> from = store.state.from || <span style="color:#a31515">&#x27;nowhere&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where do we come from?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  const from = store.state.from || &#x27;nowhere&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -1024,37 +1026,37 @@
 <ul>
   <li>In client-side routing, the routing function receives the context [context] with the property [context.from], which is the route of the page we came from. The route we are going to is obtained via [context.route];
   </li>
-  <li>In server-side routing, the routing function receives the context [context] <b>without </b>the [context.from] property. Server-side routing only occurs when a URL is manually requested from the [nuxt] server. We know that the entire [nuxt] application is then reset. It’s as if we were starting from scratch, so there is no concept of a “previous page”;
+  <li>in server routing, the routing function receives the context [context] <b>without </b>the property [context.from]. Server routing only occurs when a URL is manually requested from the server [nuxt]. We know that the entire [nuxt] application is then reset. It is as if we were starting from scratch, so there is no concept of a ‘previous page’;
   </li>
-  <li>thanks to the [nuxt] session, we know that the server can retrieve this session and thus avoid starting from scratch. It is therefore in this [nuxt] session, and more specifically in the session’s store, that we will store the name of the last page displayed by the client browser before a URL is requested from the [nuxt] server;
+  <li>thanks to the [nuxt] session, we know that the server can retrieve this session and thus avoid starting from scratch. It is therefore in this [nuxt] session, and more specifically in this session’s store, that we will store the name of the last page displayed by the client browser before a URL is requested from the [nuxt] server;
   </li>
-  <li>Lines 7–9: We retrieve the name of the last page displayed by the client browser. When the application starts, this information [from] does not exist in the store. We then assign the name [nowhere] to the variable [from];
+  <li>Lines 7–9: We retrieve the name of the last page displayed by the client browser. When the application starts, this information does not exist in the store. The name [nowhere] is then assigned to the variable [from];
   </li>
 </ul>
 
-<p>In order for the [nuxt] server to retrieve the name of the last page displayed by the client browser from the store, the [nuxt] client must also put this information into the store. The [nuxt] client routing script is therefore completed as follows:</p>
+<p>In order for the server [nuxt] to retrieve the name of the last page displayed by the client browser from the store, the client [nuxt] must also place this information in the store. The client routing script [nuxt] is therefore completed as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware client], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion du cookie de la session PHP dans le navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// le cookie de la session PHP du navigateur doit être identique à celui trouvé en session nuxt</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// l&#x27;acion [fin-session] reçoit un nouveau cookie PHP (serveur comme client nuxt)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// si c&#x27;est le serveur qui le reçoit, le client doit le transmettre au navigateur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// pour ses propres échanges avec le serveur PHP</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on est ici dans un routing client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware client], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// management of the PHP session cookie in the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the browser&#x27;s PHP session cookie must be identical to the one found in the nuxt session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// acion [fin-session] receives a new cookie PHP (server as nuxt client)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if the server receives it, the client must pass it on to the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// for its own exchanges with the PHP server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// this is customer routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on récupère le cookie de la session PHP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session cookie PHP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> phpSessionCookie = context.store.state.phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (phpSessionCookie) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// s&#x27;il existe, on affecte le cookie de session PHP au navigateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// if it exists, we assign the PHP session cookie to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    document.cookie = phpSessionCookie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on met dans la session le nom de la page où on va - pas de redirection serveur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we put the name of the page we&#x27;re going to in the session - no server redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">false</span>, from: context.route.name })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on sauvegarde le store dans la session [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.value.store = context.store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
@@ -1064,91 +1066,91 @@
 <ul>
   <li>Lines 19–24 are added;
   </li>
-  <li>Line 20: We store the name of the page [<span style="color: #000000">context.route.name</span>] that will be displayed in the store, which will then serve as the page we came from during the next routing step. Furthermore, we will see that in the [nuxt] server’s routing, it needs to know if the current routing stems from a previous redirection by the [nuxt] server. Here, that is not the case, so we set the [<span style="color: #000000">serverRedirection</span>] property to [false];
+  <li>line 20: we store the name of the page [context.route.name] that will be displayed and which will therefore be, during the next routing step, the page we came from. Furthermore, we will see that in the routing of server [nuxt], it needs to know whether the current routing resulted from a previous redirection from server [nuxt]. Here, that is not the case, so we set the property [serverRedirection] to [false];
   </li>
-  <li>lines 22–24: the state of the store is placed in the [nuxt] session (line 23), then the [nuxt] session is saved in a cookie (line 24), which in turn will be saved in the [nuxt] client’s browser;
+  <li>lines 22–24: the store’s state is placed in the [nuxt] session (line 23), then the [nuxt] session is saved in a cookie (line 24), which is itself saved in the client’s browser as [nuxt];
   </li>
 </ul>
 
-<p>Let’s go back to the [nuxt] server routing script:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<p>Let’s go back to the routing script on the [nuxt] server:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// qui exécute ce code ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware server], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on récupère quelques informations dans le store [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the store [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.store</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// d&#x27;où vient-on ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where do we come from?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> from = store.state.from || <span style="color:#a31515">&#x27;nowhere&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// où va-t-on ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where are we going?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> to = context.route.name</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// éventuelle redirection</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// possible redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">let</span> redirection = <span style="color:#a31515">&#x27;&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// gestion du routage terminé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// routing management completed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">let</span> done = <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// est-on déjà dans une redirection du serveur [nuxt]?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// are we already in a [nuxt] server redirect?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (store.state.serverRedirection) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// rien à faire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// nothing to do</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// est-ce un rechargement de page ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// is this a page reload?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (to === from) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// rien à faire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// nothing to do</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// contrôle de la navigation du serveur [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on s&#x27;inspire de la navigation client dans le composant [navigation]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// control of navigation server [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// based on the navigation client in component [navigation]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cas où la session PHP n&#x27;a pas démarré</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if session PHP has not started</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; !store.state.jsonSessionStarted &amp;&amp; to !== <span style="color:#a31515">&#x27;index&#x27;</span>) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    redirection = <span style="color:#a31515">&#x27;index&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// travail terminé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// work completed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cas où l&#x27;utilisateur n&#x27;est pas authentifié</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// when the user is not authenticated</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; store.state.jsonSessionStarted &amp;&amp; !store.state.userAuthenticated &amp;&amp; to !== <span style="color:#a31515">&#x27;authentification&#x27;</span>) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    redirection = from</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// travail terminé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// work completed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cas où l&#x27;utilisateur a été authentifié</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cases where the user has been authenticated</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; store.state.jsonSessionStarted &amp;&amp; store.state.userAuthenticated &amp;&amp; to !== <span style="color:#a31515">&#x27;get-admindata&#x27;</span> &amp;&amp; to !== <span style="color:#a31515">&#x27;fin-session&#x27;</span>) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on reste sur la même page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we stay on the same page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    redirection = from</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// travail terminé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// work completed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cas où [adminData] a été obtenu</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// case where [adminData] has been obtained</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; store.state.jsonSessionStarted &amp;&amp; store.state.userAuthenticated &amp;&amp; store.state.adminData &amp;&amp; to !== <span style="color:#a31515">&#x27;fin-session&#x27;</span>) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on reste sur la même page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we stay on the same page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    redirection = from</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// travail terminé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// work completed</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on a fait tous les contrôles ---------------------</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// redirection ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we&#x27;ve done all the checks ---------------------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// redirection?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (redirection) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on note la redirection dans le store</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we note the redirection in the store</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">true</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// pas de redirection</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">false</span>, from: to })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on sauvegarde le store dans la session [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.value.store = store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// on fait l&#x27;éventuelle redirection</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// any redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (redirection) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    context.redirect({ name: redirection })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1158,38 +1160,38 @@
 <ul>
   <li>lines 6–9: retrieve the value of [from] from the [nuxt] server store;
   </li>
-  <li>line 11: we note the target of the current route;
+  <li>line 11: we note the target of the current routing;
   </li>
   <li>line 13: routing may result in a redirect of the client browser. [redirection] will be the target of this redirect;
   </li>
-  <li>line 15: [done] set to [true] indicates that routing is complete;
+  <li>line 15: [done] to [true] indicates that the routing is complete;
   </li>
-  <li>lines 17–21: First, we check if the current routing resulted from a redirect request sent to the client browser. This information is stored in the [serverRedirection] property of the store. If this property is true, then the [nuxt] server sent a redirect to the client browser during the previous request to the [nuxt] server. In this case, no routing is required. During the previous request, the [nuxt] server router decided that the client browser should be redirected. This decision does not need to be overridden by a new routing;
+  <li>Lines 17–21: First, we check whether the current routing stems from a redirection request sent to the client browser. This information is stored in the [serverRedirection] property of the store. If this property is true, then the server [nuxt] sent a redirect to the client browser during the previous request to the server [nuxt]. In this case, no routing is required. During the previous request, the router on server [nuxt] decided that the client browser should be redirected. This decision does not need to be overridden by a new routing;
   </li>
-  <li>lines 23–27: we check if the current routing is a page reload. If so, we let it proceed;
+  <li>lines 23–27: we check whether the current routing is a page reload. If so, we let it proceed;
   </li>
   <li>Starting on line 29, we resume the rules applied in the [navigation] component of the [nuxt] client (see previous paragraph);
   </li>
-  <li>lines 32–38: we handle the case where the JSON session has not started and the routing target is not the [index] page. In this case, we redirect the client browser to the [index] page;
+  <li>lines 32–38: we handle the case where the jSON session has not started and the routing target is not the [index] page. In this case, the client browser is redirected to the page [index];
   </li>
-  <li>lines 40–46: we handle the case where the JSON session has started, the user is not authenticated, and the current routing target is not the [authentication] page. In this case, we reject the routing and remain where we were;
+  <li>lines 40–46: Handles the case where the jSON session has started, the user is not authenticated, and the current routing target is not the [authentification] page. In this case, routing is denied and the system remains where it was;
   </li>
-  <li>lines 48–54: Handles the case where the JSON session has started, the user is authenticated, and the current routing target is neither the [get-admindata] page nor the [end-session] page, which are then the only possible destinations. In this case, the requested routing is rejected, and we return to where we were previously;
+  <li>lines 48–54: We handle the case where session jSON has started, the user is authenticated, and the current routing target is neither page [get-admindata] nor page [fin-session], which are then the only possible destinations. In this case, the requested routing is denied, and we return to where we were previously;
   </li>
-  <li>lines 56–62: we handle the case where [adminData] has been obtained. In this case, there is only one possible routing target: the [fin-session] page. If that was not the page requested, we reject the routing and return to where we were previously;
+  <li>Lines 56–62: This handles the case where [adminData] was obtained. In this case, there is only one possible target for routing: the page [fin-session]. If this was not the page requested, routing is denied and we return to where we were previously;
   </li>
-  <li>lines 64–72: if a redirect occurred, we record it in the [nuxt] server store: [<span style="color: #000000">serverRedirection: </span><span style="color: #0000ff">true</span>]. Note that we do not assign a value to the [from] property of the store. The reason is that there will be a redirect from the client browser, and we saw that in this case, there was no routing (lines 17–20) and the [from] property of the store is not used;
+  <li>lines 64–72: if a redirect occurred, we record it in the [nuxt] server store: [serverRedirection: true]. Note that we do not assign a value to the [from] property of the store. The reason for this is that there will be a redirection from the client browser, and we have seen that in this case, there is no routing (lines 17–20) and the [from] property of the store is not used;
   </li>
-  <li>Lines 66–69: If there is no redirect, this is also noted in the [nuxt] server store: [<span style="color: #000000">serverRedirection: </span><span style="color: #0000ff">false</span>]. Additionally, the current routing will display the [to] page, which for the next request (client or [nuxt] server) will become the previous page. This is why we write [<span style="color: #000000"><mark style="background-color: #ffff00">from: to</mark></span>];
+  <li>lines 66–69: if there is no redirection, then this is also noted in the server store [nuxt]: [serverRedirection: false]. Furthermore, the current routing will display the page [to], which for the next request (client or server [nuxt]) will become the previous page. This is why we write [from: to];
   </li>
-  <li>lines 73–76: We save the store to the [nuxt] session, which is itself saved in a cookie;
+  <li>lines 73–76: we save the store in the [nuxt] session, which is itself saved in a cookie;
   </li>
-  <li>lines 77–80: if [redirection] is not empty, then we instruct the browser to redirect. Otherwise (not shown here), the [nuxt] server’s lifecycle will continue: the [to] page will be processed by the [nuxt] server and sent to the [nuxt] client’s browser along with the [nuxt] session cookie;
+  <li>lines 77–80: if [redirection] is not empty, then the browser is instructed to redirect. Otherwise (not shown here), the lifecycle of server [nuxt] will continue: the page [to] will be processed by the server [nuxt] and sent to the client’s browser [nuxt] with the session cookie [nuxt];
   </li>
 </ul>
 
 <p>The routing chosen here for the [nuxt] server is arbitrary. We could have chosen another one or, as mentioned, not used routing at all. The one chosen above has the advantage of always keeping the application in a stable state regardless of the URL requested by the user.</p>
-<p>We can improve this slightly when the page that is ultimately loaded is the original page. There are two cases:</p>
+<p>We can improve on this when the page that is ultimately loaded is the original page. There are two cases:</p>
 <ul>
   <li>the user has triggered a page reload (to===from);
   </li>
@@ -1197,8 +1199,8 @@
   </li>
 </ul>
 
-<p>In both cases, the original page will be executed again with its asynchronous call to the tax calculation server. Let’s take an example. If, once authenticated, the user reloads the page (F5). In this case, in the routing above, we have: [to]=[from]=[authentication]. There is no redirection. The [to=authentication] page will be executed by the [nuxt] server. If we do nothing, the [asyncData] function will run again. This is unnecessary since authentication has already been performed.</p>
-<p>We can improve this by slightly modifying the [authentication] page:</p>
+<p>In both cases, the original page will be executed again with its asynchronous call to the tax calculation server. Let’s take an example. If, after authenticating, the user reloads the page (F5). In this case, in the routing above, we have: [to]=[from]=[authentification]. There is no redirection. The page [to=authentification] will be executed by the server [nuxt]. If nothing is done, the function [asyncData] will run again. This is unnecessary since authentication has already been performed.</p>
+<p>We can improve this by slightly modifying the [authentification] page:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// asynchronous data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
@@ -1209,7 +1211,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData canceled]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[succès]&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // customer [nuxt]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">     // customer [nuxt]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
@@ -1222,7 +1224,7 @@
 </code></pre></div>
 
 <ul>
-  <li>lines 6-9: if the page is being served by the [nuxt] server and we find in the store that authentication has already been performed, then we return the desired result directly (line 8);
+  <li>lines 6-9: if the page is executed by server [nuxt] and we find in the store that authentication has already been performed, then we return the desired result directly (line 8);
   </li>
 </ul>
 
@@ -1264,7 +1266,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">   ...  </span></span>
 </code></pre></div>
 
-<p><strong>Page [end-session]</strong></p>
+<p><strong>Page [fin-session]</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// asynchronous data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
@@ -1287,11 +1289,11 @@
 </code></pre></div>
 
 <h2 id="164-execution">16.4. <span style="color: #4f81bd">Execution</span></h2>
-<p>To run this example, make sure to delete the [nuxt] session cookie and the PHP cookie from the browser running the [nuxt] client before execution to start with a clean slate. Below is an example using the Chrome browser:</p>
+<p>To run this example, you must first delete the session cookie [nuxt] and the cookie PHP from the browser running the client [nuxt] to start with a clean slate. Below is an example using the Chrome browser:</p>
 <p><img src="images/1000000000000380000001D2F02C8ECA.png" width="358" height="186" style="width:9.479cm;height:4.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000380000001D2F02C8ECA.png" /></p>
 <h2 id="165-conclusion">16.5. <span style="color: #4f81bd">Conclusion</span></h2>
-<p>Routing on the [nuxt] server is complex because you must anticipate every URL the user might type manually. This is a textbook example. A [nuxt] application is not intended to be used this way. Once the [index] page is served by the [nuxt] server’s router, subsequent requests made to the server could be redirected to an error page.</p>
-<p>In the specific case of our [nuxt-13] example, [nuxt] server routing was unnecessary. The default behavior (essentially no routing) in the [nuxt-12] example worked just fine.</p>
+<p>Routing for the [nuxt] server is complex because you must account for all the URL values that a user might type manually. This is a textbook example. A [nuxt] application is not intended to be used in this way. Once the [index] page is served by the [nuxt] server’s router, subsequent requests made to the server could be redirected to an error page.</p>
+<p>In the specific case of our [nuxt-13] example, the routing of the [nuxt] server was unnecessary. The default routing (actually no routing) in the [nuxt-12] example worked just fine.</p>
 
 
 

@@ -18,7 +18,7 @@
         <link rel="prev" href="example-nuxt-04-maintaining-a-clientserver-session.html">
       
       
-        <link rel="next" href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html">
+        <link rel="next" href="example-nuxt-06-injection-within-the-context-of-a-session-manager.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+      <a href="introduction-to-the-nuxt-frameworkjs.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. Introduction to the NUXT.JS framework
+    1. Introduction to the NUXT framework.JS
   
 
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Example [nuxt-01]: Routing and Navigation
+    4. Example [nuxt-01]: routing and navigation
   
 
     
@@ -418,7 +420,7 @@
   <span class="md-ellipsis">
     
   
-    5. Example [nuxt-02]: Server and Client Pages
+    5. Example [nuxt-02]: server and client pages
   
 
     
@@ -563,10 +565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#82-the-configuration-file-nuxtconfigjs" class="md-nav__link">
+  <a href="#82-the-nuxtconfigjs-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.2. The configuration file [nuxt.config.js]
+        8.2. The [nuxt.config.js] configuration file
       
     </span>
   </a>
@@ -607,10 +609,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#86-running-the-nuxt-05-example" class="md-nav__link">
+  <a href="#86-running-the-example-nuxt-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.6. Running the [nuxt-05] example
+        8.6. Running the example [nuxt-05]
       
     </span>
   </a>
@@ -632,14 +634,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link">
+      <a href="example-nuxt-06-injection-within-the-context-of-a-session-manager.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Example [nuxt-06]: Injection in the context of a session manager
+    9. Example [nuxt-06]: injection within the context of a session manager
   
 
     
@@ -666,7 +668,7 @@
   <span class="md-ellipsis">
     
   
-    10. Example [nuxt-07]: Client and Server Contexts
+    10. Example [nuxt-07]: client and server contexts
   
 
     
@@ -693,7 +695,7 @@
   <span class="md-ellipsis">
     
   
-    11. Example [nuxt-08]: Routing middleware
+    11. Example [nuxt-08]: routing middleware
   
 
     
@@ -720,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    12. Example [nuxt-09]: Controlling Navigation
+    12. Example [nuxt-09]: controlling navigation
   
 
     
@@ -821,14 +823,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link">
+      <a href="example-nuxt-13-checking-navigation-from-nuxt-12.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+    16. Example [nuxt-13]: checking navigation from [nuxt-12]
   
 
     
@@ -848,14 +850,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+      <a href="example-nuxt-20-porting-the-example-vuejs-22.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    17. Example [nuxt-20]: Porting the [vuejs-22] example
+    17. Example [nuxt-20]: porting the example [vuejs-22]
   
 
     
@@ -886,9 +888,9 @@
 
 
 <h1 id="8-example-nuxt-05-store-persistence-with-a-session-cookie">8. <span style="color: #365f91">Example [nuxt-05]: Store persistence with a session cookie</span></h1>
-<p><strong>Objective</strong>: We want the [Vuex] store not to be reset with every request to the server. To achieve this, we will use a session cookie:</p>
+<p><strong>Objective</strong>: We want the [Vuex] store not to be reset with every request to the server. To do this, we will use a session cookie:</p>
 <ul>
-  <li>the store will be initialized by the server and stored by it in a session cookie;
+  <li>the store will be initialized by the server and placed by it in a session cookie;
   </li>
   <li>the client browser will receive this session cookie and automatically send it with every new request to the server;
   </li>
@@ -898,7 +900,7 @@
 <h2 id="81-overview">8.1. <span style="color: #4f81bd">Overview</span></h2>
 <p>The [nuxt-05] project is initially created by cloning the [nuxt-04] project:</p>
 <p><img src="images/100000000000014D00000194D2B72658.png" width="133" height="162" style="width:3.53cm;height:4.283cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D00000194D2B72658.png" /></p>
-<p>We will see that only the [store/index.js] file will change.</p>
+<p>We will see that only the file [store / index.js] will change.</p>
 <p>To use cookies with [nuxt], we will use the [cookie-universal-nuxt] module, which we install with [yarn] in a VSCode terminal:</p>
 <p><img src="images/10000000000004C800000124EE164342.png" width="612" height="146" style="width:16.193cm;height:3.863cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C800000124EE164342.png" /></p>
 <ul>
@@ -919,8 +921,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
-<h2 id="82-the-configuration-file-nuxtconfigjs">8.2. <span style="color: #4f81bd">The configuration file [nuxt.config.js]</span></h2>
-<p>In order for [nuxt] to use cookies from [cookie-universal-nuxt], you must declare this module in the [nuxt.config.js] configuration file:</p>
+<h2 id="82-the-nuxtconfigjs-configuration-file">8.2. <span style="color: #4f81bd">The [nuxt.config.js] configuration file</span></h2>
+<p>In order for [nuxt] to use the cookies from [cookie-universal-nuxt], this module must be declared in the [nuxt.config.js] configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">],</span></span>
@@ -940,11 +942,11 @@
 
 <p><span style="color: #008000"> </span></p>
 <ul>
-  <li>line 12, the [cookie-universal-nuxt] module is added to the [nuxt] modules array [6];
+  <li>line 12, the module [cookie-universal-nuxt] is added to the array of modules [6] from [nuxt];
   </li>
 </ul>
 
-<p>The [nuxt.config.js] file is ultimately as follows:</p>
+<p>The final [nuxt.config.js] file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span>&#x27;universal&#x27;<span style="color:#000000">,</span></span></span>
@@ -1031,7 +1033,7 @@
 </code></pre></div>
 
 <ul>
-  <li>line 79: we added the [env] key to the file. This key is a reserved word. The elements declared in this object are available via the [context.env] object in the application’s elements;
+  <li>line 79: the key [env] has been added to the file. This key is a reserved word. The elements declared in this object are available via the [context.env] object in the application elements;
   </li>
   <li>line 80: the [maxAge] attribute will be the maximum lifetime of the session cookie, measured from the last time the cookie was initialized. This duration is expressed in seconds. Here, we have set a lifetime of 5 minutes;
   </li>
@@ -1039,22 +1041,22 @@
 <h2 id="83-the-principle-of-store-persistence">8.3. <span style="color: #4f81bd">The principle of store persistence</span></h2>
 <p>Cookies exchanged between the client and the server are available on both sides (client and server) in:</p>
 <ul>
-  <li>[context.app.$cookies] wherever the [context] object is available, i.e., almost everywhere;
+  <li>[context.app.$cookies] wherever the object [context] is available, i.e., just about everywhere;
   </li>
   <li>[this.$cookies] within a view;
   </li>
 </ul>
 
-<p>A specific cookie is retrieved using the expression [...$cookies.<strong>get</strong>(&#x27;cookie_name&#x27;)]. A cookie’s value is set using the expression [...$cookies.<strong>set</strong>(&#x27;cookie_name&#x27;, cookie_value)].</p>
-<p>The principle behind the store’s persistence cookie is as follows:</p>
+<p>We obtain a specific cookie with the expression [...$cookies.get(‘nom_du_cookie’)]. We set the value of a cookie with the expression [...$cookies.set(‘nom_du_cookie’, valeur_du_cookie)].</p>
+<p>The principle of the store persistence cookie is as follows:</p>
 <ul>
-  <li>when the server initializes the store in the [nuxtServerInit] function, the store’s state will be stored in a cookie named ‘session’;
+  <li>when the server initializes the store in the function [nuxtServerInit], the store’s state will be stored in a cookie named ‘session’;
   </li>
-  <li>the ‘session’ cookie will then be part of the server’s HTTP response. We know that a browser sends back to the server the cookies that the server sent to it. It does this with every new request it makes to the server. We also know that the server sends the store within the page it sends to the client;
+  <li>the ‘session’ cookie will then be part of the server’s response HTTP. We know that a browser sends back to the server the cookies that the server sent to it. It does this with every new request it makes to the server. We also know that the server sends the store within the page it sends to the client;
   </li>
   <li>within the browser, the client application retrieves the store sent by the server and then performs its tasks. We will ensure that every time it modifies the store, its new state is stored in the ‘session’ cookie saved by the browser;
   </li>
-  <li>If the user forces a request to the server, the client browser will automatically send back all the cookies that the server previously sent to it, including the cookie named ‘session’;
+  <li>if the user forces a call to the server, the client browser will automatically send back all the cookies that the server previously sent to it, including the cookie named ‘session’;
   </li>
   <li>when, following this request, the server resets the store again, it will retrieve the ‘session’ cookie and initialize the store’s state with its value;
   </li>
@@ -1062,7 +1064,7 @@
   </li>
 </ul>
 <h2 id="84-initializing-the-store">8.4. <span style="color: #4f81bd">Initializing the store</span></h2>
-<p>The store is implemented in the [store / index.js] file:</p>
+<p>The store is implemented in the file [store / index.js]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">const</span> state = () =&gt; ({</span></span>
@@ -1108,7 +1110,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!session) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no existing session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, initialisation d&#x27;une nouvelle session&quot;<span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initialize the blind</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on initialise le store</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 77)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  } <span style="color:#0000ff">else</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;nuxtServerInit, reprise d&#x27;une session existante&quot;<span style="color:#000000">)</span></span></span>
@@ -1126,11 +1128,11 @@
 <ul>
   <li>lines 2-5: the store will consist of a counter;
   </li>
-  <li>lines 9–11: this counter can be incremented;
+  <li>lines 9-11: this counter can be incremented;
   </li>
-  <li>lines 13-17: the store’s state can be initialized from a new state. This function is included to demonstrate a possible initialization of the store when it is not limited to just a counter, as in this example;
+  <li>lines 13-17: the store’s state can be initialized from a new state. This function is included to demonstrate a possible initialization of the store when it is not limited to just a counter, as in this case;
   </li>
-  <li>lines 21–35: the [nuxtServerInit] function has not changed;
+  <li>lines 21-35: the function [nuxtServerInit] has not changed;
   </li>
   <li>line 30: when the one-second timeout has elapsed, the store is initialized using the function in lines 38–56;
   </li>
@@ -1144,7 +1146,7 @@
       </li>
       <li>during the same execution of the application and during requests #2, #3, ... made to the server, this cookie <b>will exist </b>because the client browser will send it back with each new request made to the server;
       </li>
-      <li>During a second execution of the application and upon the first request made to the server, this cookie <b>may also exist</b>. Indeed, at the end of step 1, the cookie was stored on the browser with a specific lifetime. If this lifetime has not expired, the cookie named ‘session’ will be sent with the first request made to the server
+      <li>During a second execution of the application and during the first request made to the server, this cookie <b>may also exist</b>. Indeed, at the end of step 1, the cookie was stored on the browser with a specific lifetime. If this lifetime has not expired, the cookie named ‘session’ will be sent with the first request made to the server
       </li>
     </ol>
 </ol>
@@ -1153,11 +1155,11 @@
 <ul>
   <li>Lines 42–47: If the server does not receive the session cookie, then the store is initialized by line 46;
     <ul>
-      <li>then, on line 53, a cookie named ‘session’ will be created and placed in the server’s HTTP response. The value of the cookie is the object [<span style="color: #000000">{ store: store.state }</span>]. It is therefore the state of the store, and not the store itself, that is placed in the session cookie;
+      <li>then, in line 53, a cookie named ‘session’ will be created and placed in the server’s HTTP response. The value of the cookie is the [{ store: store.state }] object. It is therefore the state of the store, and not the store itself, that is placed in the session cookie;
       </li>
       <li>the third parameter of the [set] function is an options object:
         <ul>
-          <li>[path] specifies the URL to which this cookie should be sent. [context.base] is the base URL of the [nuxt-05] application. This is defined in the [nuxt.config.js] file:
+          <li>[path] specifies to which URL this cookie should be sent back. [context.base] is the base URL for the [nuxt-05] application. This is defined in the [nuxt.config.js] file:
           </li>
         </ul>
       </li>
@@ -1165,18 +1167,18 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-05/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-05/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
 <ol>
     <ol>
         <ul>
-          <li>[maxAge] is the cookie&#x27;s lifetime in seconds on the browser. After this time, the browser no longer sends it back to the server. [<span style="color: #000000">context.env.maxAge</span>] returns a value specified in the [nuxt.config.js] file:
+          <li>[maxAge] is the cookie&#x27;s lifetime in seconds on the browser. After this time, the browser no longer sends it back to the server. [context.env.maxAge] again returns a value stored in the file [nuxt.config.js]:
           </li>
         </ul>
     </ol>
@@ -1185,12 +1187,12 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>// environnement
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>// environment
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>  env: {
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>    maxAge: 60 * 5
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>}
 </code></pre></div></td></tr></table></div>
-<p>[env] is a reserved keyword in the configuration file. Here, we set the lifespan to 5 minutes. This duration is measured from the last time the browser received the session cookie. After this time, the cookie will not be sent back to the server, which will then need to start a new session;</p>
+<p>[env] is a reserved keyword in the configuration file. Here, the lifetime is set to 5 minutes. This duration is measured from the last time the browser received the session cookie. After this time, the cookie will not be sent back to the server, which will then need to start a new session;</p>
 <ul>
   <li>lines 48–50: if the server receives the session cookie, then the store’s state is initialized with the [store] object from the session cookie. Recall that this object contains the saved state of the store;
     <ul>
@@ -1198,7 +1200,7 @@
         <ul>
           <li>the [get] function retrieves the session cookie from the <b>request received </b>by the server;
           </li>
-          <li>the [set] function places the session cookie in the <b>response </b>the server sends to the client browser;
+          <li>the function [set] places the session cookie in the server’s <b>response </b>to the client browser;
           </li>
         </ul>
       </li>
@@ -1212,7 +1214,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;incrementCounter&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">              // counter increment of 1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">       // counter increment of 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      this.$store.commit(&#x27;increment&#x27;, 1)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">       // change display value</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      this.value = this.$store.state.counter</span></span>
@@ -1222,24 +1224,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>On the client side, every time the store is modified, it must be saved to the session cookie. This is because the user can manually request a URL at any time, and we must then be able to send an up-to-date store to the server. That is why, on line 10, after incrementing the store counter, we save its state to the session cookie:</p>
+<p>On the client side, every time the store is modified, it must be saved to the session cookie. This is because the user can manually request a URL at any time, and we must then be able to send an up-to-date store to the server. That is why, on line 10, after incrementing the store counter, we save its state in the session cookie:</p>
 <ul>
   <li>cookies are available in the [this.$cookies] property;
   </li>
-  <li>the store’s state [<span style="color: #0000ff">this</span><span style="color: #000000">.$store.state</span>] is saved in the cookie associated with the key [store];
+  <li>the state of the store [this.$store.state] is saved in the cookie associated with the key [store];
   </li>
   <li>the cookie path is [context.base]. In a view, the context is available in [this.$nuxt.context];
   </li>
-  <li>The cookie&#x27;s lifespan is [context.env.maxAge], which is available here in the property [this.$nuxt.context.env.maxAge];
+  <li>the cookie’s lifetime is [context.env.maxAge], available here in the property [this.$nuxt.context.env.maxAge];
   </li>
 </ul>
-<h2 id="86-running-the-nuxt-05-example">8.6. <span style="color: #4f81bd">Running the [nuxt-05] example</span></h2>
+<h2 id="86-running-the-example-nuxt-05">8.6. <span style="color: #4f81bd">Running the example [nuxt-05]</span></h2>
 <p>We launch the [nuxt-05] application:</p>
 <p><img src="images/10000000000004A4000000C393512E1D.png" width="594" height="98" style="width:15.722cm;height:2.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A4000000C393512E1D.png" /></p>
-<p>The following screenshots are from a Chrome browser. We request the URL [http://localhost:81/nuxt-05/]. <strong>Don’t forget</strong> the final / after /nuxt-05, otherwise you won’t get the expected results:</p>
+<p>The following screenshots are from a Chrome browser. We request the URL [http://localhost:81/nuxt-05/]. <strong>Don’t forget</strong> the trailing / after /nuxt-05, otherwise you won’t get the expected results:</p>
 <p><img src="images/10000000000007EA000002AD420D8580.png" width="608" height="205" style="width:16.08cm;height:5.436cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007EA000002AD420D8580.png" /></p>
 <ul>
-  <li>in [4], we obtained the initial value of the store (77);
+  <li>In [4], we obtained the initial value of the store (77);
   </li>
 </ul>
 
@@ -1248,24 +1250,24 @@
 <ul>
   <li>in [5-6], the server logs;
   </li>
-  <li>in [7], we see that the server is starting a new session. This means it did not receive a session cookie;
+  <li>in [7], we see that the server starts a new session. This means it did not receive a session cookie;
   </li>
   <li>in [8], initialization of the counter with the value 77;
   </li>
-  <li>in [9], the server’s [index] page (9) and the client’s [index] page (10) both display the same counter value;
+  <li>in [9], the server’s page (9) and the client’s page (10) both display the same counter value;
   </li>
 </ul>
 
 <p>Now let’s look at the cookies received by the browser:</p>
 <p><img src="images/100000000000071C0000026550FCE5E8.png" width="546" height="184" style="width:14.452cm;height:4.867cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000071C0000026550FCE5E8.png" /></p>
 <ul>
-  <li>In [1], select the [Application] tab, then the [Cookies] option [2]. From all the cookies in your browser, select the one from the [http://localhost:81] domain;
+  <li>In [1], select the [Application] tab, then option, [Cookies], and [2]. From all the cookies in your browser, select the one from the domain [http://localhost:81];
   </li>
-  <li>in [4], the cookie named ‘session’. If you don’t see it, reload the page [F5]: perhaps its 5-minute lifespan has expired;
+  <li>in [4], the cookie named ‘session’. If you don’t have it, reload the page [F5]: perhaps its 5-minute lifespan has expired;
   </li>
-  <li>in [5], the cookie’s value. Although it is not very legible due to the encoding of the characters { :, you can make out the value 77 from the counter;
+  <li>in [5], the cookie’s value. Although it is not very legible due to the encoding of the characters { :, we can make out the value 77 from the counter;
   </li>
-  <li>in [6], the cookie’s URL: every time this URL is requested, the browser will send the cookie to the server;
+  <li>in [6], the URL of the cookie: every time this URL is requested, the browser will send the cookie to the server;
   </li>
   <li>in [7], the cookie’s expiration time. Once this time has passed, the cookie will be deleted from the browser;
   </li>
@@ -1273,13 +1275,13 @@
 
 <p>Make sure you have this cookie. If you don’t have it, reload the page (F5). Once you have the page with its cookie, reload the page again (F5). The logs will then look like this:</p>
 <p><img src="images/10000000000003F5000002D011D4BFB8.png" width="304" height="216" style="width:8.042cm;height:5.715cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003F5000002D011D4BFB8.png" /></p>
-<p>This time, in [3], the server has successfully retrieved the session cookie. It was sent to it by the client browser.</p>
-<p>Now, increment the counter, then occasionally reload the current page (F5)—whether it’s [index] or [page1]—and you should notice that the counter does not reset to 77 as in the [nuxt-04] example, but retains the value it had in the client browser before the page was reloaded:</p>
+<p>This time, in [3], the server has successfully retrieved the session cookie. It was sent to the server by the client browser.</p>
+<p>Now, increment the counter, then occasionally reload the current page (F5), whether it is [index] or [page1], you should notice that the counter does not reset to 77 as in the example [nuxt-04] but retains the value it had in the client browser before the page was reloaded:</p>
 <p><img src="images/10000000000007E2000002B5201B12CF.png" width="605" height="208" style="width:16.02cm;height:5.502cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E2000002B5201B12CF.png" /></p>
 <p><img src="images/10000000000007F9000002B492061390.png" width="612" height="208" style="width:16.2cm;height:5.493cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007F9000002B492061390.png" /></p>
 <p>The browser logs are then as follows:</p>
 <p><img src="images/1000000000000530000001B45ACF1350.png" width="664" height="218" style="width:17.572cm;height:5.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000530000001B45ACF1350.png" /></p>
-<p><strong>Note</strong>: For testing purposes, you may need to delete [5] the session cookie stored in the browser to start a new session, initialized by the server, during the next request to it.</p>
+<p><strong>Note</strong>: For testing purposes, you may need to delete the session cookie [5] stored in the browser to start a new session, initialized by the server, during the next request to it.</p>
 <p>Finally, let’s demonstrate the effect of the [incrementCounter] function on the [index] page on the session cookie stored in the client browser:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// event management</span></span>
@@ -1297,7 +1299,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 10: The change to the counter is reflected in the session cookie;
+  <li>line 10: the change to the counter is reflected in the session cookie;
   </li>
 </ul>
 
@@ -1308,10 +1310,10 @@
   </li>
 </ul>
 
-<p>Now, let’s increment the counter once [5]. The session cookie in [4] changes as follows:</p>
+<p>Now, let&#x27;s increment the counter once to [5]. The session cookie in [4] changes as follows:</p>
 <p><img src="images/10000000000007EC000005DCC967A8FF.png" width="609" height="450" style="width:16.103cm;height:11.91cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007EC000005DCC967A8FF.png" /></p>
 <ul>
-  <li>in [7], the session cookie counter has indeed changed to 84. To see this, you need to refresh the view [8]. To do this, select another option from [Storage] [9], then reselect option [8]. The new value of the session cookie should then appear;
+  <li>to [7]; the session cookie counter has indeed increased to 84. To see this, you need to refresh the view [8]. To do this, select another option from the [Storage] [9], then reselect the option [8]. The new session cookie value should then appear;
   </li>
 </ul>
 

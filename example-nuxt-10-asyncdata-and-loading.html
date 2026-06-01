@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+      <a href="introduction-to-the-nuxt-frameworkjs.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. Introduction to the NUXT.JS framework
+    1. Introduction to the NUXT framework.JS
   
 
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Example [nuxt-01]: Routing and Navigation
+    4. Example [nuxt-01]: routing and navigation
   
 
     
@@ -418,7 +420,7 @@
   <span class="md-ellipsis">
     
   
-    5. Example [nuxt-02]: Server and Client Pages
+    5. Example [nuxt-02]: server and client pages
   
 
     
@@ -519,14 +521,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link">
+      <a href="example-nuxt-06-injection-within-the-context-of-a-session-manager.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Example [nuxt-06]: Injection in the context of a session manager
+    9. Example [nuxt-06]: injection within the context of a session manager
   
 
     
@@ -553,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    10. Example [nuxt-07]: Client and Server Contexts
+    10. Example [nuxt-07]: client and server contexts
   
 
     
@@ -580,7 +582,7 @@
   <span class="md-ellipsis">
     
   
-    11. Example [nuxt-08]: Routing middleware
+    11. Example [nuxt-08]: routing middleware
   
 
     
@@ -607,7 +609,7 @@
   <span class="md-ellipsis">
     
   
-    12. Example [nuxt-09]: Controlling Navigation
+    12. Example [nuxt-09]: controlling navigation
   
 
     
@@ -687,10 +689,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#131-the-page1-page" class="md-nav__link">
+  <a href="#131-the-page-page1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.1. The [page1] page
+        13.1. The page [page1]
       
     </span>
   </a>
@@ -698,10 +700,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#132-configuring-the-asyncdata-progress-bar" class="md-nav__link">
+  <a href="#132-configuration-of-the-asyncdata-progress-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.2. Configuring the [asyncData] progress bar
+        13.2. Configuration of the [asyncData] progress bar
       
     </span>
   </a>
@@ -788,14 +790,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link">
+      <a href="example-nuxt-13-checking-navigation-from-nuxt-12.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+    16. Example [nuxt-13]: checking navigation from [nuxt-12]
   
 
     
@@ -815,14 +817,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+      <a href="example-nuxt-20-porting-the-example-vuejs-22.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    17. Example [nuxt-20]: Porting the [vuejs-22] example
+    17. Example [nuxt-20]: porting the example [vuejs-22]
   
 
     
@@ -852,30 +854,30 @@
 
 
 
-<h1 id="13-example-nuxt-10-asyncdata-and-loading">13. <span style="color: #365f91">Example [nuxt-10]: asyncData and loading</span></h1>
-<p><span style="color: #000000">The [asyncData] function in a page allows for the asynchronous loading of data, which is often external. [nuxt] waits for the [asyncData] function to finish before starting the page’s lifecycle. The page is therefore only rendered once the external data has been obtained. It is executed by both the server and the client according to the following rules:</span></p>
+<h1 id="13-example-nuxt-10-asyncdata-and-loading">13. <span style="color: #365f91"><strong>Example [nuxt-10]: asyncData and loading</strong></span></h1>
+<p><span style="color: #000000">The [asyncData] function in a page allows for the asynchronous loading of data, which is often external. [nuxt] waits for the [asyncData] function to complete before starting the page lifecycle. The page is therefore rendered only once the external data has been obtained. It is executed by both the server and the client according to the following rules:</span></p>
 <ul>
   <li><span style="color: #000000">when the page is requested directly from the server, only the server executes the [asyncData] function;</span>
   </li>
-  <li><span style="color: #000000">then, during client-side navigation, only the client executes the [asyncData] function;</span>
+  <li><span style="color: #000000">then, during the client-side navigation, only the client executes the [asyncData] function;</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">Ultimately, only one of the two—client or server—executes the function. Additionally, when the client executes the [asyncData] function, [nuxt] displays a progress bar that can be configured.</span></p>
+<p><span style="color: #000000">Ultimately, only one of the two—the client or the server—executes the function. Furthermore, when the client executes the [asyncData] function, [nuxt] displays a progress bar that can be configured.</span></p>
 <p><span style="color: #000000">The [asyncData] function allows pages to be delivered to search engines along with their data, making them more meaningful.</span></p>
-<p><span style="color: #000000">The [nuxt-10] example is initially created by cloning the [nuxt-01] project:</span></p>
+<p><span style="color: #000000">The example [nuxt-10] is initially obtained by copying the [nuxt-01] project:</span></p>
 <p><img src="images/100000000000015200000172AFB124D6.png" width="135" height="148" style="width:3.581cm;height:3.919cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015200000172AFB124D6.png" /></p>
 <p><span style="color: #000000">Only the [page1] page changes.</span></p>
-<h2 id="131-the-page1-page">13.1. <span style="color: #4f81bd">The [page1] page</span></h2>
-<p><span style="color: #000000">The code for the [page1] page is as follows:</span></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- vue n° 1 --&gt;</span></span>
+<h2 id="131-the-page-page1">13.1. <span style="color: #4f81bd">The page [page1]</span></h2>
+<p><span style="color: #000000">The code for page [page1] is as follows:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- view n° 1 --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;primary&quot;&gt;</span> Page 1 -- result=<span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;primary&quot;&gt; Page 1 -- result={{ result }} &lt;/b-alert&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -883,11 +885,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-timing-in-fetch-data */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Page1&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -896,7 +898,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 asyncData started]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we make a promise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate an asynchronous function</span></span></span>
@@ -904,50 +906,50 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we make the result asynchronous - a random number here</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        resolve({ result: Math.floor(Math.random() * Math.floor(100)) })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span>&#x27;[page1 asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        console.log(&#x27;[page1 asyncData finished]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }, 5000)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeCreate]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 created]&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 created]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeMount]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 mounted]&#x27;)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">lines 26–39: the [asyncData] function. We have already covered this function (see </span><a href="../../../../../../st-2020/st-2020/cours/nuxtjs/masters/02/chap-05.docx#nuxt02_page2"><u><span style="color: #0563c1">linked</span></u></a><span style="color: #000000"> section). It is executed </span><b><span style="color: #000000">before </span></b><span style="color: #000000">the page lifecycle. For this reason, the [this] keyword cannot be used within the function;</span>
+  <li><span style="color: #000000">lines 26–39: the [asyncData] function. We have already studied this function (see </span><a href="../../../../../../st-2020/st-2020/cours/nuxtjs/masters/02/chap-05.docx#nuxt02_page2"><u><span style="color: #0563c1">linked</span></u></a><span style="color: #000000"> section). It is executed </span><b><span style="color: #000000">before </span></b><span style="color: #000000">the page lifecycle. For this reason, the [this] keyword cannot be used within the function;</span>
   </li>
-  <li><span style="color: #000000">line 30: it must return a [Promise] or use the async/await syntax;</span>
+  <li><span style="color: #000000">line 30: it must return a [Promise] promise or use the async/await syntax;</span>
   </li>
-  <li><span style="color: #000000">lines 32–37: the asynchronous function of the promise is simulated with a 5-second wait (line 37);</span>
+  <li><span style="color: #000000">lines 32–37: the asynchronous behavior of the promise is simulated with a 5-second wait (line 37);</span>
   </li>
-  <li><span style="color: #000000">line 34: the result of the asynchronous function is returned as an object {result:...}. The asynchronous object returned by the [asyncData] function </span><b><span style="color: #000000">is integrated into the page’s [data] object</span></b><span style="color: #000000">. This is why the [result] object is available on line 7 of the template even though the page had not defined a [data] object;</span>
+  <li><span style="color: #000000">line 34: the result of the asynchronous function is returned as an object {result:...}. The asynchronous object returned by the [asyncData] function </span><b><span style="color: #000000">is incorporated into the [data] object of the page</span></b><span style="color: #000000">. This is why the [result] object is available on line 7 of the template even though the page had not defined a [data] object;</span>
   </li>
 </ul>
-<h2 id="132-configuring-the-asyncdata-progress-bar">13.2. <span style="color: #4f81bd"><strong>Configuring</strong> the <strong>[asyncData]</strong> progress bar</span></h2>
-<p>When the [page1] page is the target of a navigation within the client (SPA mode), the client executes the [asyncData] function, and [nuxt] then displays a progress bar that it hides once the [asyncData] function has returned its result. The [loading] property in the [nuxt.config.js] file allows you to configure this bar:</p>
+<h2 id="132-configuration-of-the-asyncdata-progress-bar">13.2. <span style="color: #4f81bd"><strong>Configuration of</strong> the <strong>[asyncData]</strong> progress bar</span></h2>
+<p>When the page [page1] is the target of a navigation within the client (SPA mode), the client executes the [asyncData] function, and [nuxt] then displays a progress bar, which it hides once the [asyncData] function has returned its result. The [loading] property of the [nuxt.config.js] file allows you to configure this bar:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">loading: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    color: <span style="color:#a31515">&#x27;blue&#x27;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    height: <span style="color:#a31515">&#x27;5px&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    color: &#x27;blue&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    height: &#x27;5px&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    throttle: 200,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    continuous: <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
-<p>By default, the [nuxt] loading image is a progress bar that spans the width of the page. This bar has a color and a thickness. <span style="color: #000000">The colored line gradually grows from 0% to 100% of its size, at a rate that varies depending on the duration of the wait.</span></p>
+<p>By default, the loading image for [nuxt] is a progress bar that spans the width of the page. This bar has a color and a thickness. <span style="color: #000000">The colored bar gradually grows from 0% to 100% of its size, moving faster or slower depending on the duration of the wait.</span></p>
 <ul>
   <li><span style="color: #000000">line 2: sets the color of the progress bar;</span>
   </li>
@@ -955,7 +957,7 @@
   </li>
   <li><span style="color: #000000">line 4: [throttle] is the delay in milliseconds before the animation starts. This prevents an animation image from appearing when the [asyncData] function returns its result quickly;</span>
   </li>
-  <li><span style="color: #000000">line 5: [continuous] sets the behavior of the progress bar animation. By default, the bar grows gradually from 0% to 100% of its size, at a faster or slower rate depending on the wait time. With [continuous:true], the colored bar grows at a constant speed from 0 to 100% of its size, then repeats until the [asyncData] function returns its result;</span>
+  <li><span style="color: #000000">line 5: [continuous] sets the behavior of the progress bar animation. By default, the bar grows gradually from 0% to 100% of its size, at a rate that varies depending on the wait time. With [continuous:true], the colored bar grows at a constant speed from 0% to 100% of its size, then repeats until the [asyncData] function has returned its result;</span>
   </li>
 </ul>
 <h2 id="133-execution">13.3. <span style="color: #4f81bd">Execution</span></h2>
@@ -964,7 +966,7 @@
 <p><span style="color: #000000">The logs are as follows:</span></p>
 <p><img src="images/10000000000003B20000028946316A2B.png" width="284" height="195" style="width:7.511cm;height:5.152cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B20000028946316A2B.png" /></p>
 <ul>
-  <li><span style="color: #000000">we see that only server [1] executed the [asyncData] function, and it did so before the page cycle;</span>
+  <li><span style="color: #000000">we see that only the [1] server executed the [asyncData] function, and it did so before the page cycle;</span>
   </li>
 </ul>
 
@@ -1014,7 +1016,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                      <span style="color:#0000ff">&lt;/</span><span style="color:#800000">a</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;/</span><span style="color:#800000">li</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;/</span><span style="color:#800000">ul</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span>&lt;/<span style="color:#800000">div</span>&gt;<span style="color:#000000"> </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;col-10&quot;&gt;&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span>=&quot;alert&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-live</span>=&quot;polite&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-atomic</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;alert alert-primary&quot;&gt;<span style="color:#000000"> Page 1 -- result=3 </span>&lt;/<span style="color:#800000">div</span>&gt;&lt;/<span style="color:#800000">div</span>&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                &lt;/div&gt; &lt;div class=&quot;col-10&quot;&gt;&lt;div role=&quot;alert&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot; class=&quot;alert alert-primary&quot;&gt; Page 1 -- result=3 &lt;/div&gt;&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1042,18 +1044,18 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 55: We can see that the server sent the client an array [data] containing the object [result:3], which was integrated into the [data] object of the server’s [page1] page. So that the client can do the same and thus display the same page as the server, the server sends the [result] object to the client. Remember that the client will not execute the [asyncData] function. It will simply use the data calculated by the server;
+  <li>Line 55: We can see that the server sent the client an array [data] containing the object [result:3], which was embedded in the object [data] of the server’s page [page1]. So that the client can do the same and thus display the same page as the server, the server sends the client the object [result]. Note that the client will not execute the function [asyncData]. It will simply use the data calculated by the server;
   </li>
 </ul>
 
-<p>Now let’s navigate from the [Home] page to the [Page 1] page using the navigation menu:</p>
+<p>Now let’s navigate from page [Home] to page [Page 1] using the menu in navigation:</p>
 <p><img src="images/10000000000006BA000002955D12A382.png" width="517" height="198" style="width:13.67cm;height:5.248cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006BA000002955D12A382.png" /></p>
 <ul>
-  <li>At [1], the progress bar appears;
+  <li>In [1], the progress bar appears;
   </li>
 </ul>
 
-<p>After 5 seconds, we have the [Page 1] page:</p>
+<p>After 5 seconds, we arrive at page [Page 1]:</p>
 <p><img src="images/10000000000006B800000290992723AB.png" width="516" height="197" style="width:13.653cm;height:5.207cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B800000290992723AB.png" /></p>
 <p>The logs are as follows:</p>
 <p><img src="images/10000000000001CA000001995EE179B7.png" width="138" height="123" style="width:3.641cm;height:3.251cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CA000001995EE179B7.png" /></p>

@@ -29,7 +29,7 @@
     
     
       
-        <title>4. Example [nuxt-01]: Routing and Navigation - An Introduction to the NUXT.JS Framework Through Examples</title>
+        <title>4. Example [nuxt-01]: routing and navigation - An Introduction to the NUXT.JS Framework Through Examples</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. Example [nuxt-01]: Routing and Navigation
+              4. Example [nuxt-01]: routing and navigation
             
           </span>
         </div>
@@ -303,14 +305,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-nuxtjs-framework.html" class="md-nav__link">
+      <a href="introduction-to-the-nuxt-frameworkjs.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    1. Introduction to the NUXT.JS framework
+    1. Introduction to the NUXT framework.JS
   
 
     
@@ -400,7 +402,7 @@
   <span class="md-ellipsis">
     
   
-    4. Example [nuxt-01]: Routing and Navigation
+    4. Example [nuxt-01]: routing and navigation
   
 
     
@@ -418,7 +420,7 @@
   <span class="md-ellipsis">
     
   
-    4. Example [nuxt-01]: Routing and Navigation
+    4. Example [nuxt-01]: routing and navigation
   
 
     
@@ -447,7 +449,7 @@
   <a href="#41-project-directory-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1. Project Directory Structure
+        4.1. Project directory structure
       
     </span>
   </a>
@@ -510,10 +512,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#47-running-the-project" class="md-nav__link">
+  <a href="#47-project-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.7. Running the project
+        4.7. Project Execution
       
     </span>
   </a>
@@ -542,7 +544,7 @@
   <span class="md-ellipsis">
     
   
-    5. Example [nuxt-02]: Server and Client Pages
+    5. Example [nuxt-02]: server and client pages
   
 
     
@@ -643,14 +645,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-06-injection-in-the-context-of-a-session-manager.html" class="md-nav__link">
+      <a href="example-nuxt-06-injection-within-the-context-of-a-session-manager.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Example [nuxt-06]: Injection in the context of a session manager
+    9. Example [nuxt-06]: injection within the context of a session manager
   
 
     
@@ -677,7 +679,7 @@
   <span class="md-ellipsis">
     
   
-    10. Example [nuxt-07]: Client and Server Contexts
+    10. Example [nuxt-07]: client and server contexts
   
 
     
@@ -704,7 +706,7 @@
   <span class="md-ellipsis">
     
   
-    11. Example [nuxt-08]: Routing middleware
+    11. Example [nuxt-08]: routing middleware
   
 
     
@@ -731,7 +733,7 @@
   <span class="md-ellipsis">
     
   
-    12. Example [nuxt-09]: Controlling Navigation
+    12. Example [nuxt-09]: controlling navigation
   
 
     
@@ -832,14 +834,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-13-checking-the-navigation-of-nuxt-12.html" class="md-nav__link">
+      <a href="example-nuxt-13-checking-navigation-from-nuxt-12.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    16. Example [nuxt-13]: Checking the navigation of [nuxt-12]
+    16. Example [nuxt-13]: checking navigation from [nuxt-12]
   
 
     
@@ -859,14 +861,14 @@
   
   
     <li class="md-nav__item">
-      <a href="example-nuxt-20-porting-the-vuejs-22-example.html" class="md-nav__link">
+      <a href="example-nuxt-20-porting-the-example-vuejs-22.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    17. Example [nuxt-20]: Porting the [vuejs-22] example
+    17. Example [nuxt-20]: porting the example [vuejs-22]
   
 
     
@@ -896,31 +898,31 @@
 
 
 
-<h1 id="4-example-nuxt-01-routing-and-navigation">4. <span style="color: #365f91">Example [nuxt-01]: Routing and Navigation</span></h1>
-<p>We will build a series of simple examples to gradually discover how a [nuxt] application works. We will start by porting the [vuejs-11] application from the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">through</span></u></a> examples|, to first discover what differentiates the code organization of a [nuxt] application from that of a [vue] application.</p>
-<h2 id="41-project-directory-structure">4.1. <span style="color: #4f81bd">Project Directory Structure</span></h2>
-<p>The [vuejs-11] project was a project involving navigation between views:</p>
+<h1 id="4-example-nuxt-01-routing-and-navigation">4. <span style="color: #365f91">Example [nuxt-01]: routing and navigation</span></h1>
+<p>We will build a series of simple examples to gradually discover how a [nuxt] application works. We will start by porting the [vuejs-11] application from the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE</span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1"> framework</span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">by</span></u></a> Example|, to first discover what differentiates the code organization of a [nuxt] application from that of a [vue] application.</p>
+<h2 id="41-project-directory-structure">4.1. <span style="color: #4f81bd">Project directory structure</span></h2>
+<p>The [vuejs-11] project was a navigation project with views:</p>
 <p><img src="images/10000000000009DA000002ED622669F6.png" width="630" height="187" style="width:16.679cm;height:4.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009DA000002ED622669F6.png" /></p>
-<p>The source code directory structure of the [vuejs-11] project was as follows:</p>
+<p>The source code tree for the [vuejs-11] project was as follows:</p>
 <p><img src="images/10000000000002AE0000015510494F9F.png" width="343" height="171" style="width:9.081cm;height:4.514cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AE0000015510494F9F.png" /></p>
 <ul>
   <li>[main.js] was the script executed when the [vue] application started;
   </li>
   <li>[router.js] defined the routing rules;
   </li>
-  <li>[App.vue] was the application’s structuring view. It organized the layout of the different views;
+  <li>[App.vue] was the application’s structural view. It organized the layout of the various views;
   </li>
   <li>[Component1, Component2, Component3, Layout, Navigation] were the components used in the application’s various views;
   </li>
 </ul>
 
-<p>When porting the [Vue] application [1] to a [Nuxt] application [2]:</p>
+<p>When porting the application [vue] [1] to an application [nuxt] [2]:</p>
 <ul>
-  <li>scripts executed when the application starts must be declared in the [plugins] key of the [nuxt.config.js] file. Additionally, it is possible to separate scripts intended for the [nuxt] server from those intended for the [nuxt] client;
+  <li>the scripts executed at application startup must be declared in the [plugins] key of the [nuxt.config.js] file. Additionally, it is possible to separate the scripts intended for the [nuxt] server from those intended for the [nuxt] client;
   </li>
-  <li>the [App.vue] view must be placed in the [layouts] folder and renamed [default.vue];
+  <li>the [App.vue] view must be installed in the [layouts] folder and renamed to [default.vue];
   </li>
-  <li>the components [Component1, Component2, Component3], which are the routing targets, must be moved to the [pages] folder. One of them, the one serving as the home page, must be renamed [index.vue]. Here, we have renamed the files:
+  <li>the components [Component1, Component2, Component3], which are the routing targets, must be moved to the [pages] folder. One of them, the one serving as the home page, must be renamed to [index.vue]. Here, we have renamed the files:
     <ul>
       <li>[Component1] --&gt; [index]: displays the text [Home];
       </li>
@@ -940,7 +942,7 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>{ name :’page2’, ‘path’ :’/page2’}
 </code></pre></div></td></tr></table></div>
 <p>As a result, the [router.js] file used in the [vue] project becomes unnecessary in the [nuxt] project.</p>
-<p><a id="nuxt01-config"></a>The configuration file [nuxt.config.js] will be as follows:</p>
+<p><span id="nuxt01-config" name="nuxt01-config" class="odt-bookmark-anchor"></span>The configuration file [nuxt.config.js] will be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span>&#x27;universal&#x27;<span style="color:#000000">,</span></span></span>
@@ -1021,58 +1023,58 @@
 </code></pre></div>
 
 <ul>
-  <li>line 62: specify the folder containing the project&#x27;s source code [dvp];
+  <li>line 62: specify the folder containing the source code for project [dvp];
   </li>
-  <li>line 66: specify the root URL of the [dvp] application (you can enter whatever you want);
+  <li>Line 66: Specify URL as the root directory for the [dvp] application (you can enter any value you like);
   </li>
-  <li>line 43: note that the [bootstrap-vue] library is referenced in the configuration;
+  <li>Line 43: Note that the [bootstrap-vue] library is referenced in the configuration;
   </li>
 </ul>
 <h2 id="42-porting-the-mainjs-file">4.2. <span style="color: #4f81bd">Porting the [main.js] file</span></h2>
-<p>The [main.js] file for the [vuejs-11] project was as follows:</p>
+<p>The [main.js] file from the [vuejs-11] project was as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> Vue </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> App </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./App.vue&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import Vue from &#x27;view</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import App from &#x27;./App.vue&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// plugins</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span> BootstrapVue <span style="color:#0000ff">from</span> <span style="color:#a31515">&#x27;bootstrap-vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import BootstrapVue from &#x27;bootstrap-vue&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(BootstrapVue);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// bootstrap</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span>&#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> </span>&#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import &#x27;bootstrap/dist/css/bootstrap.css&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import &#x27;bootstrap-vue/dist/bootstrap-vue.css&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// routeur</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span> monRouteur <span style="color:#0000ff">from</span> <span style="color:#a31515">&#x27;./router&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// router</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import monRouteur from &#x27;./router&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// configuration</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.config.productionTip = <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// instanciation projet [App]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// instanciation project [App]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">new</span> Vue({</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&quot;app&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// vue principale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// main view</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  render: h =&gt; h(App),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// routeur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: monRouteur,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">}).$mount(<span style="color:#a31515">&#x27;#app&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}).$mount(&#x27;#app&#x27;)</span></span>
 </code></pre></div>
 
-<p>Apart from the [imports], the code does the following:</p>
+<p>Apart from [imports], the code does the following:</p>
 <ul>
-  <li>lines 5–11: uses the [bootstrap-vue] library. This is now handled by the [<span style="color: #a31515">bootstrap-vue/nuxt</span>] module on line 43 of the [nuxt.config.js] configuration file;
+  <li>lines 5–11: uses the [bootstrap-vue] library. This task is now handled by the [bootstrap-vue/nuxt] module on line 43 of the [nuxt.config.js] configuration file;
   </li>
-  <li>lines 14 and 25: use of the routing file [router.js]. This is now done automatically by the [nuxt] application based on the directory structure of the [pages] folder;
+  <li>lines 14 and 25: use of the routing file [router.js]. This task is now performed automatically by the application [nuxt] based on the directory tree of the folder [pages];
   </li>
   <li>lines 20–26: instantiation of the application’s main view. In a [nuxt] application, the [layouts/default.vue] view serves as the main view;
   </li>
 </ul>
 
-<p>The [main.js] file is no longer needed. If it had been, we would have declared it in the [plugins] key on line 30 of the [nuxt.config.js] configuration file;</p>
+<p>The file [main.js] is no longer needed. If it had been needed, it would have been declared in the key [plugins] on line 30 of the configuration file [nuxt.config.js];</p>
 <h2 id="43-the-main-view-defaultvue">4.3. <span style="color: #4f81bd">The main view [default.vue]</span></h2>
 <p><img src="images/1000000000000167000000BD626BF868.png" width="144" height="76" style="width:3.799cm;height:2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000167000000BD626BF868.png" /></p>
-<p>The main view [layouts/default.vue] is as follows:</p>
+<p>The main view [layouts / default.vue] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;container&quot;&gt;</span></span>
@@ -1100,8 +1102,8 @@
 </ul>
 <h2 id="44-the-components">4.4. <span style="color: #4f81bd">The components</span></h2>
 <p><img src="images/100000000000016E000000D5488BFE06.png" width="146" height="85" style="width:3.872cm;height:2.252cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016E000000D5488BFE06.png" /></p>
-<p>Compared to the [vuejs-11] project, the [layout, navigation] components remain unchanged:</p>
-<p>[<strong>components / layout.vue</strong>]</p>
+<p>Compared to the [vuejs-11] project, the components in [layout, navigation] remain unchanged:</p>
+<p>[components / layout.vue]</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- view layout --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
@@ -1143,8 +1145,8 @@
   </li>
 </ul>
 
-<p>[<strong>navigation.vue</strong>]</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<p>[navigation.vue]</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- bootstrap menu with three options --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav</span><span style="color:#000000"> </span>vertical<span style="color:#0000ff">&gt;</span></span></span>
@@ -1161,20 +1163,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>This component displays three navigation links:</p>
+<p>This component displays three links from navigation:</p>
 <p><img src="images/100000000000028A0000012120CA623E.png" width="325" height="145" style="width:8.601cm;height:3.824cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000028A0000012120CA623E.png" /></p>
-<p>To determine what values to assign to the [to] attributes in lines 4, 7, and 10, look at the [pages] folder [2]:</p>
+<p>To determine the values for the [to] attributes in lines 4, 7, and 10, you must refer to the [pages] and [2] files:</p>
 <ul>
-  <li>the [index] page will have the URL [/] ;
+  <li>the [index] page will have URL and [/];
   </li>
-  <li>the [page1] page will have the URL [/page1];
+  <li>the page [page1] will have URL and [/page1];
   </li>
-  <li>the [page2] page will have the URL [/page2];
+  <li>the page [page2] will have URL and [/page2];
   </li>
 </ul>
 
-<p>The [navigation] component can also be written as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<p>The component [navigation] can also be written as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- bootstrap menu with three options --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-nav</span><span style="color:#000000"> </span>vertical<span style="color:#0000ff">&gt;</span></span></span>
@@ -1194,11 +1196,11 @@
 <p>The &lt;<strong>b-nav-item</strong>&gt; tag is replaced by the &lt;<strong>nuxt-link</strong>&gt; tag, which denotes a routing link. In practice, I didn’t notice any major difference—nothing that would tip the scales in favor of one tag over the other.</p>
 <h2 id="45-the-pages">4.5. <span style="color: #4f81bd">The pages</span></h2>
 <p><img src="images/10000000000001790000010343016F8A.png" width="151" height="104" style="width:4.001cm;height:2.748cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001790000010343016F8A.png" /></p>
-<p>The [index.vue] page displays the following view:</p>
+<p>The page [index.vue] displays the following view:</p>
 <p><img src="images/10000000000006D2000002C6CB778E4C.png" width="611" height="249" style="width:16.17cm;height:6.576cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D2000002C6CB778E4C.png" /></p>
 <p>The page code is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- page principale --&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- main page --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
@@ -1215,11 +1217,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Home&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1227,20 +1229,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate(...args) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">, </span>&#x27;process.server=&#x27;<span style="color:#000000">, process.server,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> <span style="color:#000000">&#x27;process.client=&#x27;, process.client, &quot;nombre d&#x27;arguments=&quot;, args.length)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeCreate]&#x27;, &#x27;process.server=&#x27;, process.server,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;process.client=&#x27;, process.client, &quot;number of arguments=&quot;, args.length)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created(...args) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home created]&#x27;</span>, <span style="color:#a31515">&#x27;process.server=&#x27;</span>, process.server,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> <span style="color:#000000">&#x27;process.client=&#x27;, process.client, &quot;nombre d&#x27;arguments=&quot;, args.length)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home created]&#x27;, &#x27;process.server=&#x27;, process.server,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;process.client=&#x27;, process.client, &quot;number of arguments=&quot;, args.length)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount(...args) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">, </span>&#x27;process.server=&#x27;<span style="color:#000000">, process.server,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> <span style="color:#000000">&#x27;process.client=&#x27;, process.client, &quot;nombre d&#x27;arguments=&quot;, args.length)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeMount]&#x27;, &#x27;process.server=&#x27;, process.server,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;process.client=&#x27;, process.client, &quot;number of arguments=&quot;, args.length)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted(...args) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>, <span style="color:#a31515">&#x27;process.server=&#x27;</span>, process.server,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> <span style="color:#000000">&#x27;process.client=&#x27;, process.client, &quot;nombre d&#x27;arguments=&quot;, args.length)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home mounted]&#x27;, &#x27;process.server=&#x27;, process.server,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;process.client=&#x27;, process.client, &quot;number of arguments=&quot;, args.length)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1253,48 +1255,48 @@
   </li>
 </ul>
 
-<p>In the &lt;script&gt; section, we place code in the page lifecycle functions [beforeCreate, created, beforeMount, beforeMounted]. We want to know which ones are executed by the server []nuxt and which ones by the client [nuxt]. Let’s recall two things:</p>
+<p>In the &lt;script&gt; section, we add code to the lifecycle functions of the [beforeCreate, created, beforeMount, beforeMounted] page. We want to know which ones are executed by the []nuxt server and which ones by the [nuxt] client. Let’s recall two things:</p>
 <ul>
-  <li>when a page is requested—either at application startup (as with the [index] page) or manually by the user refreshing the browser page or typing a URL by hand—it is first delivered by the [nuxt] server. The server interprets the code above and executes the JavaScript it contains;
+  <li>when a page is requested either at application startup, as is the case with the [index] page, or manually by the user who refreshes the browser page or types a URL URL by hand, it is first served by the [nuxt] server. The server interprets the code above and executes the Javascript it contains;
   </li>
-  <li>when the page sent by the [nuxt] server arrives in the browser, it arrives with the [nuxt] client-side code. The client-side code then re-executes the code above;
+  <li>when the page sent by the [nuxt] server arrives at the browser, it arrives with the client code [nuxt]. This code interprets the page above once again;
   </li>
   <li>We use logs to track who is doing what in order to better understand this process;
   </li>
-  <li>Lines 30–31: We use a global object [process] in the function that exists on both the server and the client:
+  <li>Lines 30–31: The function uses a global object [process] that exists on both the server and the client:
     <ul>
       <li>[process.server] is true if the code is executed by the server, false otherwise;
       </li>
       <li>[process.client] is true if the code is executed by the client, false otherwise;
       </li>
-      <li>Because the [process] variable is undeclared in the code, we are required to include line 14 for [eslint]. Line 16 is necessary because otherwise [eslint] reports a different type of error due to the [process] variable. Line 15 is necessary to allow the use of [console] in lifecycle functions;
+      <li>Because the variable [process] is undeclared in the code, we are required to include line 14 for [eslint]. Line [16] is necessary because otherwise [eslint] declares a different type of error due to the variable [process]. Line 15 is necessary to allow the use of [console] in lifecycle functions;
       </li>
     </ul>
   </li>
-  <li>line 29: we also want to know if the lifecycle functions receive arguments. We will indeed discover that [nuxt] passes information to certain functions. We want to know if the lifecycle functions are among them;
+  <li>Line 29: We also want to know if the lifecycle functions receive arguments. We will indeed find that [nuxt] passes information to certain functions. We want to know if the lifecycle functions are among them;
   </li>
   <li>We repeat the same code for all four functions;
   </li>
 </ul>
 <h2 id="46-the-nuxtconfigjs-file">4.6. <span style="color: #4f81bd">The [nuxt.config.js] file</span></h2>
 <p>This file controls the execution of the [dvp] project. It was described on page<a href="#nuxt01-config"><u><span style="color: #0563c1"> 33</span></u></a>.</p>
-<h2 id="47-running-the-project">4.7. <span style="color: #4f81bd">Running the project</span></h2>
+<h2 id="47-project-execution">4.7. <span style="color: #4f81bd">Project Execution</span></h2>
 <p>We run the project:</p>
 <p><img src="images/1000000000000307000000E286F6CC26.png" width="310" height="90" style="width:8.2cm;height:2.392cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000307000000E286F6CC26.png" /></p>
 <p>The page displayed is as follows:</p>
 <p><img src="images/10000000000006D2000002CC1F192FC4.png" width="611" height="251" style="width:16.17cm;height:6.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D2000002CC1F192FC4.png" /></p>
-<p>Once loaded in the browser, the [nuxt] application becomes a standard [vue] application. We will therefore not discuss the client-side behavior of the [nuxt-01] application. This was covered in the [vuejs-11] project in the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">Framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">Through</span></u></a> Examples|.</p>
+<p>Once installed in the browser, the [nuxt] application becomes a standard [vue] application. We will therefore not discuss the client-side behavior of the [nuxt-01] application. This was covered in the [vuejs-11] project in the document <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">Framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">by</span></u></a> Example|.</p>
 <p>The [nuxt] application differs from the [vue] application in only two respects:</p>
 <ul>
-  <li>the initial startup of the application, which renders the home page;
+  <li>the initial launch of the application, which displays the home page;
   </li>
   <li>whenever the user triggers a browser refresh in any way;
   </li>
 </ul>
 
-<p>In both of these cases:</p>
+<p>In both cases:</p>
 <ul>
-  <li>the requested page is served by the server;
+  <li>the requested page is provided by the server;
   </li>
   <li>the received page is processed by the client;
   </li>
@@ -1303,7 +1305,7 @@
 <p>Let’s look at the application startup logs (F12 in the browser):</p>
 <p><img src="images/1000000000000472000001C59AF58089.png" width="569" height="226" style="width:15.05cm;height:5.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000472000001C59AF58089.png" /></p>
 <ul>
-  <li>in [1], the server logs (process.server=true). They appear preceded by the label [Nuxt SSR] (SSR = Server Side Rendered);
+  <li>in [1], the server logs (process.server=true). They appear preceded by the entry [Nuxt SSR] (SSR= Server Side Rendered);
   </li>
   <li>in [2], the client logs in the browser (process.client=true);
   </li>
@@ -1321,7 +1323,7 @@
   </li>
 </ul>
 
-<p>Now let’s look at the source code of the received page (the [Page Source] option in the browser):</p>
+<p>Now let’s look at the source code of the received page (option [Code source de la page] in the browser):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>!doctype<span style="color:#000000"> </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#000000"> </span>data-n-head-ssr<span style="color:#0000ff">&gt;</span></span></span>
@@ -1400,17 +1402,17 @@
 
 <p><strong>Comments</strong></p>
 <ul>
-  <li>The first thing you might notice is that the <b>received</b> HTML code accurately reflects what the user sees. This was not the case with [Vue] applications, where the displayed source code was the source code of a nearly empty HTML file. That was what the browser had received. Then the [Vue] client took over and built the page the user expected. You then had to go to the [Inspector] tab in the browser’s developer tools (F12) to view the HTML code of the displayed page;
+  <li>The first thing that can be noted is that the <b>received</b> HTML code correctly reflects what the user sees. This was not the case with the [vue] applications, for which the displayed source code was the source code of a nearly empty HTML file. That was what the browser had received. Then the [vue] client took over and built the page the user expected. You then had to go to the [inspecteur] tab in the browser’s developer tools (F12) to view the HTML code of the displayed page;
   </li>
-  <li>lines 57–67: this is the script that displayed the logs tagged [Nuxt SSR]. These logs were generated on the server side, and the results were embedded in a script included in the sent page;
+  <li>lines 57–67: this is the script that displayed the logs tagged [Nuxt SSR]. These logs were generated on the server side, and the results were embedded in a script included in the page sent;
   </li>
   <li>lines 68–71: the scripts that form the client-side code executed in the browser;
   </li>
 </ul>
 
-<p>The scripts in lines 68–71 are executed and transform the received page. To see the page that is ultimately displayed to the user, go to the [Inspector] tab in the browser’s developer tools (F12):</p>
+<p>The scripts in lines 68–71 are executed and transform the received page. To see the page ultimately displayed to the user, go to the [inspecteur] tab in the browser’s developer tools (F12):</p>
 <p><img src="images/100000000000048E000001476F00465E.png" width="583" height="164" style="width:15.431cm;height:4.329cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048E000001476F00465E.png" /></p>
-<p>When you expand the &lt;html&gt; tag [3], you see the following content:</p>
+<p>When you expand the &lt;html&gt; tag, you see the following content:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>head<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Introduction à [nuxt.js]<span style="color:#0000ff">&lt;/</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1498,15 +1500,15 @@
 <ul>
   <li>At first glance, the page displayed in lines 19–59 appears to be the same as the received page;
   </li>
-  <li>Lines 14–16: Three new scripts appear, one for each of the application’s pages;
+  <li>Lines 14–16: Three new scripts appear, one for each page of the application;
   </li>
-  <li>Lines 76–79: Four [iframe] elements appear;
+  <li>Lines 76–79: Four [iframe] appear;
   </li>
 </ul>
 
-<p>Lines 33, 37, and 42: the links are problematic. They appear to be normal links that, when clicked, will send a request to the server. However, upon execution, we see that this is not the case: no request is sent to the server. To understand why, we need to return to the browser’s [Inspector] tab:</p>
+<p>Lines 33, 37, and 42: the links are problematic. They appear to be normal links that, when clicked, will send a request to the server. However, upon execution, we see that this is not true: no request is sent to the server. To understand why, go back to the [inspecteur] tab in the browser:</p>
 <p><img src="images/10000000000004C7000001C856944240.png" width="489" height="182" style="width:12.942cm;height:4.824cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C7000001C856944240.png" /></p>
-<p>We see that in [1, 2] events have been attached to the links. It is the scripts on lines 71–74 that attached event handlers to the links. Therefore:</p>
+<p>We see that in [1, 2], events have been attached to the links. It is the scripts on lines 71–74 that attached event handlers to the links. Therefore:</p>
 <ul>
   <li>the page displayed by the client is visually identical to the one sent by the server;
   </li>
@@ -1514,9 +1516,9 @@
   </li>
 </ul>
 
-<p>Now let’s request the [page1] page by typing the URL manually [http://192.168.1.128:81/nuxt-01/page1]. The logs become as follows:</p>
+<p>Now let’s request the page [page1] by manually typing URL. The logs become as follows:</p>
 <p><img src="images/100000000000048B0000016161B446A2.png" width="582" height="177" style="width:15.392cm;height:4.673cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048B0000016161B446A2.png" /></p>
-<p>We get the same results as for the [index] page, but for [page1]. The source code of the received page is as follows:</p>
+<p>We get the same results as for the page [index] but for [page1]. The source code of the received page is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>body<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#000000"> </span>data-server-rendered<span style="color:#0000ff">=&quot;true&quot;</span><span style="color:#000000"> </span>id<span style="color:#0000ff">=&quot;__nuxt&quot;&gt;</span></span></span>
@@ -1565,7 +1567,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>body<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>We get the same type of page as the [index] page but with the [Page 1] view alert (line 30). Lines 41–44: the client-side code has been sent along with the page. Ultimately, manually requesting a URL is <strong>the same</strong> as restarting the application. The only difference is that the page displayed isn’t necessarily the home page; it’s the one that was requested. Once the page is received, the client takes over. The server will no longer be contacted unless the user decides otherwise.</p>
+<p>We get the same type of page as the [index] page but with the alert from the [Page 1] view (line 30). Lines 41–44: the client code was sent back with the page. Ultimately, manually requesting a URL is <strong>identical</strong> to restarting the application. The only difference is that the page displayed is not necessarily the home page; it is the one that was requested. Once the page is received, the client takes over. The server will no longer be contacted unless the user decides otherwise.</p>
 
 
 
