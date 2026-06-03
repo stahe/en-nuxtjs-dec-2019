@@ -871,7 +871,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message on yellow background --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;warning&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &lt;h4&gt;La page demandée n&#x27;does not exist&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>La page demandée n&#x27;existe pas<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation menu in the left-hand column --&gt;</span></span></span>
@@ -884,8 +884,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;</span><span style="color:#a31515">404</span><span style="color:#a31515">&#x27;</span>,</span></span>
@@ -897,19 +897,19 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[404 beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[404 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[404 created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[404 created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[404 beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[404 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[404 mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[404 mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1001,7 +1001,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Customize the progress-bar color</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  loading: { color: <span style="color:#a31515">&#x27;#fff&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  loading: { color: &#x27;#fff&#x27; },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Global CSS</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>

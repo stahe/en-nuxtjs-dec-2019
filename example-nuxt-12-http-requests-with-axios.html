@@ -1280,7 +1280,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// axios configuration</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    timeout: 2000,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    withCredentials: <span style="color:#0000ff">true</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    baseURL: </span>&#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    baseURL: &#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session cookie configuration [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    maxAge: 60 * 5</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1439,7 +1439,7 @@
 <p><img src="images/100000000000012F000000DF11652A9A.png" width="121" height="89" style="width:3.21cm;height:2.364cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012F000000DF11652A9A.png" /></p>
 <p>The [node.js] [1] server will use the [dao] layer described in the document<span id="hlk43129255" name="hlk43129255" class="odt-bookmark-anchor"></span> <a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">|Introduction to the </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">VUE.JS </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">framework </span></u></a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><u><span style="color: #0563c1">through</span></u></a> examples|. Here is the code again:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&#x27;use strict&#x27;;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;use strict&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> qs </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;qs&#x27;</span></span></span>
@@ -1470,7 +1470,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span>  authentifierUtilisateur(user, password) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authentifier-utilisateur]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;POST&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
@@ -1697,7 +1697,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// end of tax calculation session</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> finSession() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=end-session]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=fin-session]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&#x27;GET&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
@@ -1807,7 +1807,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous request</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      response = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.axios.request(<span style="color:#a31515">&#x27;main.php&#x27;</span>, options)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (error) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// parameter [error] is an exception instance - it can take various forms</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [error] parameter is an exception instance - it can take various forms</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (error.response) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the server response is in [error.response]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        response = error.response</span></span>
@@ -1822,7 +1822,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> cookies = response.headers[<span style="color:#a31515">&#x27;set-cookie&#x27;</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (cookies) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// cookies is a picture</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// look for the PHP session cookie in this array</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// look for session cookie PHP in this array</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">let</span> trouvé = <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">let</span> i = 0</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">while</span> (!trouvé &amp;&amp; i &lt; cookies.length) {</span></span>
@@ -1831,7 +1831,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (results) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we store the PHP session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">const</span> phpSessionCookie = results[1]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// is the word [deleted] in it?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// does it contain the word [deleted]?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">const</span> results2 = RegExp(<span style="color:#0000ff">this</span>.phpSessionCookieName + <span style="color:#a31515">&#x27;=deleted&#x27;</span>).exec(phpSessionCookie)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">if</span> (!results2) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// we have the right session cookie PHP</span></span></span>
@@ -1915,7 +1915,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> authentifierUtilisateur(user, password) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authenticate-user]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [post /main.php?action=authentifier-utilisateur]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&quot;POST&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      headers: {</span></span>
@@ -1981,7 +1981,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// end of tax calculation session</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> finSession() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=end-session]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// query options HHTP [get /main.php?action=fin-session]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">const</span> options = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      method: <span style="color:#a31515">&#x27;GET&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// URL parameters</span></span></span>
@@ -2013,7 +2013,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// asynchronous request</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      response = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.axios.request(<span style="color:#a31515">&#x27;main.php&#x27;</span>, options)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (error) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// parameter [error] is an exception instance - it can take various forms</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [error] parameter is an exception instance - it can take various forms</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (error.response) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the server response is in [error.response]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        response = error.response</span></span>
@@ -2037,7 +2037,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (results) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// we store the PHP session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">const</span> phpSessionCookie = results[1]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// is the word [deleted] in it?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// does it contain the word [deleted]?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">const</span> results2 = RegExp(<span style="color:#0000ff">this</span>.phpSessionCookieName + <span style="color:#a31515">&#x27;=deleted&#x27;</span>).exec(phpSessionCookie)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">if</span> (!results2) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// we have the right session cookie PHP</span></span></span>
@@ -2140,14 +2140,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// session import</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import session from &#x27;@/entities/session&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> session </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/entities/session&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server session management</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[plugin server plgSession]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[plugin server plgSession]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// is there an existing session?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  const value = context.app.$cookies.get(&#x27;nuxt-session&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> value = context.app.$cookies.get(<span style="color:#a31515">&#x27;nuxt-session&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!value) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// new session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;[plugin server plgSession], démarrage d&#x27;une nouvelle session&quot;<span style="color:#000000">)</span></span></span>
@@ -2158,7 +2158,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we inject a function into [context, Vue] that will render the current session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;session&#x27;, () =&gt; session)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -2180,16 +2180,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// session import</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import session from &#x27;@/entities/session&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> session </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/entities/session&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// customer session management</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[client plugin plgSession], resume [nuxt] server session&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[plugin client plgSession], reprise de la session [nuxt] du serveur&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the existing session from the nuxt server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  session.value = context.app.$cookies.get(&#x27;nuxt-session&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  session.value = context.app.$cookies.get(<span style="color:#a31515">&#x27;nuxt-session&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we inject a function into [context, Vue] that will render the current session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;session&#x27;, () =&gt; session)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;session&#x27;</span>, () =&gt; session)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -2207,19 +2207,19 @@
 <p>The script [client/plgDao] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to layer [Dao]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Dao from &#x27;@/api/client/Dao&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to the [Dao] layer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/api/client/Dao&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// axios configuration</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.$axios.defaults.timeout = context.env.timeout</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.$axios.defaults.baseURL = context.env.baseURL</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.$axios.defaults.withCredentials = context.env.withCredentials</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of layer [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of the [dao] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> dao = <span style="color:#0000ff">new</span> Dao(context.$axios)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [$dao] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;dao&#x27;, () =&gt; dao)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;dao&#x27;</span>, () =&gt; dao)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[customer function $dao created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[fonction client $dao créée]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -2260,8 +2260,8 @@
 <p>The script [server/plgDao] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to layer [Dao]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Dao from &#x27;@/api/server/Dao&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to the [Dao] layer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/api/server/Dao&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// axios configuration</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.$axios.defaults.timeout = context.env.timeout</span></span>
@@ -2269,13 +2269,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.app.$session().value.store</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> phpSessionCookie = store ? store.phpSessionCookie : <span style="color:#a31515">&#x27;&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;session=&#x27;, context.app.$session().value, &#x27;phpSessionCookie=&#x27;, phpSessionCookie)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of layer [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;session=&#x27;</span>, context.app.$session().value, <span style="color:#a31515">&#x27;phpSessionCookie=&#x27;</span>, phpSessionCookie)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of the [dao] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> dao = <span style="color:#0000ff">new</span> Dao(context.$axios, phpSessionCookie)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [$dao] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;dao&#x27;, () =&gt; dao)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;dao&#x27;</span>, () =&gt; dao)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[server function $dao created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[fonction server $dao créée]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -2426,14 +2426,14 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// create an event bus between views</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Vue from &#x27;view</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> Vue </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the event bus</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> eventBus = <span style="color:#0000ff">new</span> Vue()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [$eventBus] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;eventBus&#x27;, () =&gt; eventBus)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;eventBus&#x27;</span>, () =&gt; eventBus)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[function $eventBus created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[fonction $eventBus créée]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -2467,7 +2467,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// paramètres</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// settings</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  props: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    left: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      type: Boolean</span></span>
@@ -2508,18 +2508,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;container&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>b-card<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- un message --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- a message --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;success&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>[nuxt-12] : requêtes HTTP avec axios<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- la vue courante du routage --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- the current routing view --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">nuxt</span> <span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message d’attente --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- waiting message --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span>=&quot;showLoading&quot;<span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;light&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span>Requête au serveur de données en cours...<span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;spinner-border ml-auto&quot;<span style="color:#000000"> </span><span style="color:#ff0000">role</span>=&quot;status&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-hidden</span>=&quot;true&quot;&gt;&lt;/<span style="color:#800000">div</span>&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- erreur d’une opération asynchrone --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- asynchronous operation error --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">v-if</span>=&quot;showErrorLoading&quot;<span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;danger&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span>La requête au serveur de données a échoué : <span style="font-weight:bold">{{</span> <span style="color:#800080">errorLoadingMessage</span> <span style="font-weight:bold">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">strong</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
@@ -2544,7 +2544,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[default created]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// listen to the evt [loading]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we listen to evt [loading]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$on(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">this</span>.mShowLoading)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// and the [errorLoadingMessage] event</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$on(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">this</span>.mShowErrorLoading)</span></span>
@@ -2612,7 +2612,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message on pink background --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;danger&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &lt;h4&gt;L&#x27;following error occurred: {{ JSON.stringify(error) }}&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>L&#x27;erreur suivante s&#x27;est produite : <span style="font-weight:bold">{{</span> <span style="color:#800080">JSON.stringify(error)</span> <span style="font-weight:bold">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation menu in the left-hand column --&gt;</span></span></span>
@@ -2625,34 +2625,34 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Error&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Error&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// property [props]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; &#x27;waiting ...&#x27; } },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; <span style="color:#a31515">&#x27;waiting ...&#x27;</span> } },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error created, error=]&#x27;, this.error)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error created, error=]&#x27;</span>, <span style="color:#0000ff">this</span>.error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -2669,18 +2669,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;warning&quot;&gt;Initialisation de la session avec le serveur de calcul de l&#x27;tax: {{ result }} &lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span>Initialisation de la session avec le serveur de calcul de l&#x27;impôt : <span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;InitSession&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span>&#x27;InitSession&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -2689,57 +2689,57 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start a jSON session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> dao = context.app.$dao()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> dao.initSession()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData response=]&#x27;, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;[index asyncData response=]&#x27;</span>, response)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// retrieve session cookie PHP for future requests</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> phpSessionCookie = dao.getPhpSessionCookie()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we store the PHP session cookie in the [nuxt] session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { phpSessionCookie })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the session cookie PHP is stored in session [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { phpSessionCookie })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// was there a mistake?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (response.état !== 700) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the error is in response.réponse</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> <span style="color:#0000ff">new</span> Error(response.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that the jSON session has started</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { jsonSessionStarted: true })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { jsonSessionStarted: <span style="color:#0000ff">true</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we return the result</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[success]&#x27; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[succès]&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData error=]&#x27;, e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index asyncData error=]&#x27;<span style="color:#000000">, e)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that session jSON has not started</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { jsonSessionStarted: false })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { jsonSessionStarted: <span style="color:#0000ff">false</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[failure]&#x27;, showErrorLoading: true, errorLoadingMessage: e.message }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the blind</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[index created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[index mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -2826,18 +2826,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;warning&quot;&gt;Authentification auprès du serveur de calcul de l&#x27;tax: {{ result }} &lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span>Authentification auprès du serveur de calcul de l&#x27;impôt : <span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Authentication&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span>&#x27;Authentification&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -2846,24 +2846,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting for customer [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// authenticate to the server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> dao = context.app.$dao()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      const response = await dao.authentifierUtilisateur(&#x27;admin&#x27;, &#x27;admin&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> dao.authentifierUtilisateur(<span style="color:#a31515">&#x27;admin&#x27;</span>, <span style="color:#a31515">&#x27;admin&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication asyncData response=]&#x27;, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData response=]&#x27;<span style="color:#000000">, response)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> userAuthenticated = response.état === 200</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note whether the user is authenticated or not</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { userAuthenticated })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { userAuthenticated })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// authentication error?</span></span></span>
@@ -2872,35 +2872,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> <span style="color:#0000ff">new</span> Error(response.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we return the result</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[success]&#x27; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[succès]&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[failure]&#x27;, showErrorLoading: true, errorLoadingMessage: e.message }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (process.client) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end customer waiting [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end customer wait [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification created]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification mounted]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -2963,18 +2963,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;warning&quot;&gt;Authentification auprès du serveur de calcul de l&#x27;tax: {{ result }} &lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span>Authentification auprès du serveur de calcul de l&#x27;impôt : <span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Authentication&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span>&#x27;Authentification&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -2983,24 +2983,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting for customer [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// authenticate to the server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> dao = context.app.$dao()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      const response = await dao.authentifierUtilisateur(&#x27;admin&#x27;, &#x27;admin&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> dao.authentifierUtilisateur(<span style="color:#a31515">&#x27;admin&#x27;</span>, <span style="color:#a31515">&#x27;admin&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication asyncData response=]&#x27;, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData response=]&#x27;<span style="color:#000000">, response)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> userAuthenticated = response.état === 200</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note whether the user is authenticated or not</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { userAuthenticated })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { userAuthenticated })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// authentication error?</span></span></span>
@@ -3009,35 +3009,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> <span style="color:#0000ff">new</span> Error(response.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we return the result</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[success]&#x27; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[succès]&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[failure]&#x27;, showErrorLoading: true, errorLoadingMessage: e.message }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (process.client) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end customer waiting [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end customer wait [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification created]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[authentication mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[authentification mounted]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[authentication mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[authentification mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -3084,18 +3084,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;secondary&quot;&gt; Demande de [adminData] au serveur de calcul de l&#x27;tax: {{ result }} &lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;secondary&quot;&gt;</span> Demande de [adminData] au serveur de calcul de l&#x27;impôt : <span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;GetAdmindata&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span>&#x27;GetAdmindata&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -3104,23 +3104,23 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[get-admindata asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[get-admindata asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the data [admindata] is requested</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> context.app.$dao().getAdminData()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[get-admindata asyncData response=]&#x27;, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[get-admindata asyncData response=]&#x27;<span style="color:#000000">, response)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> adminData = response.état === 1000 ? response.réponse : <span style="color:#a31515">&#x27;&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// put the data in the store</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { adminData })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { adminData })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// was there a mistake?</span></span></span>
@@ -3132,32 +3132,32 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: adminData }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[failure]&#x27;, showErrorLoading: true, errorLoadingMessage: e.message }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[get-admindata asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[get-admindata asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[get-admindata beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[get-admindata beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[get-admindata created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[get-admindata created]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[get-admindata beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[get-admindata beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[get-admindata mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[get-admindata mounted]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[get-admindata mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[get-admindata mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -3177,18 +3177,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">Navigation</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;left&quot;<span style="color:#000000"> </span>/&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message--&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    &lt;b-alert slot=&quot;right&quot; show variant=&quot;warning&quot;&gt;Fin de la session avec le serveur de calcul de l&#x27;tax: {{ result }} &lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">slot</span><span style="color:#0000ff">=&quot;right&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;warning&quot;&gt;</span>Fin de la session avec le serveur de calcul de l&#x27;impôt : <span style="font-weight:bold">{{</span> <span style="color:#800080">result</span> <span style="font-weight:bold">}}</span> <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>Layout<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;FinSession&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  name: </span>&#x27;FinSession&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -3197,20 +3197,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[fin-session asyncData started]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer case [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[fin-session asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// case of customer [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// a new session PHP is requested from the tax calculation server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> dao = context.app.$dao()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> dao.finSession()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      // log</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[fin-session asyncData response=]&#x27;, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[fin-session asyncData response=]&#x27;<span style="color:#000000">, response)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// was there a mistake?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (response.état !== 400) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the error is in response.réponse</span></span></span>
@@ -3218,48 +3218,48 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the server has sent a new session cookie PHP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we retrieve it for both the server and the nuxt client</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by the [nuxt] client, the PHP session cookie must be set in the nuxt session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by client [nuxt], session cookie PHP must be set in nuxt session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that the [plgDao] plugin on the [nuxt] server can retrieve it and initialize the [dao] layer with</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by the [nuxt] server, the PHP session cookie must be set in the nuxt session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that the client routing [nuxt] can retrieve it and pass it to the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that client routing [nuxt] can retrieve it and pass it to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> phpSessionCookie = dao.getPhpSessionCookie()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note in the store that the jSON session has been started and we store the PHP session cookie</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { jsonSessionStarted: true, phpSessionCookie, userAuthenticated: false, adminData: &#x27;&#x27; })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note in the store that the session jSON has been started and we store the session cookie PHP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { jsonSessionStarted: <span style="color:#0000ff">true</span>, phpSessionCookie, userAuthenticated: <span style="color:#0000ff">false</span>, adminData: <span style="color:#a31515">&#x27;&#x27;</span> })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we return the result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> { result: </span>&quot;[succès]. La session jSON reste initialisée mais vous n&#x27;êtes plus authentifié(e).&quot;<span style="color:#000000"> }</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      // log</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[fin-session asyncData error=]&#x27;, e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[fin-session asyncData error=]&#x27;<span style="color:#000000">, e)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      return { result: &#x27;[failure]&#x27;, showErrorLoading: true, errorLoadingMessage: e.message }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      // log</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[fin-session asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[fin-session asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[end-session beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[fin-session beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[fin-session created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[fin-session created]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[end-session beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[fin-session beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[fin-session mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[fin-session mounted]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[fin-session mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[fin-session mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -3300,8 +3300,8 @@
 <p>The fact that the PHP cookie is in the [nuxt] session is sufficient for the server, because that is where its [dao] layer will retrieve it. In the [server/plgDao] plugin that initializes the server’s [dao] layer, we wrote:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to layer [Dao]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Dao from &#x27;@/api/server/Dao&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to the [Dao] layer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Dao </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/api/server/Dao&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// axios configuration</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.$axios.defaults.timeout = context.env.timeout</span></span>
@@ -3309,13 +3309,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// retrieve the session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.app.$session().value.store</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> phpSessionCookie = store ? store.phpSessionCookie : <span style="color:#a31515">&#x27;&#x27;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;session=&#x27;, context.app.$session().value, &#x27;phpSessionCookie=&#x27;, phpSessionCookie)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of layer [dao]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;session=&#x27;</span>, context.app.$session().value, <span style="color:#a31515">&#x27;phpSessionCookie=&#x27;</span>, phpSessionCookie)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of the [dao] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> dao = <span style="color:#0000ff">new</span> Dao(context.$axios, phpSessionCookie)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [$dao] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;dao&#x27;, () =&gt; dao)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;dao&#x27;</span>, () =&gt; dao)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[server function $dao created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[fonction server $dao créée]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -3334,9 +3334,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">// router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-12/&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    base: <span style="color:#a31515">&#x27;/nuxt-12/&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// routing middleware</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [&#x27;routing&#x27;]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [<span style="color:#a31515">&#x27;routing&#x27;</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
@@ -3345,11 +3345,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// import client middleware</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import clientRouting from &#x27;./client/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> clientRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./client/routing&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;[middleware], process.server&#x27;</span>, process.server, <span style="color:#a31515">&#x27;, process.client=&#x27;</span>, process.client)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    clientRouting(context)</span></span>
@@ -3417,14 +3417,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the server has sent a new session cookie PHP</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we retrieve it for both the server and the nuxt client</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by the [nuxt] client, the PHP session cookie must be set in the nuxt session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by client [nuxt], session cookie PHP must be set in nuxt session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that the [plgDao] plugin on the [nuxt] server can retrieve it and initialize the [dao] layer with</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// if this code is executed by the [nuxt] server, the PHP session cookie must be set in the nuxt session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that the client routing [nuxt] can retrieve it and pass it to the browser</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// so that client routing [nuxt] can retrieve it and pass it to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> phpSessionCookie = dao.getPhpSessionCookie()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note in the store that the session jSON has been started and we store the session cookie PHP</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we note in the store that the jSON session has been started and we store the PHP session cookie</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { jsonSessionStarted: <span style="color:#0000ff">true</span>, phpSessionCookie, userAuthenticated: <span style="color:#0000ff">false</span>, adminData: <span style="color:#a31515">&#x27;&#x27;</span> })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we return the result</span></span></span>

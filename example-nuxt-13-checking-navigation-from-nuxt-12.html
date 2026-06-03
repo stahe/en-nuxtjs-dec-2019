@@ -899,9 +899,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">// router</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-13/&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    base: <span style="color:#a31515">&#x27;/nuxt-13/&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// routing middleware</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [&#x27;routing&#x27;]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    middleware: [<span style="color:#a31515">&#x27;routing&#x27;</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
 </code></pre></div>
 
@@ -915,12 +915,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// import server and client middleware</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import serverRouting from &#x27;./server/routing&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import clientRouting from &#x27;./client/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> serverRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./server/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> clientRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./client/routing&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;[middleware], process.server&#x27;</span>, process.server, <span style="color:#a31515">&#x27;, process.client=&#x27;</span>, process.client)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (process.server) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// server routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    serverRouting(context)</span></span>
@@ -1013,12 +1013,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware server], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware server], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the store [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the [nuxt] store</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.store</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where do we come from?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  const from = store.state.from || &#x27;nowhere&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> from = store.state.from || <span style="color:#a31515">&#x27;nowhere&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -1039,7 +1039,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware client], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware client], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// management of the PHP session cookie in the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the browser&#x27;s PHP session cookie must be identical to the one found in the nuxt session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// acion [fin-session] receives a new cookie PHP (server as nuxt client)</span></span></span>
@@ -1056,7 +1056,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we put the name of the page we&#x27;re going to in the session - no server redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">false</span>, from: context.route.name })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.value.store = context.store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
@@ -1079,7 +1079,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware server], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the store [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we retrieve some information from the [nuxt] store</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> store = context.store</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where do we come from?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> from = store.state.from || <span style="color:#a31515">&#x27;nowhere&#x27;</span></span></span>
@@ -1103,7 +1103,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// control of navigation server [nuxt]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// based on the navigation client in component [navigation]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// based on navigation client in [navigation] component</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if session PHP has not started</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; !store.state.jsonSessionStarted &amp;&amp; to !== <span style="color:#a31515">&#x27;index&#x27;</span>) {</span></span>
@@ -1121,7 +1121,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    done = <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cases where the user has been authenticated</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// where the user has been authenticated</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (!done &amp;&amp; store.state.jsonSessionStarted &amp;&amp; store.state.userAuthenticated &amp;&amp; to !== <span style="color:#a31515">&#x27;get-admindata&#x27;</span> &amp;&amp; to !== <span style="color:#a31515">&#x27;fin-session&#x27;</span>) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we stay on the same page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    redirection = from</span></span>
@@ -1146,7 +1146,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">false</span>, from: to })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.value.store = store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
@@ -1277,7 +1277,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[fin-session asyncData canceled]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">return</span><span style="color:#000000"> { result: </span>&quot;[succès]. La session jSON reste initialisée mais vous n&#x27;êtes plus authentifié(e).&quot;<span style="color:#000000"> }</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer case [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// case of customer [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.client) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>

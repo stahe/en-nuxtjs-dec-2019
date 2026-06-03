@@ -1099,7 +1099,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// axios configuration</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    timeout: 2000,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    withCredentials: <span style="color:#0000ff">true</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    baseURL: </span>&#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    baseURL: &#x27;http://localhost/php7/scripts-web/impots/version-14&#x27;,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// session cookie configuration [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    maxAge: 60 * 5</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1168,7 +1168,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> Layout </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;./Layout&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    FormCalculImpot,</span></span>
@@ -1178,35 +1178,34 @@
 </code></pre></div>
 
 <p>The three [import] in lines 26–28 become:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">//</span> <span class="n">imports</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">FormCalculImpot</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;@/components/form-calcul-impot&#39;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">Menu</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;@/components/menu&#39;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">Layout</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;@/components/layout&#39;</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> FormCalculImpot </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/form-calcul-impot&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Menu </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/menu&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+</code></pre></div>
+
 <p>Check and, if necessary, correct the [import] files for all components, layouts, and pages. Once these corrections are made, you can try running a new [build]. Normally, there should be no more errors.</p>
 <p>You can then attempt to run the script:</p>
 <p><img src="images/1000000000000304000000E348146A0B.png" width="386" height="113" style="width:10.209cm;height:3.002cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000304000000E348146A0B.png" /></p>
 <p>Errors appear:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Module</span> <span class="n">Error</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="o">/</span><span class="n">node_modules</span><span class="o">/</span><span class="n">eslint</span><span class="o">-</span><span class="n">loader</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">cjs</span><span class="o">.</span><span class="n">js</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">c</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">nuxtjs</span>\<span class="n">dvp</span>\<span class="n">nuxt</span><span class="o">-</span><span class="mi">20</span>\<span class="n">pages</span>\<span class="n">index</span><span class="o">.</span><span class="n">vue</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>   <span class="mi">92</span><span class="p">:</span><span class="mi">29</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  <span class="mi">129</span><span class="p">:</span><span class="mi">27</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="mi">150</span><span class="p">:</span><span class="mi">28</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">Module</span> <span class="n">Error</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="o">/</span><span class="n">node_modules</span><span class="o">/</span><span class="n">eslint</span><span class="o">-</span><span class="n">loader</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">cjs</span><span class="o">.</span><span class="n">js</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">c</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">nuxtjs</span>\<span class="n">dvp</span>\<span class="n">nuxt</span><span class="o">-</span><span class="mi">20</span>\<span class="n">pages</span>\<span class="n">index</span><span class="o">.</span><span class="n">vue</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>   <span class="mi">92</span><span class="p">:</span><span class="mi">29</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>  <span class="mi">129</span><span class="p">:</span><span class="mi">27</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="mi">150</span><span class="p">:</span><span class="mi">28</span>  <span class="n">error</span>  <span class="n">Expected</span> <span class="s1">&#39;!==&#39;</span> <span class="ow">and</span> <span class="n">instead</span> <span class="n">saw</span> <span class="s1">&#39;!=&#39;</span>  <span class="n">eqeqeq</span>
 </code></pre></div></td></tr></table></div>
 <p>We can see that the command [dev] combined with the module [eslint] is more strict, syntactically speaking, than the command [build]. Here, it requires that the comparison operator [!=] be written as [!==], which is a stricter operator (it also checks the type of the operands). These errors occur on page [index.vue].</p>
 <p>We correct the above errors and rerun the project. We then get a warning from the [eslint] module:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">c</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">nuxtjs</span>\<span class="n">dvp</span>\<span class="n">nuxt</span><span class="o">-</span><span class="mi">20</span>\<span class="n">components</span>\<span class="n">menu</span><span class="o">.</span><span class="n">vue</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="mi">14</span><span class="p">:</span><span class="mi">5</span>  <span class="n">warning</span>  <span class="n">Prop</span> <span class="s1">&#39;options&#39;</span> <span class="n">requires</span> <span class="n">default</span> <span class="n">value</span> <span class="n">to</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">vue</span><span class="o">/</span><span class="n">require</span><span class="o">-</span><span class="n">default</span><span class="o">-</span><span class="n">prop</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">c</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">nuxtjs</span>\<span class="n">dvp</span>\<span class="n">nuxt</span><span class="o">-</span><span class="mi">20</span>\<span class="n">components</span>\<span class="n">menu</span><span class="o">.</span><span class="n">vue</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="mi">14</span><span class="p">:</span><span class="mi">5</span>  <span class="n">warning</span>  <span class="n">Prop</span> <span class="s1">&#39;options&#39;</span> <span class="n">requires</span> <span class="n">default</span> <span class="n">value</span> <span class="n">to</span> <span class="n">be</span> <span class="nb">set</span>  <span class="n">vue</span><span class="o">/</span><span class="n">require</span><span class="o">-</span><span class="n">default</span><span class="o">-</span><span class="n">prop</span>
 </code></pre></div></td></tr></table></div>
 <p><img src="images/10000000000004670000010924A6CF66.png" width="564" height="133" style="width:14.91cm;height:3.507cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004670000010924A6CF66.png" /></p>
 <p>We fix this error using [Quick fix] from the [eslint] [2] module.</p>
@@ -1245,7 +1244,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">Layout</span><span style="color:#000000"> </span><span style="color:#ff0000">:left</span>=&quot;false&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:right</span>=&quot;true&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- form HTML - post its values with the [authenticate-user] action --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- form HTML - post values with [authentifier-utilisateur] action --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form</span><span style="color:#000000"> </span>@submit.prevent<span style="color:#0000ff">=&quot;login&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- title --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;</span></span>
@@ -1266,7 +1265,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/</span>b-form-group<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- 3rd line --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &lt;b-alert v-if=&quot;showError&quot; show variant=&quot;danger&quot; class=&quot;mt-3&quot;&gt;L&#x27;the following error has occurred: {{ message }}&lt;/b-alert&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-alert</span> <span style="color:#ff0000">v-if</span><span style="color:#0000ff">=&quot;showError&quot;</span> <span style="color:#ff0000">show</span> <span style="color:#ff0000">variant</span><span style="color:#0000ff">=&quot;danger&quot;</span> <span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;mt-3&quot;&gt;</span>L&#x27;erreur suivante s&#x27;est produite : <span style="font-weight:bold">{{</span> <span style="color:#800080">message</span> <span style="font-weight:bold">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">&lt;!-- button type [submit] on a 3rd line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-row</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span> <span style="color:#ff0000">cols</span><span style="color:#0000ff">=&quot;2&quot;&gt;</span></span></span>
@@ -1281,7 +1280,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- view dynamics --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -1315,23 +1314,23 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// can the user run simulations?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.$store.state.started &amp;&amp; <span style="color:#0000ff">this</span>.$store.state.authenticated &amp;&amp; <span style="color:#0000ff">this</span>.$métier.taxAdminData) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// then the user can run simulations</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$router.push({ name: &#x27;calculImpot&#x27; })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$router.push({ name: <span style="color:#a31515">&#x27;calculImpot&#x27;</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// return to event loop</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// if the jSON session has already been started, it is not restarted again</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (!<span style="color:#0000ff">this</span>.$store.state.started) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on initialise la session avec le serveur - requête asynchrone</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we use the promise rendered by methods in the [dao] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we use the promise rendered by [dao] layer methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$dao()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on initialise une session jSON</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        .initSession()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we got the answer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        .then((response) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          this.$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// response analysis</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">if</span> (response.état !== 700) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// error is displayed</span></span></span>
@@ -1341,13 +1340,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// the session has started</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          this.$store.commit(&#x27;replace&#x27;, { started: true })</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          console.log(&#x27;[authentication], session=&#x27;, this.$session())</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { started: <span style="color:#0000ff">true</span> })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          console.log(<span style="color:#a31515">&#x27;[authentification], session=&#x27;</span>, <span style="color:#0000ff">this</span>.$session())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// in case of error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        .catch((error) =&gt; {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// the error is traced back to the [Main] view</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          this.$emit(&#x27;error&#x27;, error)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// trace the error to view [Main]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;error&#x27;</span>, error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// in all cases</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        .finally(() =&gt; {</span></span>
@@ -1363,13 +1362,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">async</span> login() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// you are not yet authenticated</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$store.commit(&#x27;replace&#x27;, { authenticated: false })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { authenticated: <span style="color:#0000ff">false</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// blocking server authentication</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.$dao().authentifierUtilisateur(<span style="color:#0000ff">this</span>.user, <span style="color:#0000ff">this</span>.password)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end of loading</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// server response analysis</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (response.état !== 200) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// error is displayed</span></span></span>
@@ -1381,16 +1380,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// no error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.showError = <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// you are authenticated</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$store.commit(&#x27;replace&#x27;, { authenticated: true })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { authenticated: <span style="color:#0000ff">true</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// --------- we now request data from the tax authorities</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// initially, no data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$métier.setTaxAdminData(<span style="color:#0000ff">null</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// blocking request to the server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">const</span> response2 = <span style="color:#0000ff">await</span> <span style="color:#0000ff">this</span>.$dao().getAdminData()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end of loading</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// response analysis</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (response2.état !== 1000) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#000000">// error is displayed</span></span></span>
@@ -1401,16 +1400,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// no error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.showError = <span style="color:#0000ff">false</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$métier.setTaxAdminData(response2.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we can move on to tax calculation</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$router.push({ name: &#x27;calculImpot&#x27; })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$router.push({ name: <span style="color:#a31515">&#x27;calculImpot&#x27;</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      } <span style="color:#0000ff">catch</span> (error) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the error is traced back to the main component</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$emit(&#x27;error&#x27;, error)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;error&#x27;</span>, error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      } <span style="color:#0000ff">finally</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// maj store</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        this.$store.commit(&#x27;replace&#x27;, { job: this.$métier })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { métier: <span style="color:#0000ff">this</span>.$métier })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// save the session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$session().save()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
@@ -1500,7 +1499,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// no error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.showError = <span style="color:#0000ff">false</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$métier.setTaxAdminData(response2.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we can move on to tax calculation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$router.push({ name: <span style="color:#a31515">&#x27;calculImpot&#x27;</span> })</span></span>
@@ -1530,15 +1529,15 @@
 <p>Once the [Métier] class is present in the project, create a new plugin for the [nuxt] client. This plugin, named [pluginMétier], will inject a function [$métier] that will provide access to the class [Métier]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to the [business] layer</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Métier from &#x27;@/api/client/Business&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// create an access point to the [métier] layer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Métier </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/api/client/Métier&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// instantiation of the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> métier = <span style="color:#0000ff">new</span> Métier()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [$métier] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;profession&#x27;, () =&gt; profession)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;métier&#x27;</span>, () =&gt; métier)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[customer function $métier created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[fonction client $métier créée]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -1603,7 +1602,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// no error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.showError = <span style="color:#0000ff">false</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the received data is stored in the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$métier().setTaxAdminData(response2.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we can move on to tax calculation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.$router.push({ name: <span style="color:#a31515">&#x27;calcul-impot&#x27;</span> })</span></span>
@@ -1667,16 +1666,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// composants utilisés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    FormCalculImpot,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Menu</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// état interne</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// inner state</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  data() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// options du menu</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// menu options</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      options: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          text: </span>&#x27;Liste des simulations&#x27;<span style="color:#000000">,</span></span></span>
@@ -1687,33 +1686,33 @@
 <span class="odt-code-line"><span class="odt-code-line-content">          path: <span style="color:#a31515">&#x27;/fin-session&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      ],</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// résultat du calcul de l&#x27;impôt</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// tax calculation result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      résultat: <span style="color:#a31515">&#x27;&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      résultatObtenu: <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cycle de vie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// eslint-disable-next-line</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&quot;CalculImpot created&quot;<span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// méthodes de gestion des évts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management methods</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// résultat du calcul de l&#x27;impôt</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// tax calculation result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    handleResultatObtenu(résultat) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on construit le résultat en chaîne HTML</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we build the result string HTML</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> impôt = <span style="color:#a31515">&quot;Montant de l&#x27;impôt : &quot;</span> + résultat.impôt + <span style="color:#a31515">&#x27; euro(s)&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> décôte = <span style="color:#a31515">&#x27;Décôte : &#x27;</span> + résultat.décôte + <span style="color:#a31515">&#x27; euro(s)&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> réduction = <span style="color:#a31515">&#x27;Réduction : &#x27;</span> + résultat.réduction + <span style="color:#a31515">&#x27; euro(s)&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> surcôte = <span style="color:#a31515">&#x27;Surcôte : &#x27;</span> + résultat.surcôte + <span style="color:#a31515">&#x27; euro(s)&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> taux = <span style="color:#a31515">&quot;Taux d&#x27;imposition : &quot;</span> + résultat.taux</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.résultat = impôt + <span style="color:#a31515">&#x27;&lt;br/&gt;&#x27;</span> + décôte + <span style="color:#a31515">&#x27;&lt;br/&gt;&#x27;</span> + réduction + <span style="color:#a31515">&#x27;&lt;br/&gt;&#x27;</span> + surcôte + <span style="color:#a31515">&#x27;&lt;br/&gt;&#x27;</span> + taux</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// affichage du résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// result display</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.résultatObtenu = <span style="color:#0000ff">true</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// ---- maj du store [Vuex]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// une simulation de +</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// ---- blind maj [Vuex]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// a + simulation</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;addSimulation&#x27;</span>, résultat)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on sauvegarde la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$session.save()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -1812,7 +1811,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  simulations: [],</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// last simulation number</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  idSimulation: 0,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// layer [profession]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// layer [métier]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  métier: <span style="color:#0000ff">null</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1832,7 +1831,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  deleteSimulation(state, index) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// eslint-disable-next-line no-console</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;mutation deleteSimulation&#x27;<span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// delete line no. [index]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// delete line n° [index]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    state.simulations.splice(index, 1)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;store simulations&#x27;</span>, state.simulations)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
@@ -1868,11 +1867,11 @@
 
 <p>The page [calcul-impot] uses the following component [form-calcul-impot]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- définition HTML de la vue --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- definition HTML of the view --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>template<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- formulaire HTML --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- form HTML --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>&lt;<span style="color:#800000">b-form</span><span style="color:#000000"> </span><span style="color:#ff0000">@submit.prevent</span>=&quot;calculerImpot&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;mb-3&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- message sur 12 colonnes sur fond bleu --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- 12-column message on blue background --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>b-row<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span> <span style="color:#ff0000">sm</span><span style="color:#0000ff">=&quot;12&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;</span></span>
@@ -1880,28 +1879,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-alert</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>b-row<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- éléments du formulaire --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- première ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- form elements --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- first line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">b-form-group</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span>=&quot;Etes-vous marié(e) ou pacsé(e) ?&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- boutons radio sur 5 colonnes--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- 5-column radio buttons--&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-col</span> <span style="color:#ff0000">sm</span><span style="color:#0000ff">=&quot;5&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span>b-form-radio<span style="color:#000000"> </span><span style="color:#ff0000">v-model</span><span style="color:#0000ff">=&quot;marié&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=&quot;oui&quot;&gt;</span><span style="color:#000000">Oui</span><span style="color:#0000ff">&lt;/</span>b-form-radio<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span>b-form-radio<span style="color:#000000"> </span><span style="color:#ff0000">v-model</span><span style="color:#0000ff">=&quot;marié&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=&quot;non&quot;&gt;</span><span style="color:#000000">Non</span><span style="color:#0000ff">&lt;/</span>b-form-radio<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-col</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>b-form-group<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- deuxième ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- second line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">b-form-group</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span>=&quot;Nombre d&#x27;enfants à charge&quot;<span style="color:#000000"> </span><span style="color:#ff0000">label-for</span>=&quot;enfants&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-form-input</span><span style="color:#000000"> </span><span style="color:#ff0000">id</span>=&quot;enfants&quot;<span style="color:#000000"> </span><span style="color:#ff0000">v-model</span>=&quot;enfants&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:state</span>=&quot;enfantsValide&quot;<span style="color:#000000"> </span><span style="color:#ff0000">type</span>=&quot;text&quot;<span style="color:#000000"> </span><span style="color:#ff0000">placeholder</span>=&quot;Indiquez votre nombre d&#x27;enfants&quot;&gt;&lt;/<span style="color:#800000">b-form-input</span>&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message d&#x27;erreur éventuel --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- possible error message --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-invalid-feedback</span> <span style="color:#ff0000">:state</span><span style="color:#0000ff">=&quot;enfantsValide&quot;&gt;</span>Vous devez saisir un nombre positif ou nul<span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-form-invalid-feedback</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>b-form-group<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- troisème ligne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- third line --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">b-form-group</span><span style="color:#000000"> </span><span style="color:#ff0000">label</span>=&quot;Salaire annuel net imposable&quot;<span style="color:#000000"> </span><span style="color:#ff0000">label-for</span>=&quot;salaire&quot;<span style="color:#000000"> </span><span style="color:#ff0000">description</span>=&quot;Arrondissez à l&#x27;euro inférieur&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-form-input</span><span style="color:#000000"> </span><span style="color:#ff0000">id</span>=&quot;salaire&quot;<span style="color:#000000"> </span><span style="color:#ff0000">v-model</span>=&quot;salaire&quot;<span style="color:#000000"> </span><span style="color:#ff0000">:state</span>=&quot;salaireValide&quot;<span style="color:#000000"> </span><span style="color:#ff0000">type</span>=&quot;text&quot;<span style="color:#000000"> </span><span style="color:#ff0000">placeholder</span>=&quot;Salaire annuel&quot;&gt;&lt;/<span style="color:#800000">b-form-input</span>&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message d&#x27;erreur éventuel --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- possible error message --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">b-form-invalid-feedback</span> <span style="color:#ff0000">:state</span><span style="color:#0000ff">=&quot;salaireValide&quot;&gt;</span>Vous devez saisir un nombre positif ou nul<span style="color:#0000ff">&lt;/</span><span style="color:#800000">b-form-invalid-feedback</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>b-form-group<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- quatrième ligne, bouton [submit] --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- fourth line, [submit] button --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">b-col</span><span style="color:#000000"> </span><span style="color:#ff0000">sm</span>=&quot;3&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-button</span><span style="color:#000000"> </span><span style="color:#ff0000">:disabled</span>=&quot;formInvalide&quot;<span style="color:#000000"> </span><span style="color:#ff0000">type</span>=&quot;submit&quot;<span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;primary&quot;&gt;<span style="color:#000000">Valider</span>&lt;/<span style="color:#800000">b-button</span>&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>b-col<span style="color:#0000ff">&gt;</span></span></span>
@@ -1955,7 +1954,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event manager</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    calculerImpot() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// tax is calculated using the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// tax is calculated using the [métier] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> résultat = <span style="color:#0000ff">this</span>.$métier.calculerImpot(<span style="color:#0000ff">this</span>.marié, Number(<span style="color:#0000ff">this</span>.enfants), Number(<span style="color:#0000ff">this</span>.salaire))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// eslint-disable-next-line</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&quot;résultat=&quot;</span>, résultat);</span></span>
@@ -1963,7 +1962,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      résultat.marié = <span style="color:#0000ff">this</span>.marié</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      résultat.enfants = <span style="color:#0000ff">this</span>.enfants</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      résultat.salaire = <span style="color:#0000ff">this</span>.salaire</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the [resultatObtenu] event is issued</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we issue the event [resultatObtenu]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;resultatObtenu&#x27;</span>, résultat)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -2027,8 +2026,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Menu from &#x27;@/components/menu&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Menu </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/menu&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -2042,24 +2041,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      options: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          text: </span>&quot;Calcul de l&#x27;impôt&quot;<span style="color:#000000">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          path: &#x27;/calcul-impot&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          path: <span style="color:#a31515">&#x27;/calcul-impot&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          text: &#x27;End of session&#x27;,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          path: &#x27;/end-session&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          text: <span style="color:#a31515">&#x27;Fin de session&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          path: <span style="color:#a31515">&#x27;/fin-session&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      ],</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// table parameters HTML</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      fields: [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;#&#x27;, key: &#x27;id&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Married&#x27;, key: &#x27;married&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &quot;Nombre d&#x27;enfants&quot;, key: &#x27;children&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Salary&#x27;, key: &#x27;salary&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Impôt&#x27;, key: &#x27;impôt&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Décôte&#x27;, key: &#x27;décôte&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Reduction&#x27;, key: &#x27;reduction&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;Surcôte&#x27;, key: &#x27;surcôte&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        { label: &#x27;&#x27;, key: &#x27;action&#x27; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Marié&#x27;</span>, key: <span style="color:#a31515">&#x27;marié&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&quot;Nombre d&#x27;enfants&quot;</span>, key: <span style="color:#a31515">&#x27;enfants&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Salaire&#x27;</span>, key: <span style="color:#a31515">&#x27;salaire&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Impôt&#x27;</span>, key: <span style="color:#a31515">&#x27;impôt&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Décôte&#x27;</span>, key: <span style="color:#a31515">&#x27;décôte&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Réduction&#x27;</span>, key: <span style="color:#a31515">&#x27;réduction&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;Surcôte&#x27;</span>, key: <span style="color:#a31515">&#x27;surcôte&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        { label: <span style="color:#a31515">&#x27;&#x27;</span>, key: <span style="color:#a31515">&#x27;action&#x27;</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      ]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
@@ -2080,8 +2079,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    supprimerSimulation(index) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// eslint-disable-next-line</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&quot;supprimerSimulation&quot;</span>, index);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// delete simulation no. [index]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$store.commit(&#x27;deleteSimulation&#x27;, index)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// delete simulation n° [index]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;deleteSimulation&#x27;</span>, index)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// save the session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$session.save()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
@@ -2119,28 +2118,20 @@
 <p>So the routing worked.</p>
 <h2 id="177-step-6">17.7. <span style="color: #4f81bd">Step 6</span></h2>
 <p>We still need to handle option from navigation [Fin de session] in the menu of navigation:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">//</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">menu</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">      </span><span class="n">options</span><span class="p">:</span><span class="w"> </span><span class="err">[</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="err">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">          </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="c1">&#39;List of simulations&#39;,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">          </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="c1">&#39;/list-of-simulations</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="err">},</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="err">{</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">          </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="c1">&#39;End of session&#39;,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">          </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="c1">&#39;/end-session&#39;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="err">}</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="err">]</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span class="odt-code-line-content">// menu options</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      options: [</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          text: </span>&#x27;Liste des simulations&#x27;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          path: </span>&#x27;/liste-des-simulations&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          text: <span style="color:#a31515">&#x27;Fin de session&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          path: <span style="color:#a31515">&#x27;/fin-session&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">]</span></span>
+</code></pre></div>
+
 <ul>
   <li>line 9, the page [/fin-session] does not exist. The project [vuejs-22] handled this case with routing rules in a file named [router.js]:
   </li>
@@ -2148,15 +2139,15 @@
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Vue from &#x27;view</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import VueRouter from &#x27;vue-router</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> Vue </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span> VueRouter <span style="color:#0000ff">from</span> <span style="color:#a31515">&#x27;vue-router&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// the views</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Authentification from &#x27;./views/Authentification&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import CalculImpot from &#x27;./views/CalculImpot&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import ListeSimulations from &#x27;./views/ListeSimulations&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import NotFound from &#x27;./views/NotFound&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Authentification </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./views/Authentification&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> CalculImpot </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./views/CalculImpot&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> ListeSimulations </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./views/ListeSimulations&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> NotFound </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./views/NotFound&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// the session</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import session from &#x27;./session&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> session </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./session&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// routing plugin</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Vue.use(VueRouter)</span></span>
@@ -2164,25 +2155,25 @@
 <span class="odt-code-line"><span class="odt-code-line-content">// application routes</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span> routes = [</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// authentication</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  { path: &#x27;/&#x27;, name: &#x27;authentication&#x27;, component: Authentication },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  { path: &#x27;/authentification&#x27;, name: &#x27;authentification2&#x27;, component: Authentication },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  { path: <span style="color:#a31515">&#x27;/&#x27;</span>, name: <span style="color:#a31515">&#x27;authentification&#x27;</span>, component: Authentification },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  { path: <span style="color:#a31515">&#x27;/authentification&#x27;</span>, name: <span style="color:#a31515">&#x27;authentification2&#x27;</span>, component: Authentification },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// tAX CALCULATION</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    path: &#x27;/calcul-impot&#x27;, name: &#x27;calculImpot&#x27;, component: CalculImpot,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    path: <span style="color:#a31515">&#x27;/calcul-impot&#x27;</span>, name: <span style="color:#a31515">&#x27;calculImpot&#x27;</span>, component: CalculImpot,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    meta: { authenticated: <span style="color:#0000ff">true</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// list of simulations</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    path: &#x27;/liste-des-simulations&#x27;, name: &#x27;listeSimulations&#x27;, component: ListeSimulations,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    path: <span style="color:#a31515">&#x27;/liste-des-simulations&#x27;</span>, name: <span style="color:#a31515">&#x27;listeSimulations&#x27;</span>, component: ListeSimulations,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    meta: { authenticated: <span style="color:#0000ff">true</span> }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// end of session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    path: &#x27;/end-session&#x27;, name: &#x27;finSession&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    path: </span>&#x27;/fin-session&#x27;<span style="color:#000000">, name: </span>&#x27;finSession&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// unknown page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    path: &#x27;*&#x27;, name: &#x27;notFound&#x27;, component: NotFound,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    path: <span style="color:#a31515">&#x27;*&#x27;</span>, name: <span style="color:#a31515">&#x27;notFound&#x27;</span>, component: NotFound,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2191,9 +2182,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the roads</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  routes,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the URL display mode</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  mode: &#x27;history&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  mode: <span style="color:#a31515">&#x27;history&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the application&#x27;s basic URL</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  base: &#x27;/client-vuejs-tax/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  base: </span>&#x27;/client-vuejs-impot/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// route verification</span></span>
@@ -2204,7 +2195,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (to.meta.authenticated &amp;&amp; !session.authenticated) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    next({</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// move on to authentication</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      name: &#x27;authentication&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      name: </span>&#x27;authentification&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// return to event loop</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>return<span style="color:#000000">;</span></span></span>
@@ -2213,9 +2204,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (to.name === <span style="color:#a31515">&quot;finSession&quot;</span>) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// clean the session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    session.clear();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// go to the [authentication] view</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// go to [authentification] view</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    next({</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      name: &#x27;authentication&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      name: </span>&#x27;authentification&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// return to event loop</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>return<span style="color:#000000">;</span></span></span>
@@ -2247,7 +2238,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  console.log(</span>&#x27;[middleware client], process.server&#x27;<span style="color:#000000">, process.server, </span>&#x27;, process.client=&#x27;<span style="color:#000000">, process.client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// management of the PHP session cookie in the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the browser&#x27;s PHP session cookie must be identical to the one found in the nuxt session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the [end-session] action receives a new PHP cookie (server as nuxt client)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the [fin-session] action receives a new PHP cookie (server as nuxt client)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// if the server receives it, the client must pass it on to the browser</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// for its own exchanges with the PHP server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// this is customer routing</span></span></span>
@@ -2299,14 +2290,13 @@
 </code></pre></div>
 
 <p>The [context.store.commit(&#x27;reset&#x27;)] method (line 5) is as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>// awning reset
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>  reset() {
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        this.commit(&#39;replace&#39;, { started: false, authenticated: false, phpSessionCookie: &#39;&#39;, idSimulation: 0, simulations: [], métier: null })
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>}
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">// awning reset</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  reset() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">this</span>.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { started: <span style="color:#0000ff">false</span>, authenticated: <span style="color:#0000ff">false</span>, phpSessionCookie: <span style="color:#a31515">&#x27;&#x27;</span>, idSimulation: 0, simulations: [], métier: <span style="color:#0000ff">null</span> })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
 <p>When we now use the link [Fin de session], the home page is displayed with the following logs:</p>
 <p><img src="images/10000000000004500000022C969E6F48.png" width="331" height="167" style="width:8.759cm;height:4.411cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004500000022C969E6F48.png" /></p>
 <ul>
@@ -2358,7 +2348,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;[index asyncData response=]&#x27;</span>, response)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// retrieve session cookie PHP for future requests</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> phpSessionCookie = dao.getPhpSessionCookie()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we store the PHP session cookie in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the session cookie PHP is stored in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { phpSessionCookie })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// was there a mistake?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (response.état !== 700) {</span></span>
@@ -2372,7 +2362,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index asyncData error=]&#x27;<span style="color:#000000">, e)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that the jSON session has not started</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that session jSON has not started</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { jsonSessionStarted: <span style="color:#0000ff">false</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { result: <span style="color:#a31515">&#x27;[échec]&#x27;</span>, showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
@@ -2422,7 +2412,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- view dynamics --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -2450,10 +2440,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">async</span> asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// don&#x27;t do things twice if the page has already been requested</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (process.server &amp;&amp; context.store.state.started) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData cancelled]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index asyncData canceled]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span> {</span></span>
@@ -2461,25 +2451,25 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> dao = context.app.$dao()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> response = <span style="color:#0000ff">await</span> dao.initSession()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData response=]&#x27;, response)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// retrieve the PHP session cookie for future requests</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;[index asyncData response=]&#x27;</span>, response)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// retrieve session cookie PHP for future requests</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> phpSessionCookie = dao.getPhpSessionCookie()</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we store the PHP session cookie in the [nuxt] session</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { phpSessionCookie })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the session cookie PHP is stored in session [nuxt]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { phpSessionCookie })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// was there a mistake?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (response.état !== 700) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// the error is in response.réponse</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">throw</span> <span style="color:#0000ff">new</span> Error(response.réponse)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that the jSON session has started</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { started: true })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { started: <span style="color:#0000ff">true</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// no result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">catch</span> (e) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData error=]&#x27;, e.message)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that the jSON session has not started</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(&#x27;replace&#x27;, { started: false })</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;[index asyncData error=]&#x27;</span>, e.message)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// note that session jSON has not started</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      context.store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { started: <span style="color:#0000ff">false</span> })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we report the error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> { showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage: e.message }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    } <span style="color:#0000ff">finally</span> {</span></span>
@@ -2487,29 +2477,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.save(context)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[index created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[index beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// error handling</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[index beforeMount, showErrorLoading=true]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[index beforeMount, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// the error is traced back to the main component [default]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$emit(&#x27;error&#x27;, new Error(this.errorLoadingMessage))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$emit(<span style="color:#a31515">&#x27;error&#x27;</span>, <span style="color:#0000ff">new</span> Error(<span style="color:#0000ff">this</span>.errorLoadingMessage))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[index mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[index mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event managers</span></span></span>
@@ -2617,12 +2607,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// import server and client middleware</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import serverRouting from &#x27;./server/routing&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import clientRouting from &#x27;./client/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> serverRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./server/routing&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> clientRouting </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;./client/routing&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> </span>function<span style="color:#000000">(context) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// who executes this code?</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  console.log(&#x27;[middleware], process.server&#x27;, process.server, &#x27;, process.client=&#x27;, process.client)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  console.log(<span style="color:#a31515">&#x27;[middleware], process.server&#x27;</span>, process.server, <span style="color:#a31515">&#x27;, process.client=&#x27;</span>, process.client)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (process.server) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// server routing</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    serverRouting(context)</span></span>
@@ -2737,11 +2727,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no redirection</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    store.commit(<span style="color:#a31515">&#x27;replace&#x27;</span>, { serverRedirection: <span style="color:#0000ff">false</span>, from: to })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in the [nuxt] session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// save the store in session [nuxt]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> session = context.app.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.value.store = store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  session.save(context)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we redirect the server [nuxt], if necessary</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// we redirect the [nuxt] server, if necessary</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">if</span> (redirection) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    context.redirect({ name: redirection })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>

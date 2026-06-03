@@ -938,8 +938,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Plugins to load before mounting the App</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  plugins: [</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    { src: &#x27;~/plugins/client/session&#x27;, mode: &#x27;client&#x27; },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    { src: &#x27;~/plugins/server/session&#x27;, mode: &#x27;server&#x27; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    { src: </span>&#x27;~/plugins/client/session&#x27;<span style="color:#000000">, mode: </span>&#x27;client&#x27;<span style="color:#000000"> },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    { src: </span>&#x27;~/plugins/server/session&#x27;<span style="color:#000000">, mode: </span>&#x27;server&#x27;<span style="color:#000000"> }</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">],</span></span>
 </code></pre></div>
 
@@ -1218,10 +1218,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Home&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1235,26 +1235,26 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home created], session=&#x27;, this.$session().value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.$session().value)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;incrementCounter&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// counter increment of 1</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$store.commit(&#x27;increment&#x27;, 1)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// session modification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">const</span> session = <span style="color:#0000ff">this</span>.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      session.value.store = <span style="color:#0000ff">this</span>.$store.state</span></span>
@@ -1313,10 +1313,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Page1&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1335,29 +1335,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// set the session in the page&#x27;s reactive properties</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.session = <span style="color:#0000ff">this</span>.$session()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 created], session=&#x27;, this.session.value)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 created], session=&#x27;</span>, <span style="color:#0000ff">this</span>.session.value)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// event management</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    incrementCounter() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;incrementCounter&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      console.log(<span style="color:#a31515">&#x27;incrementCounter&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// counter increment of 1</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$store.commit(&#x27;increment&#x27;, 1)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$store.commit(<span style="color:#a31515">&#x27;increment&#x27;</span>, 1)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// session modification</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.value.store = <span style="color:#0000ff">this</span>.$store.state</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.session.value.somethingImportant.x++</span></span>

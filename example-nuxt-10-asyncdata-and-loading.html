@@ -885,11 +885,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-timing-in-fetch-data */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Page1&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -898,7 +898,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we make a promise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate an asynchronous function</span></span></span>
@@ -906,23 +906,23 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we make the result asynchronous - a random number here</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        resolve({ result: Math.floor(Math.random() * Math.floor(100)) })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        console.log(&#x27;[page1 asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span>&#x27;[page1 asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }, 5000)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -942,8 +942,8 @@
 <p>When the page [page1] is the target of a navigation within the client (SPA mode), the client executes the [asyncData] function, and [nuxt] then displays a progress bar, which it hides once the [asyncData] function has returned its result. The [loading] property of the [nuxt.config.js] file allows you to configure this bar:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">loading: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    color: &#x27;blue&#x27;,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    height: &#x27;5px&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    color: <span style="color:#a31515">&#x27;blue&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    height: <span style="color:#a31515">&#x27;5px&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    throttle: 200,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    continuous: <span style="color:#0000ff">true</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">},</span></span>

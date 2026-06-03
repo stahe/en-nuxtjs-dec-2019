@@ -1047,7 +1047,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Customize the progress-bar color</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  loading: { color: <span style="color:#a31515">&#x27;#fff&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  loading: { color: &#x27;#fff&#x27; },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Global CSS</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
@@ -1124,32 +1124,22 @@
 </code></pre></div>
 
 <p>Now, let&#x27;s modify the [nuxt.config] file as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">head</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Introduction to [nuxt.js]&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nx">meta</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">charset</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;utf-8&#39;</span><span class="w"> </span><span class="p">},</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;viewport&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;width=device-width, initial-scale=1&#39;</span><span class="w"> </span><span class="p">},</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="nx">hid</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;description&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;description&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ssr routing loading asyncdata middleware plugins store&#39;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">],</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nx">link</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">rel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;icon&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/x-icon&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">href</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/favicon.ico&#39;</span><span class="w"> </span><span class="p">}]</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">},</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">head: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    title: </span>&#x27;Introduction à [nuxt.js]&#x27;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    meta: [</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      { charset: <span style="color:#a31515">&#x27;utf-8&#x27;</span> },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      { name: </span>&#x27;viewport&#x27;<span style="color:#000000">, content: </span>&#x27;width=device-width, initial-scale=1&#x27;<span style="color:#000000"> },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        hid: <span style="color:#a31515">&#x27;description&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        name: <span style="color:#a31515">&#x27;description&#x27;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        content: </span>&#x27;ssr routing loading asyncdata middleware plugins store&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    link: [{ rel: <span style="color:#a31515">&#x27;icon&#x27;</span>, type: <span style="color:#a31515">&#x27;image/x-icon&#x27;</span>, href: <span style="color:#a31515">&#x27;/favicon.ico&#x27;</span> }]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">},</span></span>
+</code></pre></div>
+
 <p>When we rerun the application, the &lt;head&gt; tag has changed to the following (source code of the page displayed in the browser):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">  &lt;<span style="color:#800080">head</span><span style="font-style:italic;color:#008080"> </span>&gt;</span></span>
@@ -1167,7 +1157,7 @@
 <p>Let&#x27;s go back to the [nuxt.config] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  mode: &#x27;universal&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span>&#x27;universal&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Headers of the page</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
@@ -1240,7 +1230,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  srcDir: <span style="color:#a31515">&#x27;.&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// URL root of application pages</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-intro/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-intro/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
@@ -1288,8 +1278,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>style<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">html<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  font-family: &#x27;Source Sans Pro&#x27;, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#ff0000">font-family</span><span style="color:#000000">: </span>&#x27;Source Sans Pro&#x27;<span style="color:#000000">, </span>-apple-system<span style="color:#000000">, </span>BlinkMacSystemFont<span style="color:#000000">, </span>&#x27;Segoe UI&#x27;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>Roboto<span style="color:#000000">, </span>&#x27;Helvetica Neue&#x27;<span style="color:#000000">, </span>Arial<span style="color:#000000">, </span>sans-serif<span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>font-size<span style="color:#000000">: </span><span style="color:#0000ff">16px</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>word-spacing<span style="color:#000000">: </span><span style="color:#0000ff">1px</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>-ms-text-size-adjust<span style="color:#000000">: </span><span style="color:#0000ff">100%</span><span style="color:#000000">;</span></span></span>
@@ -1351,7 +1341,7 @@
 <h2 id="35-the-pages-folder">3.5. <span style="color: #4f81bd"><strong>The [pages] folder</strong></span></h2>
 <p><img src="images/10000000000001AE000002497EC1638B.png" width="150" height="205" style="width:3.979cm;height:5.415cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AE000002497EC1638B.png" /></p>
 <p>The [pages] folder contains the routed views, which are the ones the user sees. The [index.vue] page is the application’s home page. With [nuxt.js], there is no routing file. The routes are determined based on the structure of the [pages] folder. Here, the presence of a file named [index.vue] will automatically create a route named [index], with a path of [/index] reduced to [/] since this is the home page. Thus, the following route is created:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        { name : ‘index’, path : ‘/’}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        { name : ‘index’, path : ‘/’}
 </code></pre></div>
 <p>The file [index.vue] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1382,7 +1372,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Logo from &#x27;~/components/Logo.vue&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Logo </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;~/components/Logo.vue&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -1402,7 +1392,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">.title<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  font-family: &#x27;Quicksand&#x27;, &#x27;Source Sans Pro&#x27;, -apple-system, BlinkMacSystemFont,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#ff0000">font-family</span><span style="color:#000000">: </span>&#x27;Quicksand&#x27;<span style="color:#000000">, </span>&#x27;Source Sans Pro&#x27;<span style="color:#000000">, </span>-apple-system<span style="color:#000000">, </span>BlinkMacSystemFont<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&#x27;Segoe UI&#x27;, Roboto, &#x27;Helvetica Neue&#x27;, Arial, sans-serif;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>display<span style="color:#000000">: </span><span style="color:#0000ff">block</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span>font-weight<span style="color:#000000">: </span><span style="color:#0000ff">300</span><span style="color:#000000">;</span></span></span>
@@ -1645,7 +1635,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Logo from &#x27;~/components/Logo.vue&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Logo </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;~/components/Logo.vue&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -1653,7 +1643,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;created, route=&#x27;, this.$route)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;created, route=&#x27;</span>, <span style="color:#0000ff">this</span>.$route)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1727,7 +1717,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span>script<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Logo from &#x27;~/components/Logo.vue&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Logo </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;~/components/Logo.vue&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
@@ -1735,7 +1725,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;created, route=&#x27;, this.$route)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;created, route=&#x27;</span>, <span style="color:#0000ff">this</span>.$route)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1779,7 +1769,7 @@
 <p>We modify the [nuxt.config.js] file as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  mode: &#x27;universal&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  mode: </span>&#x27;universal&#x27;<span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">/*</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   ** Headers of the page</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">   */</span></span>
@@ -1794,11 +1784,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    extend(config, ctx) {}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// source code directory</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  srcDir: &#x27;nuxt-00&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  srcDir: <span style="color:#a31515">&#x27;nuxt-00&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-00/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-00/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
@@ -1858,7 +1848,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-00/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-00/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
@@ -1904,14 +1894,14 @@
 <p>These two files constitute a self-signed certificate. Most browsers only accept them after approval by the user who requested the page.</p>
 <p>The [server.key, server.crt] files must now be used by the web application. To do this, the [nuxt.config.js] file must be modified as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content">import path from &#x27;path&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import fs from &#x27;fs&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> path </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;path&#x27;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> fs </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;fs&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// router</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  router: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// application URL root</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    base: &#x27;/nuxt-00/&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    base: </span>&#x27;/nuxt-00/&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  server: {</span></span>
@@ -1922,8 +1912,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    host: <span style="color:#a31515">&#x27;0.0.0.0&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// self-signed certificate</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    https: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      key: fs.readFileSync(path.resolve(__dirname, &#x27;server.key&#x27;)),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      cert: fs.readFileSync(path.resolve(__dirname, &#x27;server.crt&#x27;))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      key: fs.readFileSync(path.resolve(__dirname, <span style="color:#a31515">&#x27;server.key&#x27;</span>)),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      cert: fs.readFileSync(path.resolve(__dirname, <span style="color:#a31515">&#x27;server.crt&#x27;</span>))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>

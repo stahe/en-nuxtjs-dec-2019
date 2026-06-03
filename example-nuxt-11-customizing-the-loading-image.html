@@ -984,12 +984,12 @@
 <p>The [event-bus] plugin will be executed by both the client and the server, but we will see that it does not work on the server side. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// create an event bus between views</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Vue from &#x27;view</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import<span style="color:#000000"> Vue </span>from<span style="color:#000000"> </span><span style="color:#a31515">&#x27;vue&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">export</span> <span style="color:#0000ff">default</span> (context, inject) =&gt; {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the event bus</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">const</span> eventBus = <span style="color:#0000ff">new</span> Vue()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// injection of a [eventBus] function into the context</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  inject(&#x27;eventBus&#x27;, () =&gt; eventBus)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  inject(<span style="color:#a31515">&#x27;eventBus&#x27;</span>, () =&gt; eventBus)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
@@ -1046,15 +1046,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      showErrorLoading: <span style="color:#0000ff">false</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// cycle de vie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[default beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[default created]&#x27;<span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on écoute l&#x27;évt [loading]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// listen to evt [loading]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.$eventBus().$on(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">this</span>.mShowLoading)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ainsi que l&#x27;évt [errorLoadingMessage]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// and the [errorLoadingMessage] event</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.$eventBus().$on(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">this</span>.mShowErrorLoading)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
@@ -1064,12 +1064,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[default mounted]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  methods: {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// gestion du chargement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// load management</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    mShowLoading(value) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[default mShowLoading], showLoading=&#x27;<span style="color:#000000">, value)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.showLoading = value</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    },</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// erreur de chargement</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// loading error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    mShowErrorLoading(value, errorLoadingMessage) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[default mShowErrorLoading], showErrorLoading=&#x27;<span style="color:#000000">, value, </span>&#x27;errorLoadingMessage=&#x27;<span style="color:#000000">, errorLoadingMessage)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.showErrorLoading = value</span></span>
@@ -1121,11 +1121,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-timing-in-fetch-data */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Page1&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page1&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1134,19 +1134,19 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we make a promise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate an asynchronous function</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      setTimeout(<span style="color:#0000ff">function</span>() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        console.log(&#x27;[page1 asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span>&#x27;[page1 asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we make the result asynchronous - a random number here</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        resolve({ result: Math.floor(Math.random() * Math.floor(100)) })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }, 5000)</span></span>
@@ -1155,16 +1155,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page1 mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1203,11 +1203,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-timing-in-fetch-data */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Home&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Home&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1216,19 +1216,19 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page1 asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page1 asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we make a promise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate an asynchronous function</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      setTimeout(<span style="color:#0000ff">function</span>() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        console.log(&#x27;[page1 asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span>&#x27;[page1 asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we return an error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        reject(</span><span style="color:#0000ff">new</span><span style="color:#000000"> Error(</span>&quot;le serveur n&#x27;a pas répondu assez vite&quot;<span style="color:#000000">))</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }, 5000)</span></span>
@@ -1236,18 +1236,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[home beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[home mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[home mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    this.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1280,7 +1280,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;<span style="color:#800000">template</span><span style="color:#000000"> </span><span style="color:#ff0000">slot</span>=&quot;right&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">&lt;!-- message on yellow background --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span>&lt;<span style="color:#800000">b-alert</span><span style="color:#000000"> </span><span style="color:#ff0000">show</span><span style="color:#000000"> </span><span style="color:#ff0000">variant</span>=&quot;danger&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        &lt;h4&gt;L&#x27;following error occurred: {{ JSON.stringify(error) }}&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>L&#x27;erreur suivante s&#x27;est produite : <span style="font-weight:bold">{{</span> <span style="color:#800080">JSON.stringify(error)</span> <span style="font-weight:bold">}}</span><span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>b-alert<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>template<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- navigation menu in the left-hand column --&gt;</span></span></span>
@@ -1293,34 +1293,34 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-env-in-hooks */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Error&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Error&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Navigation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// property [props]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; &#x27;waiting ...&#x27; } },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  props: { error: { type: Object, default: () =&gt; <span style="color:#a31515">&#x27;waiting ...&#x27;</span> } },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// client and server</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error created, error=]&#x27;, this.error)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error created, error=]&#x27;</span>, <span style="color:#0000ff">this</span>.error)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[error beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer only</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[error mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[error mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span>script<span style="color:#0000ff">&gt;</span></span></span>
@@ -1354,11 +1354,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable no-console */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable nuxt/no-timing-in-fetch-data */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Navigation from &#x27;@/components/navigation&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">import Layout from &#x27;@/components/layout&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Navigation </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/navigation&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> Layout </span><span style="color:#0000ff">from</span><span style="color:#000000"> </span>&#x27;@/components/layout&#x27;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">export<span style="color:#000000"> </span>default<span style="color:#000000"> {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  name: &#x27;Page2&#x27;,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  name: <span style="color:#a31515">&#x27;Page2&#x27;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// components used</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  components: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    Layout,</span></span>
@@ -1367,42 +1367,42 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// asynchronous data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  asyncData(context) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page2 asyncData started]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page2 asyncData started]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// start waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;loading&#x27;, true)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">true</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// no error</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(&#x27;errorLoading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// we make a promise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">return</span> <span style="color:#0000ff">new</span> Promise(<span style="color:#0000ff">function</span>(resolve, reject) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// we simulate an asynchronous function</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      setTimeout(<span style="color:#0000ff">function</span>() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// end waiting</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(&#x27;loading&#x27;, false)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        context.app.$eventBus().$emit(<span style="color:#a31515">&#x27;loading&#x27;</span>, <span style="color:#0000ff">false</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// arbitrarily generate an error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">const</span><span style="color:#000000"> errorLoadingMessage = </span>&quot;le serveur n&#x27;a pas répondu assez vite&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// successful completion</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        resolve({ showErrorLoading: <span style="color:#0000ff">true</span>, errorLoadingMessage })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// log</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        console.log(&#x27;[page2 asyncData finished]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        console.log(</span>&#x27;[page2 asyncData finished]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }, 5000)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    })</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// life cycle</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeCreate() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page2 beforeCreate]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page2 beforeCreate]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  created() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page2 created]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page2 created]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  beforeMount() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page2 beforeMount]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    console.log(</span>&#x27;[page2 beforeMount]&#x27;<span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  },</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  mounted() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    console.log(&#x27;[page2 mounted]&#x27;)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    console.log(<span style="color:#a31515">&#x27;[page2 mounted]&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// customer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> (<span style="color:#0000ff">this</span>.showErrorLoading) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      console.log(&#x27;[page2 mounted, showErrorLoading=true]&#x27;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      this.$eventBus().$emit(&#x27;errorLoading&#x27;, true, this.errorLoadingMessage)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      console.log(</span>&#x27;[page2 mounted, showErrorLoading=true]&#x27;<span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">this</span>.$eventBus().$emit(<span style="color:#a31515">&#x27;errorLoading&#x27;</span>, <span style="color:#0000ff">true</span>, <span style="color:#0000ff">this</span>.errorLoadingMessage)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -1545,7 +1545,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span> <span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;card&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;card-body&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span>=&quot;alert&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-live</span>=&quot;polite&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-atomic</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;alert alert-success&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            &lt;h4&gt;[nuxt-11] : personnalisation de l&#x27;waiting, error management&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>[nuxt-11] : personnalisation de l&#x27;attente, gestion des erreurs<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#800000">div</span> <span style="color:#ff0000">class</span><span style="color:#0000ff">=&quot;row&quot;&gt;</span></span></span>
@@ -1568,7 +1568,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;/</span><span style="color:#800000">li</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;/</span><span style="color:#800000">ul</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span>&lt;/<span style="color:#800000">div</span>&gt;<span style="color:#000000"> </span>&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;col-10&quot;&gt;&lt;<span style="color:#800000">div</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span>=&quot;alert&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-live</span>=&quot;polite&quot;<span style="color:#000000"> </span><span style="color:#ff0000">aria-atomic</span>=&quot;true&quot;<span style="color:#000000"> </span><span style="color:#ff0000">align</span>=&quot;center&quot;<span style="color:#000000"> </span><span style="color:#ff0000">class</span>=&quot;alert alert-danger&quot;&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                &lt;h4&gt;L&#x27;the following error occurred: {&amp;quot;statusCode&amp;quot;:500,&amp;quot;message&amp;quot;:&amp;quot;server didn&#x27;t respond fast enough&amp;quot;}&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span>L&#x27;erreur suivante s&#x27;est produite : {<span style="color:#ff0000">&amp;quot;</span>statusCode<span style="color:#ff0000">&amp;quot;</span>:500,<span style="color:#ff0000">&amp;quot;</span>message<span style="color:#ff0000">&amp;quot;</span>:<span style="color:#ff0000">&amp;quot;</span>le serveur n&#x27;a pas répondu assez vite<span style="color:#ff0000">&amp;quot;</span>}<span style="color:#0000ff">&lt;/</span><span style="color:#800000">h4</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;/</span><span style="color:#800000">div</span><span style="color:#0000ff">&gt;</span></span></span>

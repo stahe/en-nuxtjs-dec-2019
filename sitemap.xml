@@ -2,74 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/index.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/a-first-nuxtjs-application.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-01-routing-and-navigation.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-02-server-and-client-pages.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-03-nuxtserverinit.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-04-maintaining-a-clientserver-session.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-05-store-persistence-with-a-session-cookie.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-06-injection-within-the-context-of-a-session-manager.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-07-client-and-server-contexts.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-08-routing-middleware.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-09-controlling-navigation.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-10-asyncdata-and-loading.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-11-customizing-the-loading-image.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-12-http-requests-with-axios.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-13-checking-navigation-from-nuxt-12.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/example-nuxt-20-porting-the-example-vuejs-22.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/introduction-to-the-nuxt-frameworkjs.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
     <url>
          <loc>https://stahe.github.io/en-nuxtjs-dec-2019/the-working-environment.html</loc>
-         <lastmod>2026-06-01</lastmod>
+         <lastmod>2026-06-03</lastmod>
     </url>
 </urlset>
